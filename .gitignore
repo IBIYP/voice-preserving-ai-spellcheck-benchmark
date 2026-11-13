@@ -1,0 +1,20 @@
+# Environment and secrets
+.env
+.env.*
+*.secret
+*.key
+*.pem
+
+# Local Private Documentation, Notes, and Tickets
+Docs/
+
+# Python and virtual environments
+.venv/
+__pycache__/
+*.pyc
+*.checkpoint.json
+
+# Heavy external evaluation corpora
+pillars-of-gec/
+m2scorer_py3/
+predictions_*.txt

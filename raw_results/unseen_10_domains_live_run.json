@@ -1,0 +1,142 @@
+{
+  "H-01": {
+    "BCorrect (FMM)": {
+      "text": "Yo that concert was strait fire no cap, but my friend lost his ticket at the entrance. We had to finagle our way past security but it was to lit to miss.",
+      "lat": 2007.5020790100098
+    },
+    "LanguageTool API": {
+      "text": "Yo that concert was straight fire no cap, but my friend lost his ticket at the entrance. We had to finagle our way past security, but it was too lit to miss.",
+      "lat": 611.8371486663818
+    },
+    "TextGears API": {
+      "text": "Yo that concert was straight fire no cap, but my friend lost his ticket at the entrance. We had to finagle our way past securty but it was to lit to miss.",
+      "lat": 952.3038864135742
+    }
+  },
+  "H-02": {
+    "BCorrect (FMM)": {
+      "text": "Granddaddy sat on the porch rockin slow, watch in the cri rise after the flooding. He reckoned the old barn wouldn't survive another downpour.",
+      "lat": 629.2433738708496
+    },
+    "LanguageTool API": {
+      "text": "Granddaddy sat on the porch rocking slow, watching the Erik rise after the flooding. He reckoned the old barn wouldn't survive another downpour.",
+      "lat": 678.2674789428711
+    },
+    "TextGears API": {
+      "text": "Granddaddy sat on the porch rocking slow, watchin the crick rise after the flooding. He reckoned the old barn wouldn't survive another downpour.",
+      "lat": 999.8035430908203
+    }
+  },
+  "H-03": {
+    "BCorrect (FMM)": {
+      "text": "Neon reflected off the wet asphalt. She jacked into the subnet, bypass the firewall, and dumped the encrypted payload before the ICE could trace her signal.",
+      "lat": 412.1243953704834
+    },
+    "LanguageTool API": {
+      "text": "Neon reflected off the wet asphalt. She Jack into the subnet, bypassed the firewall, and dump the encrypted payload before the ICE could trace her signed.",
+      "lat": 670.9070205688477
+    },
+    "TextGears API": {
+      "text": "Neon reflected off the wet asphalt. She jacked into the subnet, bypassed the firewall, and dumped the encrypted payload before the ICE could trace her signal.",
+      "lat": 930.3643703460693
+    }
+  },
+  "H-04": {
+    "BCorrect (FMM)": {
+      "text": "The roasted duck had incredible crispy skin, but the raspberry reduction was way to acidic. It totally overpowered the delicat flavor of the parsnips.",
+      "lat": 855.9622764587402
+    },
+    "LanguageTool API": {
+      "text": "The roasted duck had incredible crispy skin, but the raspberry reduction was way too acidic. It totally overpowered the delicate flavor of the parsnips.",
+      "lat": 620.9163665771484
+    },
+    "TextGears API": {
+      "text": "The roasted duck had incredible crispy skin, but the raspberry reduction was way to acidic. It totally overpowered the delicate flavor of the parsnips.",
+      "lat": 923.609733581543
+    }
+  },
+  "H-05": {
+    "BCorrect (FMM)": {
+      "text": "Lass night I dream of a spaceship flying throu the stars with a giant rocket booster. We land on a purple planet with bubble lakes and alien critturs that danced joyfully. Its felt so real I cried when my mom work me up for school!",
+      "lat": 473.34766387939453
+    },
+    "LanguageTool API": {
+      "text": "Lass night I dreamt of a spaceship flying thou the stars with a giant rocket boost. We land on a pursue planet with bubble lakes and alien critters that dance joyfully. It felt so real I cried when my mom work me up for stool!",
+      "lat": 675.1224994659424
+    },
+    "TextGears API": {
+      "text": "Lass nite I dreamed of a spaceship flying through the stars with a giant rocket booster. We landed on a pupil planet with bauble lakes and alien critters that dance joyfully. It felt so reel I cried wen my mom woke me up for skoal!",
+      "lat": 1031.4998626708984
+    }
+  },
+  "H-06": {
+    "BCorrect (FMM)": {
+      "text": "Our cac dropped 40% mom, while arr hit a record high. The competition is scrambling to match our features, but we move too fast.",
+      "lat": 1119.2097663879395
+    },
+    "LanguageTool API": {
+      "text": "Our CAC dropped 40% mom, while arr hit a record high. The competition is scrambling to match our features, but we move to fast.",
+      "lat": 801.0966777801514
+    },
+    "TextGears API": {
+      "text": "Our vac dropped 40% mom, while arr hit a record high. The competition is scrambling to match our features, but we move to fast.",
+      "lat": 1001.7452239990234
+    }
+  },
+  "H-07": {
+    "BCorrect (FMM)": {
+      "text": "Coach drew up the play on the whiteboard during the timeout. We ran the pick and rool to perfection, nailed the three pointer at the buyer, and won the championship!",
+      "lat": 597.4738597869873
+    },
+    "LanguageTool API": {
+      "text": "Coach drew up the play on the whiteboard during the timeout. We ran the pick and room to perfection, nailed the three-pointer at the buyer, and won the championship!",
+      "lat": 588.5448455810547
+    },
+    "TextGears API": {
+      "text": "Coach drew up the play on the whiteboard during the timeout. We ran the pick and roil to perfection, nailed the three-pointer at the buzzer, and won the champinship!",
+      "lat": 1006.8178176879883
+    }
+  },
+  "H-08": {
+    "BCorrect (FMM)": {
+      "text": "Autumn leaves spiraled across the abandoned trax. A quiet sadness hung in the air, neither bitter nor cruel, just the slow exiled of another dying year.",
+      "lat": 454.242467880249
+    },
+    "LanguageTool API": {
+      "text": "Autumn leave spiraled across the abandoned tax. A quiet sadness hung in the air, neither bitter nor cruel, just the slow exhail of another dying year.",
+      "lat": 611.0475063323975
+    },
+    "TextGears API": {
+      "text": "Autumn leaves spiraled across the abandoned Trax. A quiet sadness hung in the air, neither bitter nor cruel, just the slow exhale of another dying year.",
+      "lat": 949.5029449462891
+    }
+  },
+  "H-09": {
+    "BCorrect (FMM)": {
+      "text": "Observed three specimens of dendrobates tinctorious near the stream bed. The aposematic coloration was extremely vibrant despite heavy canopy shade.",
+      "lat": 677.1543025970459
+    },
+    "LanguageTool API": {
+      "text": "Observed three specimens of dendrites tinctorial near the stream bed. The aposematic coloration was extremely vibrant despite heavy canopy shade.",
+      "lat": 662.2891426086426
+    },
+    "TextGears API": {
+      "text": "Observed three specimens of dendrites tinctures near the stream bed. The postmark coloration was extremely vibrant despite heavy canopy shade.",
+      "lat": 987.0929718017578
+    }
+  },
+  "H-10": {
+    "BCorrect (FMM)": {
+      "text": "Clause 4.2 govern indemnity obligations. Neither party shall be liable for consequential damages arising from unintensional breach.",
+      "lat": 539.0379428863525
+    },
+    "LanguageTool API": {
+      "text": "Clause 4.2 governs indemnity obligations. Neither party shall be label for consequential damages arising from unintentional breach.",
+      "lat": 607.6805591583252
+    },
+    "TextGears API": {
+      "text": "Clause 4.2 governs indemnity obligations. Neither party shall be label for consequential damages arising from unintentional breach.",
+      "lat": 960.7391357421875
+    }
+  }
+}

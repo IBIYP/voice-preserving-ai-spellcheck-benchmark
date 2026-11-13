@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1020 540" width="100%" height="auto" style="background:#0d1117" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;">
+  <!-- Sharp 90-degree canvas border -->
+  <rect x="1" y="1" width="1018" height="538" fill="none" stroke="#30363d" stroke-width="1"/>
+
+  <!-- Title & Subtitle (14px title, 11px subtitle) -->
+  <text x="510" y="34" fill="#f0f6fc" font-size="14" font-weight="700" text-anchor="middle">VOICE-PRESERVING AI-SPELLCHECK PROGRESS OVER TIME (2025 - 2026)</text>
+  <text x="510" y="54" fill="#8b949e" font-size="11" text-anchor="middle">Historical Hybrid Meta-Score Progression Across Engineering Milestone Releases | Date: November 13, 2026</text>
+
+  <!-- Horizontal Gridlines & Y-Axis Labels (10px ticks) -->
+  <line x1="80" y1="410" x2="780" y2="410" stroke="#30363d" stroke-width="1.5"/>
+  <line x1="80" y1="346" x2="780" y2="346" stroke="#21262d" stroke-width="1" stroke-dasharray="2,2"/>
+  <line x1="80" y1="282" x2="780" y2="282" stroke="#21262d" stroke-width="1" stroke-dasharray="2,2"/>
+  <line x1="80" y1="218" x2="780" y2="218" stroke="#21262d" stroke-width="1" stroke-dasharray="2,2"/>
+  <line x1="80" y1="154" x2="780" y2="154" stroke="#21262d" stroke-width="1" stroke-dasharray="2,2"/>
+  <line x1="80" y1="90" x2="780" y2="90" stroke="#21262d" stroke-width="1" stroke-dasharray="2,2"/>
+
+  <text x="70" y="414" fill="#8b949e" font-size="10" font-weight="600" text-anchor="end">0%</text>
+  <text x="70" y="350" fill="#8b949e" font-size="10" font-weight="600" text-anchor="end">20%</text>
+  <text x="70" y="286" fill="#8b949e" font-size="10" font-weight="600" text-anchor="end">40%</text>
+  <text x="70" y="222" fill="#8b949e" font-size="10" font-weight="600" text-anchor="end">60%</text>
+  <text x="70" y="158" fill="#8b949e" font-size="10" font-weight="600" text-anchor="end">80%</text>
+  <text x="70" y="94" fill="#8b949e" font-size="10" font-weight="600" text-anchor="end">100%</text>
+
+  <!-- Vertical Milestone Guidelines -->
+  <line x1="150" y1="80" x2="150" y2="410" stroke="#21262d" stroke-width="1" stroke-dasharray="4,4"/>
+  <line x1="350" y1="80" x2="350" y2="410" stroke="#21262d" stroke-width="1" stroke-dasharray="4,4"/>
+  <line x1="550" y1="80" x2="550" y2="410" stroke="#21262d" stroke-width="1" stroke-dasharray="4,4"/>
+  <line x1="750" y1="80" x2="750" y2="410" stroke="#30363d" stroke-width="1.5"/>
+
+  <!-- Milestone Labels on X-Axis (11px title, 10px subtext) -->
+  <text x="150" y="432" fill="#c9d1d9" font-size="11" font-weight="600" text-anchor="middle">Q1 2025 (v1.0)</text>
+  <text x="150" y="447" fill="#8b949e" font-size="10" text-anchor="middle">Initial Baseline</text>
+
+  <text x="350" y="432" fill="#c9d1d9" font-size="11" font-weight="600" text-anchor="middle">Q3 2025 (v1.8)</text>
+  <text x="350" y="447" fill="#8b949e" font-size="10" text-anchor="middle">Consonant Skeleton</text>
+
+  <text x="550" y="432" fill="#c9d1d9" font-size="11" font-weight="600" text-anchor="middle">Early Fall 2026</text>
+  <text x="550" y="447" fill="#8b949e" font-size="10" text-anchor="middle">30-50% Blind Test</text>
+
+  <text x="750" y="432" fill="#ffffff" font-size="11" font-weight="700" text-anchor="middle">Nov 2026 (v3.0)</text>
+  <text x="750" y="447" fill="#c9d1d9" font-size="10" font-weight="600" text-anchor="middle">4-Pillar Blind Suite</text>
+
+  <!-- 1. DeepL Write (Dark gray dotted line) -->
+  <!-- 78.0% (160) -> 80.0% (154) -> 81.5% (149) -> 82.7% (145) -->
+  <polyline points="150,160 350,154 550,149 750,145" fill="none" stroke="#6e7681" stroke-width="2" stroke-dasharray="3,3"/>
+  <rect x="146" y="156" width="8" height="8" fill="#30363d" stroke="#6e7681" stroke-width="1"/>
+  <rect x="346" y="150" width="8" height="8" fill="#30363d" stroke="#6e7681" stroke-width="1"/>
+  <rect x="546" y="145" width="8" height="8" fill="#30363d" stroke="#6e7681" stroke-width="1"/>
+  <rect x="746" y="141" width="8" height="8" fill="#30363d" stroke="#6e7681" stroke-width="1"/>
+
+  <!-- 2. TextGears API (Medium gray dash-dot line) -->
+  <!-- 64.0% (205) -> 67.5% (194) -> 70.5% (184) -> 72.0% (180) -->
+  <polyline points="150,205 350,194 550,184 750,180" fill="none" stroke="#8b949e" stroke-width="2" stroke-dasharray="4,2,1,2"/>
+  <rect x="146" y="201" width="8" height="8" fill="#8b949e"/>
+  <rect x="346" y="190" width="8" height="8" fill="#8b949e"/>
+  <rect x="546" y="180" width="8" height="8" fill="#8b949e"/>
+  <rect x="746" y="176" width="8" height="8" fill="#8b949e"/>
+
+  <!-- 3. LanguageTool API (Medium-light gray dashed line) -->
+  <!-- 65.0% (202) -> 68.0% (192) -> 70.2% (185) -> 71.4% (181) -->
+  <polyline points="150,202 350,192 550,185 750,181" fill="none" stroke="#c9d1d9" stroke-width="2" stroke-dasharray="6,4"/>
+  <rect x="146" y="198" width="8" height="8" fill="#0d1117" stroke="#c9d1d9" stroke-width="1.5"/>
+  <rect x="346" y="188" width="8" height="8" fill="#0d1117" stroke="#c9d1d9" stroke-width="1.5"/>
+  <rect x="546" y="181" width="8" height="8" fill="#0d1117" stroke="#c9d1d9" stroke-width="1.5"/>
+  <rect x="746" y="177" width="8" height="8" fill="#0d1117" stroke="#c9d1d9" stroke-width="1.5"/>
+
+  <!-- 4. BCorrect API (Solid bright white line showing rapid trajectory from 30-50% dip to 61.8%) -->
+  <!-- 32.0% (308) -> 38.5% (287) -> 38.0% (288) -> 61.8% (212) -->
+  <polyline points="150,308 350,287 550,288 750,212" fill="none" stroke="#ffffff" stroke-width="3"/>
+  <rect x="145" y="303" width="10" height="10" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+  <text x="150" y="326" fill="#ffffff" font-size="10" font-weight="700" text-anchor="middle">32.0%</text>
+
+  <rect x="345" y="282" width="10" height="10" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+  <text x="350" y="305" fill="#ffffff" font-size="10" font-weight="700" text-anchor="middle">38.5%</text>
+
+  <rect x="545" y="283" width="10" height="10" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+  <text x="550" y="306" fill="#ffffff" font-size="10" font-weight="700" text-anchor="middle">38.0%</text>
+
+  <rect x="745" y="207" width="10" height="10" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+
+  <!-- Sharp 90-Degree Callout Badges on Right Margin (Strict 11px font, ample vertical clearance) -->
+  <!-- Card 1: DeepL Write (82.7%) -> y = 115 -->
+  <line x1="750" y1="145" x2="795" y2="129" stroke="#6e7681" stroke-width="1" stroke-dasharray="2,2"/>
+  <rect x="795" y="115" width="205" height="28" fill="#161b22" stroke="#6e7681" stroke-width="1"/>
+  <text x="807" y="134" fill="#c9d1d9" font-size="11" font-weight="600">DeepL Write: 82.7%</text>
+
+  <!-- Card 2: TextGears Badge (72.0%) -> y = 155 -->
+  <line x1="750" y1="180" x2="795" y2="169" stroke="#8b949e" stroke-width="1" stroke-dasharray="2,2"/>
+  <rect x="795" y="155" width="205" height="28" fill="#161b22" stroke="#8b949e" stroke-width="1"/>
+  <text x="807" y="174" fill="#8b949e" font-size="11" font-weight="600">TextGears API: 72.0%</text>
+
+  <!-- Card 3: LanguageTool Badge (71.4%) -> y = 195 -->
+  <line x1="750" y1="181" x2="795" y2="209" stroke="#c9d1d9" stroke-width="1" stroke-dasharray="2,2"/>
+  <rect x="795" y="195" width="205" height="28" fill="#161b22" stroke="#c9d1d9" stroke-width="1"/>
+  <text x="807" y="214" fill="#c9d1d9" font-size="11" font-weight="600">LanguageTool: 71.4%</text>
+
+  <!-- Card 4: BCorrect Badge (61.8%) -> y = 235 -->
+  <line x1="750" y1="212" x2="795" y2="249" stroke="#ffffff" stroke-width="1.5"/>
+  <rect x="795" y="235" width="205" height="28" fill="#21262d" stroke="#ffffff" stroke-width="1.5"/>
+  <text x="807" y="254" fill="#ffffff" font-size="11" font-weight="700">BCorrect (FMM): 61.8%</text>
+
+  <!-- Sharp 90-Degree Legend Box (11px font) -->
+  <rect x="80" y="475" width="860" height="34" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  
+  <line x1="100" y1="492" x2="130" y2="492" stroke="#6e7681" stroke-width="2" stroke-dasharray="3,3"/>
+  <rect x="111" y="488" width="8" height="8" fill="#30363d" stroke="#6e7681"/>
+  <text x="138" y="496" fill="#6e7681" font-size="11">DeepL Write</text>
+
+  <line x1="320" y1="492" x2="350" y2="492" stroke="#8b949e" stroke-width="2" stroke-dasharray="4,2,1,2"/>
+  <rect x="331" y="488" width="8" height="8" fill="#8b949e"/>
+  <text x="358" y="496" fill="#8b949e" font-size="11">TextGears API</text>
+
+  <line x1="540" y1="492" x2="570" y2="492" stroke="#c9d1d9" stroke-width="2" stroke-dasharray="6,4"/>
+  <rect x="551" y="488" width="8" height="8" fill="#0d1117" stroke="#c9d1d9" stroke-width="1.5"/>
+  <text x="578" y="496" fill="#c9d1d9" font-size="11" font-weight="600">LanguageTool API</text>
+
+  <line x1="750" y1="492" x2="780" y2="492" stroke="#ffffff" stroke-width="3"/>
+  <rect x="761" y="488" width="8" height="8" fill="#ffffff"/>
+  <text x="788" y="496" fill="#ffffff" font-size="11" font-weight="700">BCorrect API (FMM)</text>
+</svg>

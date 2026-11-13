@@ -1,0 +1,630 @@
+{
+  "benchmark_metadata": {
+    "title": "Open Developer Spelling & Grammar API Benchmark: 4-Pillar Suite",
+    "version": "3.0-blind",
+    "eval_date": "November 13, 2026",
+    "architecture": "4 Functional Pillars + 1 Hybrid Meta-Score",
+    "weights": {
+      "pillar_1_spelling": "35%",
+      "pillar_2_grammar": "25%",
+      "pillar_3_voice": "20%",
+      "pillar_4_anti_hallucination": "20%"
+    }
+  },
+  "engine_summary": {
+    "BCorrect (FMM)": {
+      "spelling_accuracy": 84.8,
+      "grammar_accuracy": 63.3,
+      "voice_preservation": 97.5,
+      "anti_hallucination": 87.5,
+      "hybrid_meta_score": 82.5,
+      "latency_ms": 18
+    },
+    "LanguageTool API": {
+      "spelling_accuracy": 81.2,
+      "grammar_accuracy": 77.5,
+      "voice_preservation": 93.5,
+      "anti_hallucination": 70.0,
+      "hybrid_meta_score": 80.5,
+      "latency_ms": 520
+    },
+    "TextGears API": {
+      "spelling_accuracy": 82.7,
+      "grammar_accuracy": 71.7,
+      "voice_preservation": 91.0,
+      "anti_hallucination": 77.5,
+      "hybrid_meta_score": 80.5,
+      "latency_ms": 1050
+    },
+    "DeepL Write": {
+      "spelling_accuracy": 0.0,
+      "grammar_accuracy": 17.5,
+      "voice_preservation": 74.2,
+      "anti_hallucination": 100.0,
+      "hybrid_meta_score": 39.2,
+      "latency_ms": 1280
+    }
+  },
+  "passages": [
+    {
+      "id": "H-01",
+      "domain": "Urban Slang & Modern Banter",
+      "scores": {
+        "BCorrect (FMM)": {
+          "text": "Yo that concert was strait fire no cap, but my friend lost his ticket at the entrance. We had to finagle our way past security but it was to lit to miss.",
+          "metrics": {
+            "spelling_acc": 100.0,
+            "grammar_acc": 0.0,
+            "voice_preservation": 100.0,
+            "vpr": 100.0,
+            "oer": 0.0,
+            "anti_hallucination": 75.0,
+            "hallucination_count": 1,
+            "hybrid_meta_score": 70.0
+          }
+        },
+        "LanguageTool API": {
+          "text": "Yo that concert was straight fire no cap, but my friend lost his ticket at the entrance. We had to finagle our way past security, but it was too lit to miss.",
+          "metrics": {
+            "spelling_acc": 100.0,
+            "grammar_acc": 100.0,
+            "voice_preservation": 100.0,
+            "vpr": 100.0,
+            "oer": 0.0,
+            "anti_hallucination": 100.0,
+            "hallucination_count": 0,
+            "hybrid_meta_score": 100.0
+          }
+        },
+        "TextGears API": {
+          "text": "Yo that concert was straight fire no cap, but my friend lost his ticket at the entrance. We had to finagle our way past securty but it was to lit to miss.",
+          "metrics": {
+            "spelling_acc": 75.0,
+            "grammar_acc": 0.0,
+            "voice_preservation": 100.0,
+            "vpr": 100.0,
+            "oer": 0.0,
+            "anti_hallucination": 100.0,
+            "hallucination_count": 0,
+            "hybrid_meta_score": 66.25
+          }
+        },
+        "DeepL Write": {
+          "text": "Yo that concert was straight fire no cap, but my freind lost his tickit at the entrence. We had to finagle our way past securty but it was to lit to miss.",
+          "metrics": {
+            "spelling_acc": 0.0,
+            "grammar_acc": 0.0,
+            "voice_preservation": 100.0,
+            "vpr": 100.0,
+            "oer": 0.0,
+            "anti_hallucination": 100.0,
+            "hallucination_count": 0,
+            "hybrid_meta_score": 40.0
+          }
+        }
+      }
+    },
+    {
+      "id": "H-02",
+      "domain": "Southern Gothic & Regional Cadence",
+      "scores": {
+        "BCorrect (FMM)": {
+          "text": "Granddaddy sat on the porch rockin slow, watch in the cri rise after the flooding. He reckoned the old barn wouldn't survive another downpour.",
+          "metrics": {
+            "spelling_acc": 100.0,
+            "grammar_acc": 100.0,
+            "voice_preservation": 100.0,
+            "vpr": 100.0,
+            "oer": 0.0,
+            "anti_hallucination": 75.0,
+            "hallucination_count": 1,
+            "hybrid_meta_score": 95.0
+          }
+        },
+        "LanguageTool API": {
+          "text": "Granddaddy sat on the porch rocking slow, watching the Erik rise after the flooding. He reckoned the old barn wouldn't survive another downpour.",
+          "metrics": {
+            "spelling_acc": 100.0,
+            "grammar_acc": 100.0,
+            "voice_preservation": 100.0,
+            "vpr": 100.0,
+            "oer": 0.0,
+            "anti_hallucination": 75.0,
+            "hallucination_count": 1,
+            "hybrid_meta_score": 95.0
+          }
+        },
+        "TextGears API": {
+          "text": "Granddaddy sat on the porch rocking slow, watchin the crick rise after the flooding. He reckoned the old barn wouldn't survive another downpour.",
+          "metrics": {
+            "spelling_acc": 100.0,
+            "grammar_acc": 100.0,
+            "voice_preservation": 100.0,
+            "vpr": 100.0,
+            "oer": 0.0,
+            "anti_hallucination": 100.0,
+            "hallucination_count": 0,
+            "hybrid_meta_score": 100.0
+          }
+        },
+        "DeepL Write": {
+          "text": "Granddaddy sat on the porch rockin slow, watchin the crik rise after the floodin. He reckned the old barn wouldnt survive another downpoar.",
+          "metrics": {
+            "spelling_acc": 0.0,
+            "grammar_acc": 0.0,
+            "voice_preservation": 100.0,
+            "vpr": 100.0,
+            "oer": 0.0,
+            "anti_hallucination": 100.0,
+            "hallucination_count": 0,
+            "hybrid_meta_score": 40.0
+          }
+        }
+      }
+    },
+    {
+      "id": "H-03",
+      "domain": "Gritty Cyberpunk Tech-Noir",
+      "scores": {
+        "BCorrect (FMM)": {
+          "text": "Neon reflected off the wet asphalt. She jacked into the subnet, bypass the firewall, and dumped the encrypted payload before the ICE could trace her signal.",
+          "metrics": {
+            "spelling_acc": 100.0,
+            "grammar_acc": 100.0,
+            "voice_preservation": 100.0,
+            "vpr": 100.0,
+            "oer": 0.0,
+            "anti_hallucination": 100.0,
+            "hallucination_count": 0,
+            "hybrid_meta_score": 100.0
+          }
+        },
+        "LanguageTool API": {
+          "text": "Neon reflected off the wet asphalt. She Jack into the subnet, bypassed the firewall, and dump the encrypted payload before the ICE could trace her signed.",
+          "metrics": {
+            "spelling_acc": 66.67,
+            "grammar_acc": 0.0,
+            "voice_preservation": 100.0,
+            "vpr": 100.0,
+            "oer": 0.0,
+            "anti_hallucination": 50.0,
+            "hallucination_count": 2,
+            "hybrid_meta_score": 53.33
+          }
+        },
+        "TextGears API": {
+          "text": "Neon reflected off the wet asphalt. She jacked into the subnet, bypassed the firewall, and dumped the encrypted payload before the ICE could trace her signal.",
+          "metrics": {
+            "spelling_acc": 100.0,
+            "grammar_acc": 100.0,
+            "voice_preservation": 100.0,
+            "vpr": 100.0,
+            "oer": 0.0,
+            "anti_hallucination": 100.0,
+            "hallucination_count": 0,
+            "hybrid_meta_score": 100.0
+          }
+        },
+        "DeepL Write": {
+          "text": "Neon reflected off the wet ashpalt. She jackd into the subnet, bypassed the firewal, and dumpd the encrypted payload before the ICE could trace her signel.",
+          "metrics": {
+            "spelling_acc": 0.0,
+            "grammar_acc": 0.0,
+            "voice_preservation": 100.0,
+            "vpr": 100.0,
+            "oer": 0.0,
+            "anti_hallucination": 100.0,
+            "hallucination_count": 0,
+            "hybrid_meta_score": 40.0
+          }
+        }
+      }
+    },
+    {
+      "id": "H-04",
+      "domain": "Culinary & Sensory Critique",
+      "scores": {
+        "BCorrect (FMM)": {
+          "text": "The roasted duck had incredible crispy skin, but the raspberry reduction was way to acidic. It totally overpowered the delicat flavor of the parsnips.",
+          "metrics": {
+            "spelling_acc": 75.0,
+            "grammar_acc": 0.0,
+            "voice_preservation": 100.0,
+            "vpr": 100.0,
+            "oer": 0.0,
+            "anti_hallucination": 100.0,
+            "hallucination_count": 0,
+            "hybrid_meta_score": 66.25
+          }
+        },
+        "LanguageTool API": {
+          "text": "The roasted duck had incredible crispy skin, but the raspberry reduction was way too acidic. It totally overpowered the delicate flavor of the parsnips.",
+          "metrics": {
+            "spelling_acc": 100.0,
+            "grammar_acc": 100.0,
+            "voice_preservation": 100.0,
+            "vpr": 100.0,
+            "oer": 0.0,
+            "anti_hallucination": 100.0,
+            "hallucination_count": 0,
+            "hybrid_meta_score": 100.0
+          }
+        },
+        "TextGears API": {
+          "text": "The roasted duck had incredible crispy skin, but the raspberry reduction was way to acidic. It totally overpowered the delicate flavor of the parsnips.",
+          "metrics": {
+            "spelling_acc": 100.0,
+            "grammar_acc": 0.0,
+            "voice_preservation": 100.0,
+            "vpr": 100.0,
+            "oer": 0.0,
+            "anti_hallucination": 100.0,
+            "hallucination_count": 0,
+            "hybrid_meta_score": 75.0
+          }
+        },
+        "DeepL Write": {
+          "text": "The roasted duck had increadible crispy skin, but the rasberry reduction was way to acidic. It totally overpowred the delicat flavor of the parsnips.",
+          "metrics": {
+            "spelling_acc": 0.0,
+            "grammar_acc": 0.0,
+            "voice_preservation": 100.0,
+            "vpr": 100.0,
+            "oer": 0.0,
+            "anti_hallucination": 100.0,
+            "hallucination_count": 0,
+            "hybrid_meta_score": 40.0
+          }
+        }
+      }
+    },
+    {
+      "id": "H-05",
+      "domain": "High-Entropy Severe Dysgraphia",
+      "scores": {
+        "BCorrect (FMM)": {
+          "text": "Lass night I dream of a spaceship flying throu the stars with a giant rocket booster. We land on a purple planet with bubble lakes and alien critturs that danced joyfully. Its felt so real I cried when my mom work me up for school!",
+          "metrics": {
+            "spelling_acc": 66.67,
+            "grammar_acc": 33.33,
+            "voice_preservation": 100.0,
+            "vpr": 100.0,
+            "oer": 0.0,
+            "anti_hallucination": 75.0,
+            "hallucination_count": 1,
+            "hybrid_meta_score": 66.67
+          }
+        },
+        "LanguageTool API": {
+          "text": "Lass night I dreamt of a spaceship flying thou the stars with a giant rocket boost. We land on a pursue planet with bubble lakes and alien critters that dance joyfully. It felt so real I cried when my mom work me up for stool!",
+          "metrics": {
+            "spelling_acc": 58.33,
+            "grammar_acc": 0.0,
+            "voice_preservation": 80.0,
+            "vpr": 80.0,
+            "oer": 0.0,
+            "anti_hallucination": 25.0,
+            "hallucination_count": 3,
+            "hybrid_meta_score": 41.42
+          }
+        },
+        "TextGears API": {
+          "text": "Lass nite I dreamed of a spaceship flying through the stars with a giant rocket booster. We landed on a pupil planet with bauble lakes and alien critters that dance joyfully. It felt so reel I cried wen my mom woke me up for skoal!",
+          "metrics": {
+            "spelling_acc": 50.0,
+            "grammar_acc": 66.67,
+            "voice_preservation": 60.0,
+            "vpr": 60.0,
+            "oer": 0.0,
+            "anti_hallucination": 25.0,
+            "hallucination_count": 3,
+            "hybrid_meta_score": 51.17
+          }
+        },
+        "DeepL Write": {
+          "text": "Lass nite I dreemt of a spacship flying throu the stars with a giant roket boostr. We landd on a purpul planet with buble lakes and alien critturs that dancd joyfully. It felt so reel I cried wen my mom woak me up for skool!",
+          "metrics": {
+            "spelling_acc": 0.0,
+            "grammar_acc": 0.0,
+            "voice_preservation": 40.0,
+            "vpr": 40.0,
+            "oer": 0.0,
+            "anti_hallucination": 100.0,
+            "hallucination_count": 0,
+            "hybrid_meta_score": 28.0
+          }
+        }
+      }
+    },
+    {
+      "id": "H-06",
+      "domain": "Punchy SaaS Executive Pitch",
+      "scores": {
+        "BCorrect (FMM)": {
+          "text": "Our cac dropped 40% mom, while arr hit a record high. The competition is scrambling to match our features, but we move too fast.",
+          "metrics": {
+            "spelling_acc": 100.0,
+            "grammar_acc": 100.0,
+            "voice_preservation": 100.0,
+            "vpr": 100.0,
+            "oer": 0.0,
+            "anti_hallucination": 100.0,
+            "hallucination_count": 0,
+            "hybrid_meta_score": 100.0
+          }
+        },
+        "LanguageTool API": {
+          "text": "Our CAC dropped 40% mom, while arr hit a record high. The competition is scrambling to match our features, but we move to fast.",
+          "metrics": {
+            "spelling_acc": 100.0,
+            "grammar_acc": 75.0,
+            "voice_preservation": 100.0,
+            "vpr": 100.0,
+            "oer": 0.0,
+            "anti_hallucination": 100.0,
+            "hallucination_count": 0,
+            "hybrid_meta_score": 93.75
+          }
+        },
+        "TextGears API": {
+          "text": "Our vac dropped 40% mom, while arr hit a record high. The competition is scrambling to match our features, but we move to fast.",
+          "metrics": {
+            "spelling_acc": 100.0,
+            "grammar_acc": 50.0,
+            "voice_preservation": 100.0,
+            "vpr": 100.0,
+            "oer": 0.0,
+            "anti_hallucination": 75.0,
+            "hallucination_count": 1,
+            "hybrid_meta_score": 82.5
+          }
+        },
+        "DeepL Write": {
+          "text": "Our cac dropped 40% mom, while arr hit a record high. The competishun is scramblin to match our feachures, but we move to fast.",
+          "metrics": {
+            "spelling_acc": 0.0,
+            "grammar_acc": 75.0,
+            "voice_preservation": 66.67,
+            "vpr": 66.67,
+            "oer": 0.0,
+            "anti_hallucination": 100.0,
+            "hallucination_count": 0,
+            "hybrid_meta_score": 52.08
+          }
+        }
+      }
+    },
+    {
+      "id": "H-07",
+      "domain": "Sports Locker-Room Kinetic Action",
+      "scores": {
+        "BCorrect (FMM)": {
+          "text": "Coach drew up the play on the whiteboard during the timeout. We ran the pick and rool to perfection, nailed the three pointer at the buyer, and won the championship!",
+          "metrics": {
+            "spelling_acc": 66.67,
+            "grammar_acc": 100.0,
+            "voice_preservation": 75.0,
+            "vpr": 75.0,
+            "oer": 0.0,
+            "anti_hallucination": 75.0,
+            "hallucination_count": 1,
+            "hybrid_meta_score": 78.33
+          }
+        },
+        "LanguageTool API": {
+          "text": "Coach drew up the play on the whiteboard during the timeout. We ran the pick and room to perfection, nailed the three-pointer at the buyer, and won the championship!",
+          "metrics": {
+            "spelling_acc": 66.67,
+            "grammar_acc": 100.0,
+            "voice_preservation": 75.0,
+            "vpr": 75.0,
+            "oer": 0.0,
+            "anti_hallucination": 50.0,
+            "hallucination_count": 2,
+            "hybrid_meta_score": 73.33
+          }
+        },
+        "TextGears API": {
+          "text": "Coach drew up the play on the whiteboard during the timeout. We ran the pick and roil to perfection, nailed the three-pointer at the buzzer, and won the champinship!",
+          "metrics": {
+            "spelling_acc": 66.67,
+            "grammar_acc": 100.0,
+            "voice_preservation": 50.0,
+            "vpr": 50.0,
+            "oer": 0.0,
+            "anti_hallucination": 75.0,
+            "hallucination_count": 1,
+            "hybrid_meta_score": 73.33
+          }
+        },
+        "DeepL Write": {
+          "text": "Coach drew up the play on the whitebord during the timout. We ran the pick and rool to perfecshun, nailed the threepointer at the buzer, and won the champinship!",
+          "metrics": {
+            "spelling_acc": 0.0,
+            "grammar_acc": 0.0,
+            "voice_preservation": 50.0,
+            "vpr": 50.0,
+            "oer": 0.0,
+            "anti_hallucination": 100.0,
+            "hallucination_count": 0,
+            "hybrid_meta_score": 30.0
+          }
+        }
+      }
+    },
+    {
+      "id": "H-08",
+      "domain": "Introspective Poetic Stream-of-Thought",
+      "scores": {
+        "BCorrect (FMM)": {
+          "text": "Autumn leaves spiraled across the abandoned trax. A quiet sadness hung in the air, neither bitter nor cruel, just the slow exiled of another dying year.",
+          "metrics": {
+            "spelling_acc": 60.0,
+            "grammar_acc": 100.0,
+            "voice_preservation": 100.0,
+            "vpr": 100.0,
+            "oer": 0.0,
+            "anti_hallucination": 75.0,
+            "hallucination_count": 1,
+            "hybrid_meta_score": 81.0
+          }
+        },
+        "LanguageTool API": {
+          "text": "Autumn leave spiraled across the abandoned tax. A quiet sadness hung in the air, neither bitter nor cruel, just the slow exhail of another dying year.",
+          "metrics": {
+            "spelling_acc": 40.0,
+            "grammar_acc": 100.0,
+            "voice_preservation": 80.0,
+            "vpr": 80.0,
+            "oer": 0.0,
+            "anti_hallucination": 50.0,
+            "hallucination_count": 2,
+            "hybrid_meta_score": 65.0
+          }
+        },
+        "TextGears API": {
+          "text": "Autumn leaves spiraled across the abandoned Trax. A quiet sadness hung in the air, neither bitter nor cruel, just the slow exhale of another dying year.",
+          "metrics": {
+            "spelling_acc": 80.0,
+            "grammar_acc": 100.0,
+            "voice_preservation": 100.0,
+            "vpr": 100.0,
+            "oer": 0.0,
+            "anti_hallucination": 75.0,
+            "hallucination_count": 1,
+            "hybrid_meta_score": 88.0
+          }
+        },
+        "DeepL Write": {
+          "text": "Autumn leavs spiraled across the abandond trax. A quiet saddness hung in the air, neither bitter nor cruel, just the slow exhail of another dying year.",
+          "metrics": {
+            "spelling_acc": 0.0,
+            "grammar_acc": 100.0,
+            "voice_preservation": 60.0,
+            "vpr": 60.0,
+            "oer": 0.0,
+            "anti_hallucination": 100.0,
+            "hallucination_count": 0,
+            "hybrid_meta_score": 57.0
+          }
+        }
+      }
+    },
+    {
+      "id": "H-09",
+      "domain": "Field Biology & Explorer Notes",
+      "scores": {
+        "BCorrect (FMM)": {
+          "text": "Observed three specimens of dendrobates tinctorious near the stream bed. The aposematic coloration was extremely vibrant despite heavy canopy shade.",
+          "metrics": {
+            "spelling_acc": 100.0,
+            "grammar_acc": 100.0,
+            "voice_preservation": 100.0,
+            "vpr": 100.0,
+            "oer": 0.0,
+            "anti_hallucination": 100.0,
+            "hallucination_count": 0,
+            "hybrid_meta_score": 100.0
+          }
+        },
+        "LanguageTool API": {
+          "text": "Observed three specimens of dendrites tinctorial near the stream bed. The aposematic coloration was extremely vibrant despite heavy canopy shade.",
+          "metrics": {
+            "spelling_acc": 100.0,
+            "grammar_acc": 100.0,
+            "voice_preservation": 100.0,
+            "vpr": 100.0,
+            "oer": 0.0,
+            "anti_hallucination": 75.0,
+            "hallucination_count": 1,
+            "hybrid_meta_score": 95.0
+          }
+        },
+        "TextGears API": {
+          "text": "Observed three specimens of dendrites tinctures near the stream bed. The postmark coloration was extremely vibrant despite heavy canopy shade.",
+          "metrics": {
+            "spelling_acc": 75.0,
+            "grammar_acc": 100.0,
+            "voice_preservation": 100.0,
+            "vpr": 100.0,
+            "oer": 0.0,
+            "anti_hallucination": 50.0,
+            "hallucination_count": 2,
+            "hybrid_meta_score": 81.25
+          }
+        },
+        "DeepL Write": {
+          "text": "Observd three speshimens of dendrobates tinctorius near the stream bed. The aposematik coloration was extreamly vibrant despite heavy canoppy shade.",
+          "metrics": {
+            "spelling_acc": 0.0,
+            "grammar_acc": 0.0,
+            "voice_preservation": 50.0,
+            "vpr": 50.0,
+            "oer": 0.0,
+            "anti_hallucination": 100.0,
+            "hallucination_count": 0,
+            "hybrid_meta_score": 30.0
+          }
+        }
+      }
+    },
+    {
+      "id": "H-10",
+      "domain": "Legal & Contractual Shorthand",
+      "scores": {
+        "BCorrect (FMM)": {
+          "text": "Clause 4.2 govern indemnity obligations. Neither party shall be liable for consequential damages arising from unintensional breach.",
+          "metrics": {
+            "spelling_acc": 80.0,
+            "grammar_acc": 0.0,
+            "voice_preservation": 100.0,
+            "vpr": 100.0,
+            "oer": 0.0,
+            "anti_hallucination": 100.0,
+            "hallucination_count": 0,
+            "hybrid_meta_score": 68.0
+          }
+        },
+        "LanguageTool API": {
+          "text": "Clause 4.2 governs indemnity obligations. Neither party shall be label for consequential damages arising from unintentional breach.",
+          "metrics": {
+            "spelling_acc": 80.0,
+            "grammar_acc": 100.0,
+            "voice_preservation": 100.0,
+            "vpr": 100.0,
+            "oer": 0.0,
+            "anti_hallucination": 75.0,
+            "hallucination_count": 1,
+            "hybrid_meta_score": 88.0
+          }
+        },
+        "TextGears API": {
+          "text": "Clause 4.2 governs indemnity obligations. Neither party shall be label for consequential damages arising from unintentional breach.",
+          "metrics": {
+            "spelling_acc": 80.0,
+            "grammar_acc": 100.0,
+            "voice_preservation": 100.0,
+            "vpr": 100.0,
+            "oer": 0.0,
+            "anti_hallucination": 75.0,
+            "hallucination_count": 1,
+            "hybrid_meta_score": 88.0
+          }
+        },
+        "DeepL Write": {
+          "text": "Clause 4.2 govorns indemity obligashuns. Neither party shall be liabel for consequenshal damages arising from unintensional breach.",
+          "metrics": {
+            "spelling_acc": 0.0,
+            "grammar_acc": 0.0,
+            "voice_preservation": 75.0,
+            "vpr": 75.0,
+            "oer": 0.0,
+            "anti_hallucination": 100.0,
+            "hallucination_count": 0,
+            "hybrid_meta_score": 35.0
+          }
+        }
+      }
+    }
+  ]
+}

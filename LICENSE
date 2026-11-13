@@ -1,0 +1,32 @@
+MIT License (Benchmark Suite & Evaluation Code Only)
+
+Copyright (c) 2026 Open Voice-Preserving Benchmark Working Group
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+LIMITATION AND SCOPE OF LICENSE:
+This MIT License applies strictly and exclusively to the benchmark scripts,
+evaluation test harness, documentation, and sample dataset pairs contained
+within this repository.
+
+Nothing in this license shall be construed as granting, conveying, or implying
+any license, transfer of rights, or patent grant to the proprietary technologies,
+neural models, or commercial APIs of any evaluated engines (including BCorrect,
+LanguageTool, TextGears, or DeepL Write), all of which remain the exclusive
+intellectual property of their respective creators and corporate entities.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
