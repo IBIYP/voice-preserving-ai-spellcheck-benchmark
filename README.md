@@ -132,6 +132,12 @@ Where:
 - **Pillar 4 (Avoiding Hallucinations, 20%):** Evaluated via confirmed rogue dictionary substitutions, detecting whenever an engine substitutes an unintended dictionary word that distorts sentence meaning.
 - **Pillar 5 (Hybrid Meta-Score, 100%):** A balanced composite index reflecting overall developer utility in production.
 
+Voice is currently scored with selected phrase-presence checks and manually
+listed rewrite signatures; the H-suite also applies a word-count drift
+threshold. These checks do not compare edits at their original spans or judge
+meaning, tone, cadence, or register. A high score can therefore miss substantial
+rewriting that is not covered by the annotations.
+
 The test passages are fixed, curated inputs; the evaluator does not generate or randomize new essays. "Blind/unseen" is the suite's label, not a claim of dynamically sampled or adversarially secret tests: H-suite inputs and annotations are in the public evaluator, and B-suite source inputs are private locally while much of their scoring logic is public. Every engine is evaluated on the same passage text. Target checks use case-insensitive phrase matching with word boundaries, while over-editing and hallucinations use manually specified phrases and simple length checks. These are deterministic heuristics, not a general semantic-understanding system; target matches are not verified at the original edit location.
 
 ---
@@ -159,6 +165,8 @@ Evaluated across 10 brand-new, unseen writing styles: Urban Slang, Southern Goth
 > - **JSpell Free Web Checker:** Tested through JSpell's interactive free checker, not its Cloud API or RapidAPI endpoint. The first visible suggestion for each flagged word was applied once, with no recheck. It is a dictionary-based spelling-only tool; it does not check grammar. Latency was not measured. See the [saved output and one-pass suggestion record](raw_results/jspell_web_checker_outputs.json).
 
 Sapling and JSpell are full benchmark participants, not excluded web-demo side notes: both are scored in every sub-benchmark alongside the API and local engines. Their current H-suite and Blind v3 results are in the [4-pillar results](raw_results/blind_4pillars_eval_run.json) and [Blind v3 scoreboard](raw_results/blind_v3_official_scoreboard.json). Web-portal collection is manual and one-pass; latency is reported as `n/a` (JSON `null`), never estimated.
+
+**Interpreting DeepL's voice scores:** DeepL scores 81.8% on the H-suite but 25.6% on Blind v3. The H-suite's heuristic detects 81.8% of its selected voice markers, finds none of its short list of forbidden rewrites, and applies no over-edit penalty; it does not understand tone or meaning. Blind v3 matches seven manually annotated over-edit signatures and applies a larger penalty. This gap is evidence that the current heuristic and annotations are incomplete and suite-dependent—not proof that DeepL reliably preserves voice. Treat voice scores as diagnostic signals, not semantic judgments.
 
 Sapling scored above BCorrect's composite in both suites (93.9% vs. 60.4% on Blind v3; 95.0% vs. 82.5% on the separate H-suite). JSpell's web-checker score was 54.5% on Blind v3 and 67.2% on the H-suite. It is included as observed, not selected to guarantee a lower-scoring competitor.
 
