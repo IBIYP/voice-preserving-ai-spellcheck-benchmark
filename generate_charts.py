@@ -269,8 +269,8 @@ def build_progress_chart_svg():
     svg = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 560" style="background:#0d1117; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;">
   <rect x="1" y="1" width="1398" height="558" fill="none" stroke="#30363d" stroke-width="1"/>
 
-  <text x="700" y="34" fill="#f0f6fc" font-size="14" font-weight="700" text-anchor="middle">LEGACY HYBRID META-SCORE HISTORY (2025 - 2026)</text>
-  <text x="700" y="54" fill="#8b949e" font-size="11" text-anchor="middle">Legacy scoring; no historical Sapling/JSpell series; not comparable with current scorecards</text>
+  <text x="700" y="34" fill="#f0f6fc" font-size="14" font-weight="700" text-anchor="middle">HISTORICAL HYBRID META-SCORE (MEASURED + MODELED)</text>
+  <text x="700" y="54" fill="#8b949e" font-size="11" text-anchor="middle">Legacy series measured; Sapling/JSpell history is hypothetical, backcast from current H-suite results</text>
 
   <!-- y-axis gridlines: 0% at y=430, 100% at y=90 -> range = 340px, scale = 3.4 px per % -->
   <line x1="140" y1="430" x2="1100" y2="430" stroke="#30363d" stroke-width="1.5"/>
@@ -346,6 +346,21 @@ def build_progress_chart_svg():
 
   <rect x="1054" y="219" width="12" height="12" fill="#ffffff" stroke="#0d1117" stroke-width="1"/>
 
+  <!-- Web-demo history is modeled, not measured: Sapling assumes current quality
+       at older milestones, a 30% relative per-pillar reduction at the prior
+       milestone, then the current H-suite result; JSpell is assumed flat. -->
+  <polyline points="260,111 540,111 820,207 1060,111" fill="none" stroke="#f0f6fc" stroke-width="2" stroke-dasharray="2,4"/>
+  <circle cx="260" cy="111" r="5" fill="#0d1117" stroke="#f0f6fc" stroke-width="1.5"/>
+  <circle cx="540" cy="111" r="5" fill="#0d1117" stroke="#f0f6fc" stroke-width="1.5"/>
+  <circle cx="820" cy="207" r="5" fill="#0d1117" stroke="#f0f6fc" stroke-width="1.5"/>
+  <circle cx="1060" cy="111" r="6" fill="#f0f6fc" stroke="#f0f6fc" stroke-width="1.5"/>
+
+  <polyline points="260,209 540,209 820,209 1060,209" fill="none" stroke="#a3a3a3" stroke-width="2" stroke-dasharray="1,4"/>
+  <polygon points="260,203 266,209 260,215 254,209" fill="#0d1117" stroke="#a3a3a3" stroke-width="1.5"/>
+  <polygon points="540,203 546,209 540,215 534,209" fill="#0d1117" stroke="#a3a3a3" stroke-width="1.5"/>
+  <polygon points="820,203 826,209 820,215 814,209" fill="#0d1117" stroke="#a3a3a3" stroke-width="1.5"/>
+  <polygon points="1060,202 1067,209 1060,216 1053,209" fill="#a3a3a3" stroke="#a3a3a3" stroke-width="1.5"/>
+
   <!-- right-margin callout badges -->
   <line x1="1060" y1="141" x2="1120" y2="129" stroke="#6e7681" stroke-width="1" stroke-dasharray="2,2"/>
   <rect x="1120" y="115" width="250" height="28" fill="#161b22" stroke="#6e7681" stroke-width="1"/>
@@ -364,7 +379,7 @@ def build_progress_chart_svg():
   <text x="1132" y="254" fill="#ffffff" font-size="11" font-weight="700">BCorrect (FMM): 60.4%</text>
 
   <!-- legend -->
-  <rect x="140" y="490" width="960" height="34" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <rect x="140" y="490" width="960" height="60" fill="#161b22" stroke="#30363d" stroke-width="1"/>
 
   <line x1="160" y1="507" x2="190" y2="507" stroke="#6e7681" stroke-width="2" stroke-dasharray="3,3"/>
   <rect x="176" y="503" width="8" height="8" fill="#30363d" stroke="#6e7681"/>
@@ -381,6 +396,14 @@ def build_progress_chart_svg():
   <line x1="830" y1="507" x2="860" y2="507" stroke="#ffffff" stroke-width="3"/>
   <rect x="841" y="503" width="8" height="8" fill="#ffffff"/>
   <text x="870" y="511" fill="#ffffff" font-size="11" font-weight="700">BCorrect API (FMM)</text>
+
+  <line x1="160" y1="535" x2="190" y2="535" stroke="#f0f6fc" stroke-width="2" stroke-dasharray="2,4"/>
+  <circle cx="175" cy="535" r="4" fill="#0d1117" stroke="#f0f6fc" stroke-width="1.5"/>
+  <text x="200" y="539" fill="#f0f6fc" font-size="11">Sapling estimate: 65.6% prior / 93.8% current</text>
+
+  <line x1="610" y1="535" x2="640" y2="535" stroke="#a3a3a3" stroke-width="2" stroke-dasharray="1,4"/>
+  <polygon points="625,530 630,535 625,540 620,535" fill="#0d1117" stroke="#a3a3a3" stroke-width="1.5"/>
+  <text x="650" y="539" fill="#a3a3a3" font-size="11">JSpell flat estimate: 65.1% current</text>
 </svg>"""
     with open("assets/progress_over_time.svg", "w", encoding="utf-8") as f:
         f.write(svg)

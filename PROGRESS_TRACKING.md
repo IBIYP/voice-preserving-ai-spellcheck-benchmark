@@ -59,6 +59,26 @@ estimate latency.
 Never overwrite an earlier run to make a chart look smoother. Corrections to
 recorded data should be traceable and explained.
 
+## Retrospective chart estimates
+
+The public historical chart includes two illustrative backcasts
+because no earlier Sapling or JSpell web-demo runs were collected. They are
+visual estimates only and must never be added to raw results, described as
+measured history, or used to claim a verified improvement:
+
+- JSpell is assumed to have held its current H-suite composite score (65.1%)
+  at earlier milestones.
+- Sapling is assumed to have matched its current H-suite pillar quality at the
+  older milestones, then to have scored 30% lower relative to each current
+  pillar at the prior milestone. Applying that reduction to all four pillars
+  yields an estimated 65.6% hybrid score; the latest plotted value is its
+  measured current H-suite score (93.8%). The November 12 update date is an
+  assumption, not a recorded provider-version event.
+
+The chart uses distinct dashed styles and identifies the web-demo series as
+estimates. Future longitudinal claims must use actual dated runs under a
+consistent suite and evaluator.
+
 ## Interpretation
 
 Use the public-anchor series for longitudinal engine-version comparisons and

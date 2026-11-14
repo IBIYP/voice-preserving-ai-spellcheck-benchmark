@@ -64,7 +64,7 @@ python generate_charts.py
 - `assets/hybrid_score_comparison.svg`: Sharp bar chart comparing Hybrid Meta-Scores.
 - `assets/pillars_breakdown.svg`: Grouped breakdown across Pillars 1, 2, 3, and 4.
 - `assets/latency_comparison.svg`: Measured latency comparison; Sapling and JSpell are shown as not measured and are excluded from speed rankings.
-- `assets/progress_over_time.svg`: Legacy multi-milestone progress line graph; no historical Sapling or JSpell series is available.
+- `assets/progress_over_time.svg`: Legacy measured series plus clearly labeled hypothetical Sapling/JSpell estimates; the estimates are not benchmark run data.
 
 ---
 
@@ -83,7 +83,7 @@ $$\text{Pillar 1 (Spelling)} = \frac{\text{Corrected Spelling Targets}}{\text{To
 
 $$\text{Pillar 2 (Grammar)} = \frac{\text{Corrected Grammar Targets}}{\text{Total Grammar Targets}} \times 100\%$$
 
-$$\text{Pillar 3 (Voice)} = \operatorname{mean}(\text{Lexical F1} \times \text{Marker Retention}) \times \left(1 - \frac{\min(10 \times \text{Over-Edit Signatures}, 80)}{100}\right)$$
+$$\text{Pillar 3 (Voice)} = \text{mean}(\text{Lexical F1} \times \text{Marker Retention}) \times \left(1 - \frac{\min(10 \times \text{Over-Edit Signatures}, 80)}{100}\right)$$
 
 Lexical F1 is calculated from case-folded word-token LCS outside annotated
 correction spans. Voice-marker retention uses the curated phrases and accepted

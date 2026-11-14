@@ -79,9 +79,9 @@ These charts use the separate H-01 through H-10 4-pillar suite. The B-01 through
 
 ### Historical Accuracy & Progression Over Time
 A key measure of engine reliability is consistent improvement across revisions on unseen evaluations. The line graph below illustrates the historical progression of overall hybrid score across benchmark milestones from early 2025 to November 2026.
-This historical series uses legacy scoring and predates the Sapling and JSpell web-demo runs. Both web demos appear in the current score and pillar charts; their historical scores are unavailable, so no trend values are invented.
+The four legacy engine series are measured historical results. Sapling and JSpell are also shown as explicitly modeled estimates, not historical measurements: JSpell is assumed flat at its current H-suite score (65.1%), while Sapling is assumed to have matched its current quality at older milestones, fallen 30% relative in each H-suite pillar at the prior milestone (about 65.6% hybrid), and improved to its measured current H-suite score (93.8%) after the assumed November 12 update. These estimates are illustrative only and must not be treated as evidence of past performance or compared directly with the legacy series.
 
-![Historical Progress Over Time](assets/progress_over_time.svg?v=3.5)
+![Historical Progress Over Time](assets/progress_over_time.svg?v=3.6)
 
 ### Tracking progress as engines improve
 
