@@ -119,7 +119,7 @@ $$\text{Pillar 1 (Spelling)} = \frac{\text{Corrected Spelling Targets}}{\text{To
 
 $$\text{Pillar 2 (Grammar)} = \frac{\text{Corrected Grammar Targets}}{\text{Total Grammar Targets}} \times 100\%$$
 
-$$\text{Pillar 3 (Voice)} = \operatorname{mean}(\text{Lexical F1} \times \text{Marker Retention}) \times \left(1 - \frac{\min(10 \times \text{Over-Edit Signatures}, 80)}{100}\right)$$
+$$\text{Pillar 3 (Voice)} = \text{mean}(\text{Lexical F1} \times \text{Marker Retention}) \times \left(1 - \frac{\min(10 \times \text{Over-Edit Signatures}, 80)}{100}\right)$$
 
 $$\text{Pillar 4 (Anti-Hallucination)} = 100\% - \text{Semantic Drift Rate (SDR)}$$
 
