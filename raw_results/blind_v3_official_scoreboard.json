@@ -1,14 +1,14 @@
 {
   "benchmark": "Voice-Preserving AI-Spellcheck Benchmark (Blind Suite v3.0)",
-  "evaluation_date": "November 13, 2026",
+  "evaluation_date": "November 14, 2026",
   "mode": "cached",
   "engines": {
     "BCorrect (FMM)": {
-      "spelling_accuracy": 69.4,
+      "spelling_accuracy": 65.3,
       "grammar_accuracy": 50.0,
       "voice_preservation": 90.2,
       "anti_hallucination": 35.0,
-      "hybrid_meta_score": 61.8,
+      "hybrid_meta_score": 60.4,
       "latency_ms": 614.2,
       "sari_keep_score": 90.8,
       "hallucination_count": 13,
@@ -28,24 +28,46 @@
     "TextGears API": {
       "spelling_accuracy": 71.4,
       "grammar_accuracy": 100.0,
-      "voice_preservation": 90.2,
+      "voice_preservation": 87.8,
       "anti_hallucination": 20.0,
-      "hybrid_meta_score": 72.0,
+      "hybrid_meta_score": 71.5,
       "latency_ms": 967.2,
       "sari_keep_score": 93.7,
       "hallucination_count": 17,
       "over_edit_count": 0
     },
     "DeepL Write": {
-      "spelling_accuracy": 98.0,
+      "spelling_accuracy": 100.0,
       "grammar_accuracy": 100.0,
-      "voice_preservation": 17.1,
+      "voice_preservation": 25.6,
       "anti_hallucination": 100.0,
-      "hybrid_meta_score": 82.7,
+      "hybrid_meta_score": 85.1,
       "latency_ms": 1280.0,
-      "sari_keep_score": 91.4,
+      "sari_keep_score": 90.4,
       "hallucination_count": 0,
-      "over_edit_count": 9
+      "over_edit_count": 7
+    },
+    "Sapling Grammar Checker": {
+      "spelling_accuracy": 93.9,
+      "grammar_accuracy": 100.0,
+      "voice_preservation": 90.2,
+      "anti_hallucination": 90.0,
+      "hybrid_meta_score": 93.9,
+      "latency_ms": null,
+      "sari_keep_score": 94.5,
+      "hallucination_count": 2,
+      "over_edit_count": 0
+    },
+    "JSpell Free Web Checker": {
+      "spelling_accuracy": 61.2,
+      "grammar_accuracy": 50.0,
+      "voice_preservation": 82.9,
+      "anti_hallucination": 20.0,
+      "hybrid_meta_score": 54.5,
+      "latency_ms": null,
+      "sari_keep_score": 91.3,
+      "hallucination_count": 22,
+      "over_edit_count": 0
     }
   }
 }

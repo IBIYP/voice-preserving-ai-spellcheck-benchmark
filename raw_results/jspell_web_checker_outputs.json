@@ -1,0 +1,253 @@
+{
+  "benchmark_metadata": {
+    "engine": "JSpell Free Web Checker",
+    "source": "https://www.jspell.com/checker/",
+    "language": "English (US)",
+    "suggestion_policy": "For each initial spelling error, apply the first displayed suggestion once in the interactive checker session; do not recheck after edits.",
+    "latency_ms": null,
+    "collected_at": "2026-11-14",
+    "note": "This is a web-demo result, not a JSpell Cloud API or RapidAPI result. Blind v3 source passages are omitted; their SHA-256 fingerprints are retained."
+  },
+  "four_pillar": {
+    "H-01": {
+      "source_input_sha256": "d5eef06eec2a6a20859002030fdbc2f1434ec5aebcfd9d8cd54e487e74062e23",
+      "text": "You that concert was straight fire no cap, but my friend lost his tick at the entrance. We had to finagle our way past security but it was to lit to miss.",
+      "initial_suggestions": [
+        {"word": "Yo", "suggestion": "You"},
+        {"word": "freind", "suggestion": "friend"},
+        {"word": "tickit", "suggestion": "tick"},
+        {"word": "entrence", "suggestion": "entrance"},
+        {"word": "securty", "suggestion": "security"}
+      ]
+    },
+    "H-02": {
+      "source_input_sha256": "09172370b181e2abf39ca314dc767562c08c11b3ce5a69213a759c0b4236496c",
+      "text": "Granddaddy sat on the porch rocking slow, watching the crick rise after the flooding. He reckoned the old barn wouldn't survive another downpour.",
+      "initial_suggestions": [
+        {"word": "rockin", "suggestion": "rocking"},
+        {"word": "watchin", "suggestion": "watching"},
+        {"word": "crik", "suggestion": "crick"},
+        {"word": "floodin", "suggestion": "flooding"},
+        {"word": "reckned", "suggestion": "reckoned"},
+        {"word": "wouldnt", "suggestion": "wouldn't"},
+        {"word": "downpoar", "suggestion": "downpour"}
+      ]
+    },
+    "H-03": {
+      "source_input_sha256": "14fb901e3ff6595aab13e948351c40342f5ff9e65b5cc8ee181f8ed7ad4ee0a7",
+      "text": "Neon reflected off the wet asphalt. She jacked into the subnet, bypassed the firewall, and dump the encrypted payload before the ICE could trace her signed.",
+      "initial_suggestions": [
+        {"word": "ashpalt", "suggestion": "asphalt"},
+        {"word": "jackd", "suggestion": "jacked"},
+        {"word": "firewal", "suggestion": "firewall"},
+        {"word": "dumpd", "suggestion": "dump"},
+        {"word": "signel", "suggestion": "signed"}
+      ]
+    },
+    "H-04": {
+      "source_input_sha256": "ff7140ac41594be6f659de2609c8bc87436d6556ac2d29e55c36d71b27602ef8",
+      "text": "The roasted duck had incredible crispy skin, but the raspberry reduction was way to acidic. It totally overpowered the delicate flavor of the parsnips.",
+      "initial_suggestions": [
+        {"word": "increadible", "suggestion": "incredible"},
+        {"word": "rasberry", "suggestion": "raspberry"},
+        {"word": "overpowred", "suggestion": "overpowered"},
+        {"word": "delicat", "suggestion": "delicate"}
+      ]
+    },
+    "H-05": {
+      "source_input_sha256": "fb5a8d1f3e8a0cb16f25ce5546f2dc6ba2cead2640b8e3733a2dfb6d30ed3b13",
+      "text": "Lass niter I dreamt of a spaceship flying thro the stars with a giant rocket boosts. We land on a purl planet with bubble lakes and alien critters that danced joyfully. It felt so reel I cried ween my mom wok me up for solo!",
+      "initial_suggestions": [
+        {"word": "nite", "suggestion": "niter"},
+        {"word": "dreemt", "suggestion": "dreamt"},
+        {"word": "spacship", "suggestion": "spaceship"},
+        {"word": "throu", "suggestion": "thro"},
+        {"word": "roket", "suggestion": "rocket"},
+        {"word": "boostr", "suggestion": "boosts"},
+        {"word": "landd", "suggestion": "land"},
+        {"word": "purpul", "suggestion": "purl"},
+        {"word": "buble", "suggestion": "bubble"},
+        {"word": "critturs", "suggestion": "critters"},
+        {"word": "dancd", "suggestion": "danced"},
+        {"word": "wen", "suggestion": "ween"},
+        {"word": "woak", "suggestion": "wok"},
+        {"word": "skool", "suggestion": "solo"}
+      ]
+    },
+    "H-06": {
+      "source_input_sha256": "2947dcdc1dc553d6f64ccef749bd56a438ef01d81caec146324f78fddff459aa",
+      "text": "Our ca dropped 40% mom, while AR hit a record high. The competition is scrambling to match our Peachtree, but we move to fast.",
+      "initial_suggestions": [
+        {"word": "cac", "suggestion": "ca"},
+        {"word": "arr", "suggestion": "AR"},
+        {"word": "competishun", "suggestion": "competition"},
+        {"word": "scramblin", "suggestion": "scrambling"},
+        {"word": "feachures", "suggestion": "Peachtree"}
+      ]
+    },
+    "H-07": {
+      "source_input_sha256": "75fa9df65c9e641030a9d3bea0d30a2930897cf8fb28bada53fb9f16fc77b46b",
+      "text": "Coach drew up the play on the whiteboard during the timeout. We ran the pick and roll to preference, nailed the thirteenth at the buzzer, and won the championship!",
+      "initial_suggestions": [
+        {"word": "whitebord", "suggestion": "whiteboard"},
+        {"word": "timout", "suggestion": "timeout"},
+        {"word": "rool", "suggestion": "roll"},
+        {"word": "perfecshun", "suggestion": "preference"},
+        {"word": "threepointer", "suggestion": "thirteenth"},
+        {"word": "buzer", "suggestion": "buzzer"},
+        {"word": "champinship", "suggestion": "championship"}
+      ]
+    },
+    "H-08": {
+      "source_input_sha256": "33d63cb756363f0fb1c9dbdeecd14280925924992b104c3d7fd1c03a63dc8220",
+      "text": "Autumn leaves spiraled across the abandon Tara. A quiet sadness hung in the air, neither bitter nor cruel, just the slow exhale of another dying year.",
+      "initial_suggestions": [
+        {"word": "leavs", "suggestion": "leaves"},
+        {"word": "abandond", "suggestion": "abandon"},
+        {"word": "trax", "suggestion": "Tara"},
+        {"word": "saddness", "suggestion": "sadness"},
+        {"word": "exhail", "suggestion": "exhale"}
+      ]
+    },
+    "H-09": {
+      "source_input_sha256": "436f60d02374d1a978b686a3111a1f3461fd02b2403cf9d03537159e5dfce97d",
+      "text": "Observe three specimens of tenderfoots tinctures near the stream bed. The Postmates coloration was extremely vibrant despite heavy canopy shade.",
+      "initial_suggestions": [
+        {"word": "Observd", "suggestion": "Observe"},
+        {"word": "speshimens", "suggestion": "specimens"},
+        {"word": "dendrobates", "suggestion": "tenderfoots"},
+        {"word": "tinctorius", "suggestion": "tinctures"},
+        {"word": "aposematik", "suggestion": "Postmates"},
+        {"word": "extreamly", "suggestion": "extremely"},
+        {"word": "canoppy", "suggestion": "canopy"}
+      ]
+    },
+    "H-10": {
+      "source_input_sha256": "af13f8a4babf9363403f96ba42a98ff779ac5f65cecafb242845374ea06b27d1",
+      "text": "Clause 4.2 governs indemnity obligations. Neither party shall be liable for consequential damages arising from unintentional breach.",
+      "initial_suggestions": [
+        {"word": "govorns", "suggestion": "governs"},
+        {"word": "indemity", "suggestion": "indemnity"},
+        {"word": "obligashuns", "suggestion": "obligations"},
+        {"word": "liabel", "suggestion": "liable"},
+        {"word": "consequenshal", "suggestion": "consequential"},
+        {"word": "unintensional", "suggestion": "unintentional"}
+      ]
+    }
+  },
+  "blind_v3": {
+    "B-01": {
+      "source_input_sha256": "ea33643dd882cfee898d06c06f4557da83316d3472a3e4227ba30648ff544ed7",
+      "text": "Bro that clutch was so cracked FRR FRR, but my keyboard Glitché during the defuse. We gotta clime back up the ranks tontine cue tomorrow is patch day.",
+      "initial_suggestions": [
+        {"word": "fr", "suggestion": "FRR"},
+        {"word": "fr", "suggestion": "FRR"},
+        {"word": "keybord", "suggestion": "keyboard"},
+        {"word": "glitchd", "suggestion": "Glitché"},
+        {"word": "tonite", "suggestion": "tontine"},
+        {"word": "cuz", "suggestion": "cue"}
+      ]
+    },
+    "B-02": {
+      "source_input_sha256": "4adedac2c3f85db514dfa1bf8b55cd872d15781e85a93ef77edfdb14fc9c7723",
+      "text": "Old man Miller was sitting by the Woodstock whittling an axe handle, listening to the howling wind. He figured winter was gonna hit early this wryer.",
+      "initial_suggestions": [
+        {"word": "sittin", "suggestion": "sitting"},
+        {"word": "woodstove", "suggestion": "Woodstock"},
+        {"word": "whittlin", "suggestion": "whittling"},
+        {"word": "listenin", "suggestion": "listening"},
+        {"word": "yeer", "suggestion": "wryer"}
+      ]
+    },
+    "B-03": {
+      "source_input_sha256": "d3db3c6cc24dc460e28c814f977c43fa3b757a2b546c1332208b22e8bf63473b",
+      "text": "Rain drummed against the cracked plasmas. He pod the neural deck open, swapped the fried heathens, and waited for the optics to recalibrate.",
+      "initial_suggestions": [
+        {"word": "plasglas", "suggestion": "plasmas"},
+        {"word": "popd", "suggestion": "pod"},
+        {"word": "swaped", "suggestion": "swapped"},
+        {"word": "heatsink", "suggestion": "heathens"},
+        {"word": "recalabrate", "suggestion": "recalibrate"}
+      ]
+    },
+    "B-04": {
+      "source_input_sha256": "71d884302ba8119e425b6dfa2753f2534ebbbdfa1984a6020af569a60e8b3458",
+      "text": "The Ethiopians hierarchies had an intensely floral aroma with notes of bergamot, but the roast profile was slightly to dark, masking the delicate storefront acidity.",
+      "initial_suggestions": [
+        {"word": "ethiopian", "suggestion": "Ethiopians"},
+        {"word": "yirgacheffe", "suggestion": "hierarchies"},
+        {"word": "aromma", "suggestion": "aroma"},
+        {"word": "profle", "suggestion": "profile"},
+        {"word": "delcate", "suggestion": "delicate"},
+        {"word": "stonefruit", "suggestion": "storefront"}
+      ]
+    },
+    "B-05": {
+      "source_input_sha256": "3e8ee2f2010432afa0d2f79f2f524ddfc99a25a0e439c62412820b0e7e75081c",
+      "text": "The little puppy ran across the grass chasing a yellow ball. He jumped in the muddy puddle and starts splashing everywhere until his paws were dark boron.",
+      "initial_suggestions": [
+        {"word": "litle", "suggestion": "little"},
+        {"word": "acros", "suggestion": "across"},
+        {"word": "gras", "suggestion": "grass"},
+        {"word": "yello", "suggestion": "yellow"},
+        {"word": "jumpd", "suggestion": "jumped"},
+        {"word": "mudy", "suggestion": "muddy"},
+        {"word": "pudle", "suggestion": "puddle"},
+        {"word": "startd", "suggestion": "starts"},
+        {"word": "eveywhere", "suggestion": "everywhere"},
+        {"word": "untill", "suggestion": "until"},
+        {"word": "broun", "suggestion": "boron"}
+      ]
+    },
+    "B-06": {
+      "source_input_sha256": "95f32524567c35486c3387b4147271d5853c752402e223de82bcf8981935e919",
+      "text": "The sync worker crashed due to an unhandled null pointer in the reddish cache layer. We rolled back the commit and increased the connection pool timeout.",
+      "initial_suggestions": [
+        {"word": "async", "suggestion": "sync"},
+        {"word": "unhandeled", "suggestion": "unhandled"},
+        {"word": "rediss", "suggestion": "reddish"},
+        {"word": "increesed", "suggestion": "increased"}
+      ]
+    },
+    "B-07": {
+      "source_input_sha256": "e891c516079924195ef68a4af1ae90e14047ee82d2efedf020a4c593cb92ad9b",
+      "text": "We trap their point guard in the backcountry and forced a turnover. Marcus caught the Aleppo pass in transition and threw down a thunderous dunk!",
+      "initial_suggestions": [
+        {"word": "trapd", "suggestion": "trap"},
+        {"word": "backcourt", "suggestion": "backcountry"},
+        {"word": "forcd", "suggestion": "forced"},
+        {"word": "alleyoop", "suggestion": "Aleppo"},
+        {"word": "transtion", "suggestion": "transition"},
+        {"word": "thunderos", "suggestion": "thunderous"}
+      ]
+    },
+    "B-08": {
+      "source_input_sha256": "d309a1356d289709762bb6536b85535cfdc98fbc32901749f755e2e17b544223",
+      "text": "Frost creep silently across the cold windowpane. The room grew still, shadowed by the fading dusk, as if the whole world was holding its Brett for snow.",
+      "initial_suggestions": [
+        {"word": "crep", "suggestion": "creep"},
+        {"word": "breth", "suggestion": "Brett"}
+      ]
+    },
+    "B-09": {
+      "source_input_sha256": "15036002cfdb6f503e8190cb03d3a1f2b6b49cd2088ed096c662c5efb99035c1",
+      "text": "Examined a juvenile barn owl with a fractured left humorous. The wing feathers were clean and the raptor showed strong aggressive defense reflexes.",
+      "initial_suggestions": [
+        {"word": "Exaimned", "suggestion": "Examined"},
+        {"word": "humerous", "suggestion": "humorous"},
+        {"word": "agressive", "suggestion": "aggressive"}
+      ]
+    },
+    "B-10": {
+      "source_input_sha256": "8a2609afe5aef67be2657e874394f82582a0f728891d8ee0bd3cdc7f424c9bc4",
+      "text": "Pursuant to Section 8, the supplier shall reimburse the buyer for any unauthorized shipment expenses incurred prior to the termination date.",
+      "initial_suggestions": [
+        {"word": "Pursuent", "suggestion": "Pursuant"},
+        {"word": "remburse", "suggestion": "reimburse"},
+        {"word": "unauthorizd", "suggestion": "unauthorized"},
+        {"word": "incured", "suggestion": "incurred"},
+        {"word": "terminashun", "suggestion": "termination"}
+      ]
+    }
+  }
+}

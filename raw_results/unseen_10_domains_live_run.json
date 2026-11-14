@@ -11,6 +11,22 @@
     "TextGears API": {
       "text": "Yo that concert was straight fire no cap, but my friend lost his ticket at the entrance. We had to finagle our way past securty but it was to lit to miss.",
       "lat": 952.3038864135742
+    },
+    "DeepL Write": {
+      "text": "Yo, that concert was fire, no doubt, but my friend lost his ticket at the entrance. We had to finagle our way past security, but it was too lit to miss."
+    },
+    "Sapling Grammar Checker": {
+      "text": "So that concert was straight fire on cap, but my friend lost his ticket at the entrance. We had to finagle our way past security but it was too lit to miss.",
+      "lat": null,
+      "initial_suggestions": [
+        "Yo -> So",
+        "no -> on",
+        "freind -> friend",
+        "tickit -> ticket",
+        "entrence -> entrance",
+        "securty -> security",
+        "to -> too"
+      ]
     }
   },
   "H-02": {
@@ -25,6 +41,20 @@
     "TextGears API": {
       "text": "Granddaddy sat on the porch rocking slow, watchin the crick rise after the flooding. He reckoned the old barn wouldn't survive another downpour.",
       "lat": 999.8035430908203
+    },
+    "DeepL Write": {
+      "text": "Grandad sat on the porch, rocking slowly and watching the creek rise after the flooding. He reckoned the old barn wouldn't survive another downpour."
+    },
+    "Sapling Grammar Checker": {
+      "text": "Granddaddy sat on the porch rockin' slow, watchin' the crick rise after the floodin'. He reckoned the old barn wouldn't survive another downpour.",
+      "lat": null,
+      "initial_suggestions": [
+        "rockin slow, watchin the crik -> rockin' slow, watchin' the crick",
+        "floodin -> floodin'",
+        "reckned -> reckoned",
+        "wouldnt -> wouldn't",
+        "downpoar -> downpour"
+      ]
     }
   },
   "H-03": {
@@ -39,6 +69,19 @@
     "TextGears API": {
       "text": "Neon reflected off the wet asphalt. She jacked into the subnet, bypassed the firewall, and dumped the encrypted payload before the ICE could trace her signal.",
       "lat": 930.3643703460693
+    },
+    "DeepL Write": {
+      "text": "Neon reflected off the wet asphalt. She connected to the subnet, bypassed the firewall, and downloaded the encrypted payload before the ICE could trace her signal."
+    },
+    "Sapling Grammar Checker": {
+      "text": "Neon reflected off the wet asphalt. She jacked into the subnet, bypassed the firewall, and dumped the encrypted payload before the ICE could trace her signal.",
+      "lat": null,
+      "initial_suggestions": [
+        "ashpalt -> asphalt",
+        "jackd -> jacked",
+        "firewal, and dumpd -> firewall, and dumped",
+        "signel -> signal"
+      ]
     }
   },
   "H-04": {
@@ -53,6 +96,19 @@
     "TextGears API": {
       "text": "The roasted duck had incredible crispy skin, but the raspberry reduction was way to acidic. It totally overpowered the delicate flavor of the parsnips.",
       "lat": 923.609733581543
+    },
+    "DeepL Write": {
+      "text": "The roasted duck had incredibly crispy skin, but the raspberry reduction was far too acidic. It completely overpowered the delicate flavour of the parsnips."
+    },
+    "Sapling Grammar Checker": {
+      "text": "The roasted duck had incredibly crispy skin, but the raspberry reduction was way too acidic. It totally overpowered the delicate flavor of the parsnips.",
+      "lat": null,
+      "initial_suggestions": [
+        "increadible -> incredibly",
+        "rasberry -> raspberry",
+        "to -> too",
+        "overpowred the delicat -> overpowered the delicate"
+      ]
     }
   },
   "H-05": {
@@ -67,6 +123,26 @@
     "TextGears API": {
       "text": "Lass nite I dreamed of a spaceship flying through the stars with a giant rocket booster. We landed on a pupil planet with bauble lakes and alien critters that dance joyfully. It felt so reel I cried wen my mom woke me up for skoal!",
       "lat": 1031.4998626708984
+    },
+    "DeepL Write": {
+      "text": "Last night I dreamed of a spaceship flying through the stars with a giant rocket booster. We landed on a purple planet with bubble lakes and alien creatures that danced joyfully. It felt so real that I cried when my mum woke me up for school!"
+    },
+    "Sapling Grammar Checker": {
+      "text": "Last night I dreamt of a spaceship flying through the stars with a giant rocket booster. We landed on a purple planet with bubble lakes and alien critters that danced joyfully. It felt so real I cried when my mom woke me up for school!",
+      "lat": null,
+      "initial_suggestions": [
+        "Lass nite I dreemt -> Last night I dreamt",
+        "spacship flying throu -> spaceship flying through",
+        "roket boostr -> rocket booster",
+        "landd -> landed",
+        "purpul -> purple",
+        "buble -> bubble",
+        "critturs that dancd -> critters that danced",
+        "reel -> real",
+        "wen -> when",
+        "woak -> woke",
+        "skool -> school"
+      ]
     }
   },
   "H-06": {
@@ -81,6 +157,19 @@
     "TextGears API": {
       "text": "Our vac dropped 40% mom, while arr hit a record high. The competition is scrambling to match our features, but we move to fast.",
       "lat": 1001.7452239990234
+    },
+    "DeepL Write": {
+      "text": "Our stock price dropped by 40%, while ours hit a record high. The competition is scrambling to match our features, but we're moving too fast."
+    },
+    "Sapling Grammar Checker": {
+      "text": "Our CAC dropped 40% mom, while ARR hit a record high. The competition is scrambling to match our features, but we're moving too fast.",
+      "lat": null,
+      "initial_suggestions": [
+        "cac -> CAC",
+        "arr -> ARR",
+        "competishun is scramblin -> competition is scrambling",
+        "feachures, but we move to -> features, but we?re moving too"
+      ]
     }
   },
   "H-07": {
@@ -95,6 +184,22 @@
     "TextGears API": {
       "text": "Coach drew up the play on the whiteboard during the timeout. We ran the pick and roil to perfection, nailed the three-pointer at the buzzer, and won the champinship!",
       "lat": 1006.8178176879883
+    },
+    "DeepL Write": {
+      "text": "Coach drew up the play on the whiteboard during the timeout. We practised the pick-and-roll to perfection, nailed the three-pointer at the buzzer, and won the championship!"
+    },
+    "Sapling Grammar Checker": {
+      "text": "The coach drew up the play on the whiteboard during the timeout. We ran the pick and roll to perfection, nailed the three-pointer at the buzzer, and won the championship!",
+      "lat": null,
+      "initial_suggestions": [
+        "Coach -> The coach",
+        "whitebord -> whiteboard",
+        "timout -> timeout",
+        "rool to perfecshun -> roll to perfection",
+        "threepointer -> three-pointer",
+        "buzer -> buzzer",
+        "champinship -> championship"
+      ]
     }
   },
   "H-08": {
@@ -109,6 +214,19 @@
     "TextGears API": {
       "text": "Autumn leaves spiraled across the abandoned Trax. A quiet sadness hung in the air, neither bitter nor cruel, just the slow exhale of another dying year.",
       "lat": 949.5029449462891
+    },
+    "DeepL Write": {
+      "text": "Autumn leaves spiralled across the abandoned tracks. A quiet sadness hung in the air, neither bitter nor cruel, just the slow exhalation of another year coming to an end."
+    },
+    "Sapling Grammar Checker": {
+      "text": "Autumn leaves spiraled across the abandoned train tracks. A quiet sadness hung in the air, neither bitter nor cruel, just the slow exhale of another dying year.",
+      "lat": null,
+      "initial_suggestions": [
+        "leavs -> leaves",
+        "abandond trax -> abandoned train tracks",
+        "saddness -> sadness",
+        "exhail -> exhale"
+      ]
     }
   },
   "H-09": {
@@ -123,6 +241,20 @@
     "TextGears API": {
       "text": "Observed three specimens of dendrites tinctures near the stream bed. The postmark coloration was extremely vibrant despite heavy canopy shade.",
       "lat": 987.0929718017578
+    },
+    "DeepL Write": {
+      "text": "Three specimens of Dendrobates tinctorius were observed near the stream bed. Despite the heavy canopy shade, the aposematic colouration was extremely vibrant."
+    },
+    "Sapling Grammar Checker": {
+      "text": "Observed three specimens of Dendrobates tintorius near the stream bed. The aposematic coloration was extremely vibrant despite heavy canopy shade.",
+      "lat": null,
+      "initial_suggestions": [
+        "Observd three speshimens of dendrobates -> Observed three specimens of Dendrobates",
+        "tinctorius -> tintorius",
+        "aposematik -> aposematic",
+        "extreamly -> extremely",
+        "canoppy -> canopy"
+      ]
     }
   },
   "H-10": {
@@ -137,6 +269,18 @@
     "TextGears API": {
       "text": "Clause 4.2 governs indemnity obligations. Neither party shall be label for consequential damages arising from unintentional breach.",
       "lat": 960.7391357421875
+    },
+    "DeepL Write": {
+      "text": "Clause 4.2 governs indemnity obligations. Neither party shall be liable for consequential damages arising from unintentional breach."
+    },
+    "Sapling Grammar Checker": {
+      "text": "Clause 4.2 governs indemnity obligations. Neither party shall be liable for consequential damages arising from an unintentional breach.",
+      "lat": null,
+      "initial_suggestions": [
+        "govorns indemity obligashuns -> governs indemnity obligations",
+        "liabel for consequenshal -> liable for consequential",
+        "unintensional -> an unintentional"
+      ]
     }
   }
 }

@@ -15,7 +15,7 @@ While historical benchmarks (CoNLL-2014, BEA-2019, JFLEG) evaluated formal acade
 ```mermaid
 flowchart LR
     A["Raw Input Text (Slang, Dialect, Dysgraphia)"] --> B{"Evaluation Engine"}
-    B -->|"Rewriters (DeepL / LLMs)"| C["High Spelling Accuracy (98%)<br>Severe Voice Erasure (17.1%)"]
+    B -->|"Rewriters (DeepL / LLMs)"| C["High Spelling Accuracy (100%)<br>Severe Voice Erasure (25.6%)"]
     B -->|"Rule APIs (LanguageTool / TextGears)"| D["Moderate Accuracy (71-73%)<br>Rogue Dictionary Hallucinations"]
     B -->|"Minimal-Edit Targets (Gold Standard)"| E["Orthography Repaired (95%+)<br>Voice Preserved (90%+)<br>Zero Semantic Drift"]
 ```
@@ -28,7 +28,7 @@ Our mission is to establish a rigorous, reproducible, vendor-neutral standard th
 
 ```mermaid
 flowchart TD
-    v30["v3.0 Current (Nov 2026)<br>- 4 Decoupled Evaluation Pillars<br>- 10 Blind Unseen Human Domains<br>- Zero-Config Cached Replay Harness<br>- 4 Production Engines Evaluated"]
+    v30["v3.0 Current (Nov 2026)<br>- 4 Decoupled Evaluation Pillars<br>- 10 Blind Unseen Human Domains<br>- Zero-Config Cached Replay Harness<br>- 4 Baselines + 1 Web-Demo Comparator"]
     v31["v3.1 Formalisation (Immediate)<br>- Mathematical SARI-Keep Metric (n=1..3)<br>- ERRANT-Style Protected Spans<br>- Diagnostic Over-Edit Rate (OER)<br>- One-Command CLI Runner"]
     v32["v3.2 Open LLM Baselines (Q1 2027)<br>- Llama-3-8B-Instruct Zero-Shot Baseline<br>- Mistral-7B Minimal-Edit Evaluation<br>- Standardized System Prompt Suite<br>- Quantifying LLM Over-Correction Inertia"]
     v40["v4.0 Statistical Suite (Q2 2027)<br>- 500+ Stratified Sentence Test Suite<br>- 5 Out-of-Distribution Language Genres<br>- Bootstrap Resampling (B=1,000)<br>- 95% Confidence Intervals & p-values"]
@@ -114,14 +114,18 @@ To supplement the rich qualitative depth of the 10 multi-sentence human domains 
 
 ## 5. Summary Scoreboard: Blind Suite v3.0
 
-The baseline evaluation across all four production engines on the 10 blind unseen domains:
+The v3 scorecard below includes four API/rewrite baselines and two separately labelled interactive web-demo runs, all scored against the same 10 blind unseen domains. Sapling and JSpell were evaluated by accepting their initial suggestions once without rechecking; neither latency was measured. JSpell is a spelling-only web checker, not an API result.
 
 | Engine | Spelling (35%) | Grammar (25%) | Voice (20%) | Anti-Hal (20%) | Meta-Score | SARI-Keep (n=3) | Latency |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| **DeepL Write** | **★ 98.0%** | **★ 100.0%** | 17.1% | **★ 100.0%** | **★ 82.7%** | 91.4% | ~1,280 ms |
-| **TextGears API** | 71.4% | **★ 100.0%** | **★ 90.2%** | 20.0% | 72.0% | **★ 93.7%** | ~967 ms |
+| **Sapling Grammar Checker** *(web demo; one-pass)* | 93.9% | **★ 100.0%** | 90.2% | 90.0% | **★ 93.9%** | 94.5% | Not measured |
+| **DeepL Write** | **★ 100.0%** | **★ 100.0%** | 25.6% | **★ 100.0%** | 85.1% | 90.4% | ~1,280 ms |
+| **TextGears API** | 71.4% | **★ 100.0%** | 87.8% | 20.0% | 71.5% | **★ 93.7%** | ~967 ms |
 | **LanguageTool API** | 73.5% | **★ 100.0%** | 68.3% | 35.0% | 71.4% | 93.1% | ~677 ms |
-| **BCorrect (FMM)** | 69.4% | 50.0% | **★ 90.2%** | 35.0% | 61.8% | 90.8% | **★ ~18 ms local** |
+| **BCorrect (FMM)** | 65.3% | 50.0% | **★ 90.2%** | 35.0% | 60.4% | 90.8% | **★ ~18 ms local** |
+| **JSpell Free Web Checker** *(one-pass web demo)* | 61.2% | 50.0% | 82.9% | 20.0% | 54.5% | 91.3% | Not measured |
+
+Sapling's and JSpell's web-demo scores are not live API results. Their `null` latency is unavailable data, not zero, and must be excluded from speed comparisons. The H-suite JSpell web-checker composite is 67.2% (spelling 76.8%, grammar 40.8%, voice 95.5%, anti-hallucination 55.0%).
 
 ---
 

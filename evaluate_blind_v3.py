@@ -20,6 +20,7 @@ import argparse
 from collections import Counter
 import json
 import os
+from text_matching import contains_phrase
 import sys
 
 # Official gold-standard minimal-edit voice-preserving references
@@ -54,7 +55,9 @@ GROUND_TRUTH = {
             "BCorrect (FMM)": [],
             "LanguageTool API": ["for for", "glitch during to defuse"],
             "TextGears API": ["but that clutch", "keyboard broke", "donate cu"],
-            "DeepL Write": []
+            "DeepL Write": [],
+            "Sapling Grammar Checker": ["for fur"],
+            "JSpell Free Web Checker": ["FRR FRR", "Glitché", "tontine", "cue tomorrow"]
         }
     },
     "B-02": {
@@ -73,7 +76,9 @@ GROUND_TRUTH = {
             "BCorrect (FMM)": ["woodstock", "whitley an axe"],
             "LanguageTool API": [],
             "TextGears API": ["ace handle"],
-            "DeepL Write": []
+            "DeepL Write": [],
+            "Sapling Grammar Checker": [],
+            "JSpell Free Web Checker": ["Woodstock", "wryer"]
         }
     },
     "B-03": {
@@ -91,7 +96,9 @@ GROUND_TRUTH = {
             "BCorrect (FMM)": ["cracked plays", "dodd the neural", "recelebrate"],
             "LanguageTool API": ["cracked plasmas", "he pop the neural"],
             "TextGears API": ["cracked pascals", "he pops the neural", "fried heartsick", "optics to calibrate"],
-            "DeepL Write": []
+            "DeepL Write": [],
+            "Sapling Grammar Checker": [],
+            "JSpell Free Web Checker": ["plasmas", "pod the neural deck", "fried heathens"]
         }
     },
     "B-04": {
@@ -113,7 +120,9 @@ GROUND_TRUTH = {
             "BCorrect (FMM)": ["yorkshire"],
             "LanguageTool API": [],
             "TextGears API": ["ethiopian giraffe", "floral atmosphere", "roast style"],
-            "DeepL Write": []
+            "DeepL Write": [],
+            "Sapling Grammar Checker": [],
+            "JSpell Free Web Checker": ["Ethiopians", "hierarchies", "storefront acidity"]
         }
     },
     "B-05": {
@@ -138,7 +147,9 @@ GROUND_TRUTH = {
             "BCorrect (FMM)": ["muddy buble"],
             "LanguageTool API": ["title puppy", "across the gas", "he jump in the mud puddle"],
             "TextGears API": [],
-            "DeepL Write": []
+            "DeepL Write": [],
+            "Sapling Grammar Checker": [],
+            "JSpell Free Web Checker": ["starts splashing", "dark boron"]
         }
     },
     "B-06": {
@@ -155,7 +166,9 @@ GROUND_TRUTH = {
             "BCorrect (FMM)": [],
             "LanguageTool API": ["remiss cache layer"],
             "TextGears API": ["sync worker", "unhanded null pointer", "remiss cache layer"],
-            "DeepL Write": []
+            "DeepL Write": [],
+            "Sapling Grammar Checker": ["saync worker"],
+            "JSpell Free Web Checker": ["sync worker", "reddish cache"]
         }
     },
     "B-07": {
@@ -174,7 +187,11 @@ GROUND_TRUTH = {
             "BCorrect (FMM)": ["we trad", "allotrope pass", "thunders dunk"],
             "LanguageTool API": ["we trap their", "force a turnover"],
             "TextGears API": ["we traps their", "alloyed pass"],
-            "DeepL Write": []
+            "DeepL Write": [],
+            "Sapling Grammar Checker": [],
+            "JSpell Free Web Checker": [
+                "We trap their point guard", "backcountry", "Aleppo pass"
+            ]
         }
     },
     "B-08": {
@@ -192,7 +209,9 @@ GROUND_TRUTH = {
             "BCorrect (FMM)": ["frost crepe", "it's breth"],
             "LanguageTool API": ["frost crew", "holding its berth for snow"],
             "TextGears API": ["frost creep"],
-            "DeepL Write": []
+            "DeepL Write": [],
+            "Sapling Grammar Checker": [],
+            "JSpell Free Web Checker": ["Frost creep", "holding its Brett"]
         }
     },
     "B-09": {
@@ -209,7 +228,9 @@ GROUND_TRUTH = {
             "BCorrect (FMM)": ["humorous"],
             "LanguageTool API": ["fractured left numerous"],
             "TextGears API": [],
-            "DeepL Write": []
+            "DeepL Write": [],
+            "Sapling Grammar Checker": [],
+            "JSpell Free Web Checker": ["left humorous"]
         }
     },
     "B-10": {
@@ -228,12 +249,21 @@ GROUND_TRUTH = {
             "BCorrect (FMM)": [],
             "LanguageTool API": [],
             "TextGears API": [],
-            "DeepL Write": []
+            "DeepL Write": [],
+            "Sapling Grammar Checker": [],
+            "JSpell Free Web Checker": []
         }
     }
 }
 
-ENGINES = ["BCorrect (FMM)", "LanguageTool API", "TextGears API", "DeepL Write"]
+ENGINES = [
+    "BCorrect (FMM)",
+    "LanguageTool API",
+    "TextGears API",
+    "DeepL Write",
+    "Sapling Grammar Checker",
+    "JSpell Free Web Checker",
+]
 
 
 def extract_ngrams(tokens, n):
@@ -271,8 +301,7 @@ def calculate_sari_keep(input_text, ref_text, hyp_text, max_n=3):
 
 def count_detected_hallucinations(output_text, signatures):
     """Count known hallucination signatures that appear in an engine output."""
-    output_lower = output_text.lower()
-    return sum(1 for signature in signatures if signature.lower() in output_lower)
+    return sum(1 for signature in signatures if contains_phrase(output_text, signature))
 
 
 def run_evaluation(mode="cached", verbose=False, academic=False, export_path="raw_results/blind_v3_official_scoreboard.json"):
@@ -287,9 +316,30 @@ def run_evaluation(mode="cached", verbose=False, academic=False, export_path="ra
     with open(runs_file, "r", encoding="utf-8") as f:
         live_runs = json.load(f)
 
+    sapling_file = "raw_results/blind_v3_sapling_outputs.json"
+    with open(sapling_file, "r", encoding="utf-8") as f:
+        sapling_runs = json.load(f)["passages"]
+    for pid, output in sapling_runs.items():
+        if pid not in live_runs:
+            raise ValueError(f"Sapling result references unknown passage {pid}")
+        live_runs[pid]["Sapling Grammar Checker"] = {"text": output["text"]}
+
+    jspell_file = "raw_results/jspell_web_checker_outputs.json"
+    with open(jspell_file, "r", encoding="utf-8") as f:
+        jspell_runs = json.load(f).get("blind_v3")
+    if not isinstance(jspell_runs, dict):
+        raise ValueError("JSpell web-checker results are missing blind_v3 outputs")
+    for pid in GROUND_TRUTH:
+        output = jspell_runs.get(pid)
+        if not isinstance(output, dict) or not isinstance(output.get("text"), str):
+            raise ValueError(f"JSpell web-checker result is missing {pid}")
+        if pid not in live_runs:
+            raise ValueError(f"JSpell result references unknown passage {pid}")
+        live_runs[pid]["JSpell Free Web Checker"] = {"text": output["text"], "lat": None}
+
     evaluation_report = {
         "benchmark": "Voice-Preserving AI-Spellcheck Benchmark (Blind Suite v3.0)",
-        "evaluation_date": "November 13, 2026",
+        "evaluation_date": "November 14, 2026",
         "mode": mode,
         "engines": {}
     }
@@ -310,27 +360,28 @@ def run_evaluation(mode="cached", verbose=False, academic=False, export_path="ra
         for pid, unit in live_runs.items():
             gt = GROUND_TRUTH[pid]
             out_text = unit[eng]["text"]
-            out_lower = out_text.lower()
-            latencies.append(unit[eng]["lat"])
+            latency = unit[eng].get("lat")
+            if latency is not None:
+                latencies.append(latency)
 
             # 1. Spelling
             for typo, targets in gt["spelling"].items():
-                if any(t.lower() in out_lower for t in targets):
+                if any(contains_phrase(out_text, target) for target in targets):
                     spell_hits += 1
 
             # 2. Grammar
             for err, targets in gt["grammar"].items():
-                if any(t.lower() in out_lower for t in targets):
+                if any(contains_phrase(out_text, target) for target in targets):
                     gram_hits += 1
 
             # 3. Voice markers
             for vm in gt["voice_markers"]:
-                if vm.lower() in out_lower:
+                if contains_phrase(out_text, vm):
                     voice_hits += 1
 
             # Over-edits
             for oe in gt["over_edits"]:
-                if oe.lower() in out_lower:
+                if contains_phrase(out_text, oe):
                     over_edit_count += 1
 
             # Hallucinations
@@ -350,7 +401,7 @@ def run_evaluation(mode="cached", verbose=False, academic=False, export_path="ra
 
         anti_halluc = round(max(100.0 - (hallucination_count * 5.0), 20.0), 1)
         meta_score = round((0.35 * spelling_acc) + (0.25 * grammar_acc) + (0.20 * voice_score) + (0.20 * anti_halluc), 1)
-        avg_lat = round(sum(latencies) / len(latencies), 1)
+        avg_lat = round(sum(latencies) / len(latencies), 1) if latencies else None
         avg_sari_keep = round(sum(sari_keep_scores) / len(sari_keep_scores), 1)
 
         evaluation_report["engines"][eng] = {
@@ -371,7 +422,8 @@ def run_evaluation(mode="cached", verbose=False, academic=False, export_path="ra
     print(f"{'Engine':<20} | {'Spelling (35%)':<14} | {'Grammar (25%)':<13} | {'Voice (20%)':<12} | {'Anti-Hal (20%)':<14} | {'Meta-Score':<10} | {'Latency':<8}")
     print("-" * 105)
     for eng, sc in evaluation_report["engines"].items():
-        print(f"{eng:<20} | {sc['spelling_accuracy']:>13}% | {sc['grammar_accuracy']:>12}% | {sc['voice_preservation']:>11}% | {sc['anti_hallucination']:>13}% | {sc['hybrid_meta_score']:>9}% | {sc['latency_ms']:>6}ms")
+        latency = f"{sc['latency_ms']} ms" if sc["latency_ms"] is not None else "n/a"
+        print(f"{eng:<24} | {sc['spelling_accuracy']:>13}% | {sc['grammar_accuracy']:>12}% | {sc['voice_preservation']:>11}% | {sc['anti_hallucination']:>13}% | {sc['hybrid_meta_score']:>9}% | {latency:>8}")
     print("=================================================================================")
 
     if academic:

@@ -1,8 +1,8 @@
 {
   "benchmark_metadata": {
-    "title": "Open Developer Spelling & Grammar API Benchmark: 4-Pillar Suite",
+    "title": "Open Spelling & Grammar Benchmark: 4-Pillar Suite",
     "version": "3.0-blind",
-    "eval_date": "November 13, 2026",
+    "eval_date": "November 14, 2026",
     "architecture": "4 Functional Pillars + 1 Hybrid Meta-Score",
     "weights": {
       "pillar_1_spelling": "35%",
@@ -37,12 +37,28 @@
       "latency_ms": 1050
     },
     "DeepL Write": {
-      "spelling_accuracy": 0.0,
-      "grammar_accuracy": 17.5,
-      "voice_preservation": 74.2,
-      "anti_hallucination": 100.0,
-      "hybrid_meta_score": 39.2,
+      "spelling_accuracy": 94.7,
+      "grammar_accuracy": 72.5,
+      "voice_preservation": 81.8,
+      "anti_hallucination": 97.5,
+      "hybrid_meta_score": 87.1,
       "latency_ms": 1280
+    },
+    "Sapling Grammar Checker": {
+      "spelling_accuracy": 94.2,
+      "grammar_accuracy": 100.0,
+      "voice_preservation": 95.0,
+      "anti_hallucination": 90.0,
+      "hybrid_meta_score": 95.0,
+      "latency_ms": null
+    },
+    "JSpell Free Web Checker": {
+      "spelling_accuracy": 76.8,
+      "grammar_accuracy": 40.8,
+      "voice_preservation": 95.5,
+      "anti_hallucination": 55.0,
+      "hybrid_meta_score": 67.2,
+      "latency_ms": null
     }
   },
   "passages": [
@@ -90,16 +106,42 @@
           }
         },
         "DeepL Write": {
-          "text": "Yo that concert was straight fire no cap, but my freind lost his tickit at the entrence. We had to finagle our way past securty but it was to lit to miss.",
+          "text": "Yo, that concert was fire, no doubt, but my friend lost his ticket at the entrance. We had to finagle our way past security, but it was too lit to miss.",
           "metrics": {
-            "spelling_acc": 0.0,
-            "grammar_acc": 0.0,
-            "voice_preservation": 100.0,
-            "vpr": 100.0,
+            "spelling_acc": 100.0,
+            "grammar_acc": 100.0,
+            "voice_preservation": 75.0,
+            "vpr": 75.0,
             "oer": 0.0,
             "anti_hallucination": 100.0,
             "hallucination_count": 0,
-            "hybrid_meta_score": 40.0
+            "hybrid_meta_score": 95.0
+          }
+        },
+        "Sapling Grammar Checker": {
+          "text": "So that concert was straight fire on cap, but my friend lost his ticket at the entrance. We had to finagle our way past security but it was too lit to miss.",
+          "metrics": {
+            "spelling_acc": 100.0,
+            "grammar_acc": 100.0,
+            "voice_preservation": 50.0,
+            "vpr": 50.0,
+            "oer": 0.0,
+            "anti_hallucination": 50.0,
+            "hallucination_count": 2,
+            "hybrid_meta_score": 80.0
+          }
+        },
+        "JSpell Free Web Checker": {
+          "text": "You that concert was straight fire no cap, but my friend lost his tick at the entrance. We had to finagle our way past security but it was to lit to miss.",
+          "metrics": {
+            "spelling_acc": 75.0,
+            "grammar_acc": 0.0,
+            "voice_preservation": 75.0,
+            "vpr": 75.0,
+            "oer": 0.0,
+            "anti_hallucination": 50.0,
+            "hallucination_count": 2,
+            "hybrid_meta_score": 51.25
           }
         }
       }
@@ -148,16 +190,42 @@
           }
         },
         "DeepL Write": {
-          "text": "Granddaddy sat on the porch rockin slow, watchin the crik rise after the floodin. He reckned the old barn wouldnt survive another downpoar.",
+          "text": "Grandad sat on the porch, rocking slowly and watching the creek rise after the flooding. He reckoned the old barn wouldn't survive another downpour.",
           "metrics": {
-            "spelling_acc": 0.0,
-            "grammar_acc": 0.0,
+            "spelling_acc": 100.0,
+            "grammar_acc": 100.0,
+            "voice_preservation": 66.67,
+            "vpr": 66.67,
+            "oer": 0.0,
+            "anti_hallucination": 75.0,
+            "hallucination_count": 1,
+            "hybrid_meta_score": 88.33
+          }
+        },
+        "Sapling Grammar Checker": {
+          "text": "Granddaddy sat on the porch rockin' slow, watchin' the crick rise after the floodin'. He reckoned the old barn wouldn't survive another downpour.",
+          "metrics": {
+            "spelling_acc": 66.67,
+            "grammar_acc": 100.0,
             "voice_preservation": 100.0,
             "vpr": 100.0,
             "oer": 0.0,
             "anti_hallucination": 100.0,
             "hallucination_count": 0,
-            "hybrid_meta_score": 40.0
+            "hybrid_meta_score": 88.33
+          }
+        },
+        "JSpell Free Web Checker": {
+          "text": "Granddaddy sat on the porch rocking slow, watching the crick rise after the flooding. He reckoned the old barn wouldn't survive another downpour.",
+          "metrics": {
+            "spelling_acc": 100.0,
+            "grammar_acc": 100.0,
+            "voice_preservation": 100.0,
+            "vpr": 100.0,
+            "oer": 0.0,
+            "anti_hallucination": 100.0,
+            "hallucination_count": 0,
+            "hybrid_meta_score": 100.0
           }
         }
       }
@@ -206,16 +274,42 @@
           }
         },
         "DeepL Write": {
-          "text": "Neon reflected off the wet ashpalt. She jackd into the subnet, bypassed the firewal, and dumpd the encrypted payload before the ICE could trace her signel.",
+          "text": "Neon reflected off the wet asphalt. She connected to the subnet, bypassed the firewall, and downloaded the encrypted payload before the ICE could trace her signal.",
           "metrics": {
-            "spelling_acc": 0.0,
+            "spelling_acc": 100.0,
             "grammar_acc": 0.0,
             "voice_preservation": 100.0,
             "vpr": 100.0,
             "oer": 0.0,
             "anti_hallucination": 100.0,
             "hallucination_count": 0,
-            "hybrid_meta_score": 40.0
+            "hybrid_meta_score": 75.0
+          }
+        },
+        "Sapling Grammar Checker": {
+          "text": "Neon reflected off the wet asphalt. She jacked into the subnet, bypassed the firewall, and dumped the encrypted payload before the ICE could trace her signal.",
+          "metrics": {
+            "spelling_acc": 100.0,
+            "grammar_acc": 100.0,
+            "voice_preservation": 100.0,
+            "vpr": 100.0,
+            "oer": 0.0,
+            "anti_hallucination": 100.0,
+            "hallucination_count": 0,
+            "hybrid_meta_score": 100.0
+          }
+        },
+        "JSpell Free Web Checker": {
+          "text": "Neon reflected off the wet asphalt. She jacked into the subnet, bypassed the firewall, and dump the encrypted payload before the ICE could trace her signed.",
+          "metrics": {
+            "spelling_acc": 66.67,
+            "grammar_acc": 50.0,
+            "voice_preservation": 100.0,
+            "vpr": 100.0,
+            "oer": 0.0,
+            "anti_hallucination": 50.0,
+            "hallucination_count": 2,
+            "hybrid_meta_score": 65.83
           }
         }
       }
@@ -264,16 +358,42 @@
           }
         },
         "DeepL Write": {
-          "text": "The roasted duck had increadible crispy skin, but the rasberry reduction was way to acidic. It totally overpowred the delicat flavor of the parsnips.",
+          "text": "The roasted duck had incredibly crispy skin, but the raspberry reduction was far too acidic. It completely overpowered the delicate flavour of the parsnips.",
           "metrics": {
-            "spelling_acc": 0.0,
+            "spelling_acc": 75.0,
             "grammar_acc": 0.0,
             "voice_preservation": 100.0,
             "vpr": 100.0,
             "oer": 0.0,
             "anti_hallucination": 100.0,
             "hallucination_count": 0,
-            "hybrid_meta_score": 40.0
+            "hybrid_meta_score": 66.25
+          }
+        },
+        "Sapling Grammar Checker": {
+          "text": "The roasted duck had incredibly crispy skin, but the raspberry reduction was way too acidic. It totally overpowered the delicate flavor of the parsnips.",
+          "metrics": {
+            "spelling_acc": 75.0,
+            "grammar_acc": 100.0,
+            "voice_preservation": 100.0,
+            "vpr": 100.0,
+            "oer": 0.0,
+            "anti_hallucination": 100.0,
+            "hallucination_count": 0,
+            "hybrid_meta_score": 91.25
+          }
+        },
+        "JSpell Free Web Checker": {
+          "text": "The roasted duck had incredible crispy skin, but the raspberry reduction was way to acidic. It totally overpowered the delicate flavor of the parsnips.",
+          "metrics": {
+            "spelling_acc": 100.0,
+            "grammar_acc": 0.0,
+            "voice_preservation": 100.0,
+            "vpr": 100.0,
+            "oer": 0.0,
+            "anti_hallucination": 100.0,
+            "hallucination_count": 0,
+            "hybrid_meta_score": 75.0
           }
         }
       }
@@ -322,16 +442,42 @@
           }
         },
         "DeepL Write": {
-          "text": "Lass nite I dreemt of a spacship flying throu the stars with a giant roket boostr. We landd on a purpul planet with buble lakes and alien critturs that dancd joyfully. It felt so reel I cried wen my mom woak me up for skool!",
+          "text": "Last night I dreamed of a spaceship flying through the stars with a giant rocket booster. We landed on a purple planet with bubble lakes and alien creatures that danced joyfully. It felt so real that I cried when my mum woke me up for school!",
           "metrics": {
-            "spelling_acc": 0.0,
-            "grammar_acc": 0.0,
-            "voice_preservation": 40.0,
-            "vpr": 40.0,
+            "spelling_acc": 91.67,
+            "grammar_acc": 100.0,
+            "voice_preservation": 100.0,
+            "vpr": 100.0,
             "oer": 0.0,
             "anti_hallucination": 100.0,
             "hallucination_count": 0,
-            "hybrid_meta_score": 28.0
+            "hybrid_meta_score": 97.08
+          }
+        },
+        "Sapling Grammar Checker": {
+          "text": "Last night I dreamt of a spaceship flying through the stars with a giant rocket booster. We landed on a purple planet with bubble lakes and alien critters that danced joyfully. It felt so real I cried when my mom woke me up for school!",
+          "metrics": {
+            "spelling_acc": 100.0,
+            "grammar_acc": 100.0,
+            "voice_preservation": 100.0,
+            "vpr": 100.0,
+            "oer": 0.0,
+            "anti_hallucination": 100.0,
+            "hallucination_count": 0,
+            "hybrid_meta_score": 100.0
+          }
+        },
+        "JSpell Free Web Checker": {
+          "text": "Lass niter I dreamt of a spaceship flying thro the stars with a giant rocket boosts. We land on a purl planet with bubble lakes and alien critters that danced joyfully. It felt so reel I cried ween my mom wok me up for solo!",
+          "metrics": {
+            "spelling_acc": 41.67,
+            "grammar_acc": 33.33,
+            "voice_preservation": 80.0,
+            "vpr": 80.0,
+            "oer": 0.0,
+            "anti_hallucination": 0.0,
+            "hallucination_count": 6,
+            "hybrid_meta_score": 38.92
           }
         }
       }
@@ -380,16 +526,42 @@
           }
         },
         "DeepL Write": {
-          "text": "Our cac dropped 40% mom, while arr hit a record high. The competishun is scramblin to match our feachures, but we move to fast.",
+          "text": "Our stock price dropped by 40%, while ours hit a record high. The competition is scrambling to match our features, but we're moving too fast.",
           "metrics": {
-            "spelling_acc": 0.0,
-            "grammar_acc": 75.0,
+            "spelling_acc": 100.0,
+            "grammar_acc": 25.0,
             "voice_preservation": 66.67,
             "vpr": 66.67,
             "oer": 0.0,
             "anti_hallucination": 100.0,
             "hallucination_count": 0,
-            "hybrid_meta_score": 52.08
+            "hybrid_meta_score": 74.58
+          }
+        },
+        "Sapling Grammar Checker": {
+          "text": "Our CAC dropped 40% mom, while ARR hit a record high. The competition is scrambling to match our features, but we're moving too fast.",
+          "metrics": {
+            "spelling_acc": 100.0,
+            "grammar_acc": 100.0,
+            "voice_preservation": 100.0,
+            "vpr": 100.0,
+            "oer": 0.0,
+            "anti_hallucination": 100.0,
+            "hallucination_count": 0,
+            "hybrid_meta_score": 100.0
+          }
+        },
+        "JSpell Free Web Checker": {
+          "text": "Our ca dropped 40% mom, while AR hit a record high. The competition is scrambling to match our Peachtree, but we move to fast.",
+          "metrics": {
+            "spelling_acc": 66.67,
+            "grammar_acc": 25.0,
+            "voice_preservation": 100.0,
+            "vpr": 100.0,
+            "oer": 0.0,
+            "anti_hallucination": 25.0,
+            "hallucination_count": 3,
+            "hybrid_meta_score": 54.58
           }
         }
       }
@@ -438,16 +610,42 @@
           }
         },
         "DeepL Write": {
-          "text": "Coach drew up the play on the whitebord during the timout. We ran the pick and rool to perfecshun, nailed the threepointer at the buzer, and won the champinship!",
+          "text": "Coach drew up the play on the whiteboard during the timeout. We practised the pick-and-roll to perfection, nailed the three-pointer at the buzzer, and won the championship!",
           "metrics": {
-            "spelling_acc": 0.0,
-            "grammar_acc": 0.0,
-            "voice_preservation": 50.0,
-            "vpr": 50.0,
+            "spelling_acc": 100.0,
+            "grammar_acc": 100.0,
+            "voice_preservation": 75.0,
+            "vpr": 75.0,
             "oer": 0.0,
             "anti_hallucination": 100.0,
             "hallucination_count": 0,
-            "hybrid_meta_score": 30.0
+            "hybrid_meta_score": 95.0
+          }
+        },
+        "Sapling Grammar Checker": {
+          "text": "The coach drew up the play on the whiteboard during the timeout. We ran the pick and roll to perfection, nailed the three-pointer at the buzzer, and won the championship!",
+          "metrics": {
+            "spelling_acc": 100.0,
+            "grammar_acc": 100.0,
+            "voice_preservation": 100.0,
+            "vpr": 100.0,
+            "oer": 0.0,
+            "anti_hallucination": 100.0,
+            "hallucination_count": 0,
+            "hybrid_meta_score": 100.0
+          }
+        },
+        "JSpell Free Web Checker": {
+          "text": "Coach drew up the play on the whiteboard during the timeout. We ran the pick and roll to preference, nailed the thirteenth at the buzzer, and won the championship!",
+          "metrics": {
+            "spelling_acc": 83.33,
+            "grammar_acc": 0.0,
+            "voice_preservation": 100.0,
+            "vpr": 100.0,
+            "oer": 0.0,
+            "anti_hallucination": 50.0,
+            "hallucination_count": 2,
+            "hybrid_meta_score": 59.17
           }
         }
       }
@@ -496,16 +694,42 @@
           }
         },
         "DeepL Write": {
-          "text": "Autumn leavs spiraled across the abandond trax. A quiet saddness hung in the air, neither bitter nor cruel, just the slow exhail of another dying year.",
+          "text": "Autumn leaves spiralled across the abandoned tracks. A quiet sadness hung in the air, neither bitter nor cruel, just the slow exhalation of another year coming to an end.",
           "metrics": {
-            "spelling_acc": 0.0,
+            "spelling_acc": 80.0,
             "grammar_acc": 100.0,
             "voice_preservation": 60.0,
             "vpr": 60.0,
             "oer": 0.0,
             "anti_hallucination": 100.0,
             "hallucination_count": 0,
-            "hybrid_meta_score": 57.0
+            "hybrid_meta_score": 85.0
+          }
+        },
+        "Sapling Grammar Checker": {
+          "text": "Autumn leaves spiraled across the abandoned train tracks. A quiet sadness hung in the air, neither bitter nor cruel, just the slow exhale of another dying year.",
+          "metrics": {
+            "spelling_acc": 100.0,
+            "grammar_acc": 100.0,
+            "voice_preservation": 100.0,
+            "vpr": 100.0,
+            "oer": 0.0,
+            "anti_hallucination": 75.0,
+            "hallucination_count": 1,
+            "hybrid_meta_score": 95.0
+          }
+        },
+        "JSpell Free Web Checker": {
+          "text": "Autumn leaves spiraled across the abandon Tara. A quiet sadness hung in the air, neither bitter nor cruel, just the slow exhale of another dying year.",
+          "metrics": {
+            "spelling_acc": 60.0,
+            "grammar_acc": 100.0,
+            "voice_preservation": 100.0,
+            "vpr": 100.0,
+            "oer": 0.0,
+            "anti_hallucination": 75.0,
+            "hallucination_count": 1,
+            "hybrid_meta_score": 81.0
           }
         }
       }
@@ -554,16 +778,42 @@
           }
         },
         "DeepL Write": {
-          "text": "Observd three speshimens of dendrobates tinctorius near the stream bed. The aposematik coloration was extreamly vibrant despite heavy canoppy shade.",
+          "text": "Three specimens of Dendrobates tinctorius were observed near the stream bed. Despite the heavy canopy shade, the aposematic colouration was extremely vibrant.",
           "metrics": {
-            "spelling_acc": 0.0,
-            "grammar_acc": 0.0,
-            "voice_preservation": 50.0,
-            "vpr": 50.0,
+            "spelling_acc": 100.0,
+            "grammar_acc": 100.0,
+            "voice_preservation": 75.0,
+            "vpr": 75.0,
             "oer": 0.0,
             "anti_hallucination": 100.0,
             "hallucination_count": 0,
-            "hybrid_meta_score": 30.0
+            "hybrid_meta_score": 95.0
+          }
+        },
+        "Sapling Grammar Checker": {
+          "text": "Observed three specimens of Dendrobates tintorius near the stream bed. The aposematic coloration was extremely vibrant despite heavy canopy shade.",
+          "metrics": {
+            "spelling_acc": 100.0,
+            "grammar_acc": 100.0,
+            "voice_preservation": 100.0,
+            "vpr": 100.0,
+            "oer": 0.0,
+            "anti_hallucination": 75.0,
+            "hallucination_count": 1,
+            "hybrid_meta_score": 95.0
+          }
+        },
+        "JSpell Free Web Checker": {
+          "text": "Observe three specimens of tenderfoots tinctures near the stream bed. The Postmates coloration was extremely vibrant despite heavy canopy shade.",
+          "metrics": {
+            "spelling_acc": 75.0,
+            "grammar_acc": 0.0,
+            "voice_preservation": 100.0,
+            "vpr": 100.0,
+            "oer": 0.0,
+            "anti_hallucination": 0.0,
+            "hallucination_count": 4,
+            "hybrid_meta_score": 46.25
           }
         }
       }
@@ -612,16 +862,42 @@
           }
         },
         "DeepL Write": {
-          "text": "Clause 4.2 govorns indemity obligashuns. Neither party shall be liabel for consequenshal damages arising from unintensional breach.",
+          "text": "Clause 4.2 governs indemnity obligations. Neither party shall be liable for consequential damages arising from unintentional breach.",
           "metrics": {
-            "spelling_acc": 0.0,
-            "grammar_acc": 0.0,
-            "voice_preservation": 75.0,
-            "vpr": 75.0,
+            "spelling_acc": 100.0,
+            "grammar_acc": 100.0,
+            "voice_preservation": 100.0,
+            "vpr": 100.0,
             "oer": 0.0,
             "anti_hallucination": 100.0,
             "hallucination_count": 0,
-            "hybrid_meta_score": 35.0
+            "hybrid_meta_score": 100.0
+          }
+        },
+        "Sapling Grammar Checker": {
+          "text": "Clause 4.2 governs indemnity obligations. Neither party shall be liable for consequential damages arising from an unintentional breach.",
+          "metrics": {
+            "spelling_acc": 100.0,
+            "grammar_acc": 100.0,
+            "voice_preservation": 100.0,
+            "vpr": 100.0,
+            "oer": 0.0,
+            "anti_hallucination": 100.0,
+            "hallucination_count": 0,
+            "hybrid_meta_score": 100.0
+          }
+        },
+        "JSpell Free Web Checker": {
+          "text": "Clause 4.2 governs indemnity obligations. Neither party shall be liable for consequential damages arising from unintentional breach.",
+          "metrics": {
+            "spelling_acc": 100.0,
+            "grammar_acc": 100.0,
+            "voice_preservation": 100.0,
+            "vpr": 100.0,
+            "oer": 0.0,
+            "anti_hallucination": 100.0,
+            "hallucination_count": 0,
+            "hybrid_meta_score": 100.0
           }
         }
       }
