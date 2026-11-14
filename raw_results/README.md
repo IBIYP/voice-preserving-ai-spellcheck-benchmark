@@ -70,7 +70,9 @@ The separate Cloud API collector is retained for a future attempt, but its HTTP 
 
 ## 3. Scoring Method
 
-The evaluation passages and expected corrections are fixed, curated data; no essays are generated or randomized during evaluation. Each engine receives the same passage text. H-suite inputs and annotations are public; B-suite source passages are private locally, but much of the scoring logic is public, so neither should be described as an adversarially secure hidden test set. Outputs are checked against annotated spelling and grammar targets, accepted voice/dialect variants, over-edit phrases, and known hallucination signatures. Target checks are case-insensitive whole-phrase matches with word boundaries, but do not verify the exact edit location. These rules are deterministic heuristics; hallucination signatures are manually specified and are not a general semantic-drift detector.
+The evaluation passages and expected corrections are fixed, curated data; no essays are generated or randomized during evaluation. Each engine receives the same passage text. H-suite inputs and annotations are public; B-suite source passages are private locally, but much of the scoring logic is public, so neither should be described as an adversarially secure hidden test set.
+
+Voice scoring revision `lexical-marker-f1-v2` computes case-folded word-token LCS F1 outside annotated correction spans, multiplies each passage score by its curated voice-marker retention, then applies a suite-wide penalty of 10% per matched over-edit signature (capped at 80%). Accepted dialect equivalents are normalized, and accepted correction forms are excluded from the voice comparison. Correction spans are paired by approximate relative position. All of these rules are deterministic heuristics: over-edit and hallucination signatures are manually specified, and the evaluator does not provide general semantic or tone understanding.
 
 The local evaluator reads the saved outputs and annotations and calculates the published scores without contacting the engines. The Blind v3 source passages remain in a private local cache and are not included in this public repository.
 

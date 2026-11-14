@@ -2,6 +2,7 @@
   "benchmark_metadata": {
     "title": "Open Spelling & Grammar Benchmark: 4-Pillar Suite",
     "version": "3.0-blind",
+    "voice_scoring_revision": "lexical-marker-f1-v2",
     "eval_date": "November 14, 2026",
     "architecture": "4 Functional Pillars + 1 Hybrid Meta-Score",
     "weights": {
@@ -15,49 +16,73 @@
     "BCorrect (FMM)": {
       "spelling_accuracy": 84.8,
       "grammar_accuracy": 63.3,
-      "voice_preservation": 97.5,
+      "voice_preservation": 88.86,
+      "voice_lexical_f1": 95.89,
+      "voice_marker_retention": 92.5,
+      "voice_over_edit_count": 0,
+      "voice_over_edit_penalty": 0.0,
       "anti_hallucination": 87.5,
-      "hybrid_meta_score": 82.5,
+      "hybrid_meta_score": 80.8,
       "latency_ms": 18
     },
     "LanguageTool API": {
       "spelling_accuracy": 81.2,
       "grammar_accuracy": 77.5,
-      "voice_preservation": 93.5,
+      "voice_preservation": 84.07,
+      "voice_lexical_f1": 94.84,
+      "voice_marker_retention": 88.5,
+      "voice_over_edit_count": 0,
+      "voice_over_edit_penalty": 0.0,
       "anti_hallucination": 70.0,
-      "hybrid_meta_score": 80.5,
+      "hybrid_meta_score": 78.6,
       "latency_ms": 520
     },
     "TextGears API": {
       "spelling_accuracy": 82.7,
       "grammar_accuracy": 71.7,
-      "voice_preservation": 91.0,
+      "voice_preservation": 83.19,
+      "voice_lexical_f1": 96.82,
+      "voice_marker_retention": 86.0,
+      "voice_over_edit_count": 0,
+      "voice_over_edit_penalty": 0.0,
       "anti_hallucination": 77.5,
-      "hybrid_meta_score": 80.5,
+      "hybrid_meta_score": 79.0,
       "latency_ms": 1050
     },
     "DeepL Write": {
       "spelling_accuracy": 94.7,
       "grammar_accuracy": 72.5,
-      "voice_preservation": 81.8,
+      "voice_preservation": 67.13,
+      "voice_lexical_f1": 87.73,
+      "voice_marker_retention": 75.67,
+      "voice_over_edit_count": 0,
+      "voice_over_edit_penalty": 0.0,
       "anti_hallucination": 97.5,
-      "hybrid_meta_score": 87.1,
+      "hybrid_meta_score": 84.2,
       "latency_ms": 1280
     },
     "Sapling Grammar Checker": {
       "spelling_accuracy": 94.2,
       "grammar_accuracy": 100.0,
-      "voice_preservation": 95.0,
+      "voice_preservation": 89.07,
+      "voice_lexical_f1": 96.19,
+      "voice_marker_retention": 92.5,
+      "voice_over_edit_count": 0,
+      "voice_over_edit_penalty": 0.0,
       "anti_hallucination": 90.0,
-      "hybrid_meta_score": 95.0,
+      "hybrid_meta_score": 93.8,
       "latency_ms": null
     },
     "JSpell Free Web Checker": {
       "spelling_accuracy": 76.8,
       "grammar_accuracy": 40.8,
-      "voice_preservation": 95.5,
+      "voice_preservation": 84.92,
+      "voice_lexical_f1": 94.01,
+      "voice_marker_retention": 90.5,
+      "voice_over_edit_count": 0,
+      "voice_over_edit_penalty": 0.0,
       "anti_hallucination": 55.0,
-      "hybrid_meta_score": 67.2,
+      "hybrid_meta_score": 65.1,
       "latency_ms": null
     }
   },
@@ -71,12 +96,19 @@
           "metrics": {
             "spelling_acc": 100.0,
             "grammar_acc": 0.0,
-            "voice_preservation": 100.0,
-            "vpr": 100.0,
+            "voice_preservation": 72.12,
+            "vpr": 75.0,
+            "voice_precision": 96.15,
+            "voice_recall": 96.15,
+            "voice_lexical_f1": 96.15,
+            "voice_marker_retention": 75.0,
+            "voice_over_edit_count": 0,
             "oer": 0.0,
             "anti_hallucination": 75.0,
             "hallucination_count": 1,
-            "hybrid_meta_score": 70.0
+            "hybrid_meta_score": 64.42,
+            "voice_base_score": 72.12,
+            "voice_over_edit_penalty": 0.0
           }
         },
         "LanguageTool API": {
@@ -86,10 +118,17 @@
             "grammar_acc": 100.0,
             "voice_preservation": 100.0,
             "vpr": 100.0,
+            "voice_precision": 100.0,
+            "voice_recall": 100.0,
+            "voice_lexical_f1": 100.0,
+            "voice_marker_retention": 100.0,
+            "voice_over_edit_count": 0,
             "oer": 0.0,
             "anti_hallucination": 100.0,
             "hallucination_count": 0,
-            "hybrid_meta_score": 100.0
+            "hybrid_meta_score": 100.0,
+            "voice_base_score": 100.0,
+            "voice_over_edit_penalty": 0.0
           }
         },
         "TextGears API": {
@@ -99,10 +138,17 @@
             "grammar_acc": 0.0,
             "voice_preservation": 100.0,
             "vpr": 100.0,
+            "voice_precision": 100.0,
+            "voice_recall": 100.0,
+            "voice_lexical_f1": 100.0,
+            "voice_marker_retention": 100.0,
+            "voice_over_edit_count": 0,
             "oer": 0.0,
             "anti_hallucination": 100.0,
             "hallucination_count": 0,
-            "hybrid_meta_score": 66.25
+            "hybrid_meta_score": 66.25,
+            "voice_base_score": 100.0,
+            "voice_over_edit_penalty": 0.0
           }
         },
         "DeepL Write": {
@@ -110,12 +156,19 @@
           "metrics": {
             "spelling_acc": 100.0,
             "grammar_acc": 100.0,
-            "voice_preservation": 75.0,
-            "vpr": 75.0,
+            "voice_preservation": 47.06,
+            "vpr": 50.0,
+            "voice_precision": 96.0,
+            "voice_recall": 92.31,
+            "voice_lexical_f1": 94.12,
+            "voice_marker_retention": 50.0,
+            "voice_over_edit_count": 0,
             "oer": 0.0,
             "anti_hallucination": 100.0,
             "hallucination_count": 0,
-            "hybrid_meta_score": 95.0
+            "hybrid_meta_score": 89.41,
+            "voice_base_score": 47.06,
+            "voice_over_edit_penalty": 0.0
           }
         },
         "Sapling Grammar Checker": {
@@ -123,12 +176,19 @@
           "metrics": {
             "spelling_acc": 100.0,
             "grammar_acc": 100.0,
-            "voice_preservation": 50.0,
+            "voice_preservation": 46.15,
             "vpr": 50.0,
+            "voice_precision": 92.31,
+            "voice_recall": 92.31,
+            "voice_lexical_f1": 92.31,
+            "voice_marker_retention": 50.0,
+            "voice_over_edit_count": 0,
             "oer": 0.0,
             "anti_hallucination": 50.0,
             "hallucination_count": 2,
-            "hybrid_meta_score": 80.0
+            "hybrid_meta_score": 79.23,
+            "voice_base_score": 46.15,
+            "voice_over_edit_penalty": 0.0
           }
         },
         "JSpell Free Web Checker": {
@@ -136,12 +196,19 @@
           "metrics": {
             "spelling_acc": 75.0,
             "grammar_acc": 0.0,
-            "voice_preservation": 75.0,
+            "voice_preservation": 70.75,
             "vpr": 75.0,
+            "voice_precision": 92.59,
+            "voice_recall": 96.15,
+            "voice_lexical_f1": 94.34,
+            "voice_marker_retention": 75.0,
+            "voice_over_edit_count": 0,
             "oer": 0.0,
             "anti_hallucination": 50.0,
             "hallucination_count": 2,
-            "hybrid_meta_score": 51.25
+            "hybrid_meta_score": 50.4,
+            "voice_base_score": 70.75,
+            "voice_over_edit_penalty": 0.0
           }
         }
       }
@@ -155,12 +222,19 @@
           "metrics": {
             "spelling_acc": 100.0,
             "grammar_acc": 100.0,
-            "voice_preservation": 100.0,
-            "vpr": 100.0,
+            "voice_preservation": 65.38,
+            "vpr": 75.0,
+            "voice_precision": 85.0,
+            "voice_recall": 89.47,
+            "voice_lexical_f1": 87.18,
+            "voice_marker_retention": 75.0,
+            "voice_over_edit_count": 0,
             "oer": 0.0,
             "anti_hallucination": 75.0,
             "hallucination_count": 1,
-            "hybrid_meta_score": 95.0
+            "hybrid_meta_score": 88.08,
+            "voice_base_score": 65.38,
+            "voice_over_edit_penalty": 0.0
           }
         },
         "LanguageTool API": {
@@ -168,12 +242,19 @@
           "metrics": {
             "spelling_acc": 100.0,
             "grammar_acc": 100.0,
-            "voice_preservation": 100.0,
-            "vpr": 100.0,
+            "voice_preservation": 47.37,
+            "vpr": 50.0,
+            "voice_precision": 94.74,
+            "voice_recall": 94.74,
+            "voice_lexical_f1": 94.74,
+            "voice_marker_retention": 50.0,
+            "voice_over_edit_count": 0,
             "oer": 0.0,
             "anti_hallucination": 75.0,
             "hallucination_count": 1,
-            "hybrid_meta_score": 95.0
+            "hybrid_meta_score": 84.47,
+            "voice_base_score": 47.37,
+            "voice_over_edit_penalty": 0.0
           }
         },
         "TextGears API": {
@@ -181,12 +262,19 @@
           "metrics": {
             "spelling_acc": 100.0,
             "grammar_acc": 100.0,
-            "voice_preservation": 100.0,
-            "vpr": 100.0,
+            "voice_preservation": 50.0,
+            "vpr": 50.0,
+            "voice_precision": 100.0,
+            "voice_recall": 100.0,
+            "voice_lexical_f1": 100.0,
+            "voice_marker_retention": 50.0,
+            "voice_over_edit_count": 0,
             "oer": 0.0,
             "anti_hallucination": 100.0,
             "hallucination_count": 0,
-            "hybrid_meta_score": 100.0
+            "hybrid_meta_score": 90.0,
+            "voice_base_score": 50.0,
+            "voice_over_edit_penalty": 0.0
           }
         },
         "DeepL Write": {
@@ -194,12 +282,19 @@
           "metrics": {
             "spelling_acc": 100.0,
             "grammar_acc": 100.0,
-            "voice_preservation": 66.67,
-            "vpr": 66.67,
+            "voice_preservation": 21.79,
+            "vpr": 25.0,
+            "voice_precision": 85.0,
+            "voice_recall": 89.47,
+            "voice_lexical_f1": 87.18,
+            "voice_marker_retention": 25.0,
+            "voice_over_edit_count": 0,
             "oer": 0.0,
             "anti_hallucination": 75.0,
             "hallucination_count": 1,
-            "hybrid_meta_score": 88.33
+            "hybrid_meta_score": 79.36,
+            "voice_base_score": 21.79,
+            "voice_over_edit_penalty": 0.0
           }
         },
         "Sapling Grammar Checker": {
@@ -207,12 +302,19 @@
           "metrics": {
             "spelling_acc": 66.67,
             "grammar_acc": 100.0,
-            "voice_preservation": 100.0,
-            "vpr": 100.0,
+            "voice_preservation": 75.0,
+            "vpr": 50.0,
+            "voice_precision": 100.0,
+            "voice_recall": 100.0,
+            "voice_lexical_f1": 100.0,
+            "voice_marker_retention": 75.0,
+            "voice_over_edit_count": 0,
             "oer": 0.0,
             "anti_hallucination": 100.0,
             "hallucination_count": 0,
-            "hybrid_meta_score": 88.33
+            "hybrid_meta_score": 83.33,
+            "voice_base_score": 75.0,
+            "voice_over_edit_penalty": 0.0
           }
         },
         "JSpell Free Web Checker": {
@@ -220,12 +322,19 @@
           "metrics": {
             "spelling_acc": 100.0,
             "grammar_acc": 100.0,
-            "voice_preservation": 100.0,
-            "vpr": 100.0,
+            "voice_preservation": 50.0,
+            "vpr": 50.0,
+            "voice_precision": 100.0,
+            "voice_recall": 100.0,
+            "voice_lexical_f1": 100.0,
+            "voice_marker_retention": 50.0,
+            "voice_over_edit_count": 0,
             "oer": 0.0,
             "anti_hallucination": 100.0,
             "hallucination_count": 0,
-            "hybrid_meta_score": 100.0
+            "hybrid_meta_score": 90.0,
+            "voice_base_score": 50.0,
+            "voice_over_edit_penalty": 0.0
           }
         }
       }
@@ -239,12 +348,19 @@
           "metrics": {
             "spelling_acc": 100.0,
             "grammar_acc": 100.0,
-            "voice_preservation": 100.0,
+            "voice_preservation": 95.24,
             "vpr": 100.0,
+            "voice_precision": 95.24,
+            "voice_recall": 95.24,
+            "voice_lexical_f1": 95.24,
+            "voice_marker_retention": 100.0,
+            "voice_over_edit_count": 0,
             "oer": 0.0,
             "anti_hallucination": 100.0,
             "hallucination_count": 0,
-            "hybrid_meta_score": 100.0
+            "hybrid_meta_score": 99.05,
+            "voice_base_score": 95.24,
+            "voice_over_edit_penalty": 0.0
           }
         },
         "LanguageTool API": {
@@ -252,12 +368,19 @@
           "metrics": {
             "spelling_acc": 66.67,
             "grammar_acc": 0.0,
-            "voice_preservation": 100.0,
+            "voice_preservation": 93.33,
             "vpr": 100.0,
+            "voice_precision": 87.5,
+            "voice_recall": 100.0,
+            "voice_lexical_f1": 93.33,
+            "voice_marker_retention": 100.0,
+            "voice_over_edit_count": 0,
             "oer": 0.0,
             "anti_hallucination": 50.0,
             "hallucination_count": 2,
-            "hybrid_meta_score": 53.33
+            "hybrid_meta_score": 52.0,
+            "voice_base_score": 93.33,
+            "voice_over_edit_penalty": 0.0
           }
         },
         "TextGears API": {
@@ -267,10 +390,17 @@
             "grammar_acc": 100.0,
             "voice_preservation": 100.0,
             "vpr": 100.0,
+            "voice_precision": 100.0,
+            "voice_recall": 100.0,
+            "voice_lexical_f1": 100.0,
+            "voice_marker_retention": 100.0,
+            "voice_over_edit_count": 0,
             "oer": 0.0,
             "anti_hallucination": 100.0,
             "hallucination_count": 0,
-            "hybrid_meta_score": 100.0
+            "hybrid_meta_score": 100.0,
+            "voice_base_score": 100.0,
+            "voice_over_edit_penalty": 0.0
           }
         },
         "DeepL Write": {
@@ -278,12 +408,19 @@
           "metrics": {
             "spelling_acc": 100.0,
             "grammar_acc": 0.0,
-            "voice_preservation": 100.0,
+            "voice_preservation": 90.91,
             "vpr": 100.0,
+            "voice_precision": 86.96,
+            "voice_recall": 95.24,
+            "voice_lexical_f1": 90.91,
+            "voice_marker_retention": 100.0,
+            "voice_over_edit_count": 0,
             "oer": 0.0,
             "anti_hallucination": 100.0,
             "hallucination_count": 0,
-            "hybrid_meta_score": 75.0
+            "hybrid_meta_score": 73.18,
+            "voice_base_score": 90.91,
+            "voice_over_edit_penalty": 0.0
           }
         },
         "Sapling Grammar Checker": {
@@ -293,10 +430,17 @@
             "grammar_acc": 100.0,
             "voice_preservation": 100.0,
             "vpr": 100.0,
+            "voice_precision": 100.0,
+            "voice_recall": 100.0,
+            "voice_lexical_f1": 100.0,
+            "voice_marker_retention": 100.0,
+            "voice_over_edit_count": 0,
             "oer": 0.0,
             "anti_hallucination": 100.0,
             "hallucination_count": 0,
-            "hybrid_meta_score": 100.0
+            "hybrid_meta_score": 100.0,
+            "voice_base_score": 100.0,
+            "voice_over_edit_penalty": 0.0
           }
         },
         "JSpell Free Web Checker": {
@@ -304,12 +448,19 @@
           "metrics": {
             "spelling_acc": 66.67,
             "grammar_acc": 50.0,
-            "voice_preservation": 100.0,
+            "voice_preservation": 95.45,
             "vpr": 100.0,
+            "voice_precision": 91.3,
+            "voice_recall": 100.0,
+            "voice_lexical_f1": 95.45,
+            "voice_marker_retention": 100.0,
+            "voice_over_edit_count": 0,
             "oer": 0.0,
             "anti_hallucination": 50.0,
             "hallucination_count": 2,
-            "hybrid_meta_score": 65.83
+            "hybrid_meta_score": 64.92,
+            "voice_base_score": 95.45,
+            "voice_over_edit_penalty": 0.0
           }
         }
       }
@@ -325,10 +476,17 @@
             "grammar_acc": 0.0,
             "voice_preservation": 100.0,
             "vpr": 100.0,
+            "voice_precision": 100.0,
+            "voice_recall": 100.0,
+            "voice_lexical_f1": 100.0,
+            "voice_marker_retention": 100.0,
+            "voice_over_edit_count": 0,
             "oer": 0.0,
             "anti_hallucination": 100.0,
             "hallucination_count": 0,
-            "hybrid_meta_score": 66.25
+            "hybrid_meta_score": 66.25,
+            "voice_base_score": 100.0,
+            "voice_over_edit_penalty": 0.0
           }
         },
         "LanguageTool API": {
@@ -338,10 +496,17 @@
             "grammar_acc": 100.0,
             "voice_preservation": 100.0,
             "vpr": 100.0,
+            "voice_precision": 100.0,
+            "voice_recall": 100.0,
+            "voice_lexical_f1": 100.0,
+            "voice_marker_retention": 100.0,
+            "voice_over_edit_count": 0,
             "oer": 0.0,
             "anti_hallucination": 100.0,
             "hallucination_count": 0,
-            "hybrid_meta_score": 100.0
+            "hybrid_meta_score": 100.0,
+            "voice_base_score": 100.0,
+            "voice_over_edit_penalty": 0.0
           }
         },
         "TextGears API": {
@@ -351,10 +516,17 @@
             "grammar_acc": 0.0,
             "voice_preservation": 100.0,
             "vpr": 100.0,
+            "voice_precision": 100.0,
+            "voice_recall": 100.0,
+            "voice_lexical_f1": 100.0,
+            "voice_marker_retention": 100.0,
+            "voice_over_edit_count": 0,
             "oer": 0.0,
             "anti_hallucination": 100.0,
             "hallucination_count": 0,
-            "hybrid_meta_score": 75.0
+            "hybrid_meta_score": 75.0,
+            "voice_base_score": 100.0,
+            "voice_over_edit_penalty": 0.0
           }
         },
         "DeepL Write": {
@@ -362,12 +534,19 @@
           "metrics": {
             "spelling_acc": 75.0,
             "grammar_acc": 0.0,
-            "voice_preservation": 100.0,
-            "vpr": 100.0,
+            "voice_preservation": 69.74,
+            "vpr": 80.0,
+            "voice_precision": 80.95,
+            "voice_recall": 94.44,
+            "voice_lexical_f1": 87.18,
+            "voice_marker_retention": 80.0,
+            "voice_over_edit_count": 0,
             "oer": 0.0,
             "anti_hallucination": 100.0,
             "hallucination_count": 0,
-            "hybrid_meta_score": 66.25
+            "hybrid_meta_score": 60.2,
+            "voice_base_score": 69.74,
+            "voice_over_edit_penalty": 0.0
           }
         },
         "Sapling Grammar Checker": {
@@ -375,12 +554,19 @@
           "metrics": {
             "spelling_acc": 75.0,
             "grammar_acc": 100.0,
-            "voice_preservation": 100.0,
+            "voice_preservation": 97.3,
             "vpr": 100.0,
+            "voice_precision": 94.74,
+            "voice_recall": 100.0,
+            "voice_lexical_f1": 97.3,
+            "voice_marker_retention": 100.0,
+            "voice_over_edit_count": 0,
             "oer": 0.0,
             "anti_hallucination": 100.0,
             "hallucination_count": 0,
-            "hybrid_meta_score": 91.25
+            "hybrid_meta_score": 90.71,
+            "voice_base_score": 97.3,
+            "voice_over_edit_penalty": 0.0
           }
         },
         "JSpell Free Web Checker": {
@@ -390,10 +576,17 @@
             "grammar_acc": 0.0,
             "voice_preservation": 100.0,
             "vpr": 100.0,
+            "voice_precision": 100.0,
+            "voice_recall": 100.0,
+            "voice_lexical_f1": 100.0,
+            "voice_marker_retention": 100.0,
+            "voice_over_edit_count": 0,
             "oer": 0.0,
             "anti_hallucination": 100.0,
             "hallucination_count": 0,
-            "hybrid_meta_score": 75.0
+            "hybrid_meta_score": 75.0,
+            "voice_base_score": 100.0,
+            "voice_over_edit_penalty": 0.0
           }
         }
       }
@@ -407,12 +600,19 @@
           "metrics": {
             "spelling_acc": 66.67,
             "grammar_acc": 33.33,
-            "voice_preservation": 100.0,
+            "voice_preservation": 88.89,
             "vpr": 100.0,
+            "voice_precision": 82.35,
+            "voice_recall": 96.55,
+            "voice_lexical_f1": 88.89,
+            "voice_marker_retention": 100.0,
+            "voice_over_edit_count": 0,
             "oer": 0.0,
             "anti_hallucination": 75.0,
             "hallucination_count": 1,
-            "hybrid_meta_score": 66.67
+            "hybrid_meta_score": 64.44,
+            "voice_base_score": 88.89,
+            "voice_over_edit_penalty": 0.0
           }
         },
         "LanguageTool API": {
@@ -420,12 +620,19 @@
           "metrics": {
             "spelling_acc": 58.33,
             "grammar_acc": 0.0,
-            "voice_preservation": 80.0,
+            "voice_preservation": 69.25,
             "vpr": 80.0,
+            "voice_precision": 76.32,
+            "voice_recall": 100.0,
+            "voice_lexical_f1": 86.57,
+            "voice_marker_retention": 80.0,
+            "voice_over_edit_count": 0,
             "oer": 0.0,
             "anti_hallucination": 25.0,
             "hallucination_count": 3,
-            "hybrid_meta_score": 41.42
+            "hybrid_meta_score": 39.27,
+            "voice_base_score": 69.25,
+            "voice_over_edit_penalty": 0.0
           }
         },
         "TextGears API": {
@@ -433,12 +640,19 @@
           "metrics": {
             "spelling_acc": 50.0,
             "grammar_acc": 66.67,
-            "voice_preservation": 60.0,
+            "voice_preservation": 56.13,
             "vpr": 60.0,
+            "voice_precision": 87.88,
+            "voice_recall": 100.0,
+            "voice_lexical_f1": 93.55,
+            "voice_marker_retention": 60.0,
+            "voice_over_edit_count": 0,
             "oer": 0.0,
             "anti_hallucination": 25.0,
             "hallucination_count": 3,
-            "hybrid_meta_score": 51.17
+            "hybrid_meta_score": 50.39,
+            "voice_base_score": 56.13,
+            "voice_over_edit_penalty": 0.0
           }
         },
         "DeepL Write": {
@@ -446,12 +660,19 @@
           "metrics": {
             "spelling_acc": 91.67,
             "grammar_acc": 100.0,
-            "voice_preservation": 100.0,
+            "voice_preservation": 93.33,
             "vpr": 100.0,
+            "voice_precision": 90.32,
+            "voice_recall": 96.55,
+            "voice_lexical_f1": 93.33,
+            "voice_marker_retention": 100.0,
+            "voice_over_edit_count": 0,
             "oer": 0.0,
             "anti_hallucination": 100.0,
             "hallucination_count": 0,
-            "hybrid_meta_score": 97.08
+            "hybrid_meta_score": 95.75,
+            "voice_base_score": 93.33,
+            "voice_over_edit_penalty": 0.0
           }
         },
         "Sapling Grammar Checker": {
@@ -461,10 +682,17 @@
             "grammar_acc": 100.0,
             "voice_preservation": 100.0,
             "vpr": 100.0,
+            "voice_precision": 100.0,
+            "voice_recall": 100.0,
+            "voice_lexical_f1": 100.0,
+            "voice_marker_retention": 100.0,
+            "voice_over_edit_count": 0,
             "oer": 0.0,
             "anti_hallucination": 100.0,
             "hallucination_count": 0,
-            "hybrid_meta_score": 100.0
+            "hybrid_meta_score": 100.0,
+            "voice_base_score": 100.0,
+            "voice_over_edit_penalty": 0.0
           }
         },
         "JSpell Free Web Checker": {
@@ -472,12 +700,19 @@
           "metrics": {
             "spelling_acc": 41.67,
             "grammar_acc": 33.33,
-            "voice_preservation": 80.0,
+            "voice_preservation": 69.25,
             "vpr": 80.0,
+            "voice_precision": 76.32,
+            "voice_recall": 100.0,
+            "voice_lexical_f1": 86.57,
+            "voice_marker_retention": 80.0,
+            "voice_over_edit_count": 0,
             "oer": 0.0,
             "anti_hallucination": 0.0,
             "hallucination_count": 6,
-            "hybrid_meta_score": 38.92
+            "hybrid_meta_score": 36.77,
+            "voice_base_score": 69.25,
+            "voice_over_edit_penalty": 0.0
           }
         }
       }
@@ -493,10 +728,17 @@
             "grammar_acc": 100.0,
             "voice_preservation": 100.0,
             "vpr": 100.0,
+            "voice_precision": 100.0,
+            "voice_recall": 100.0,
+            "voice_lexical_f1": 100.0,
+            "voice_marker_retention": 100.0,
+            "voice_over_edit_count": 0,
             "oer": 0.0,
             "anti_hallucination": 100.0,
             "hallucination_count": 0,
-            "hybrid_meta_score": 100.0
+            "hybrid_meta_score": 100.0,
+            "voice_base_score": 100.0,
+            "voice_over_edit_penalty": 0.0
           }
         },
         "LanguageTool API": {
@@ -506,10 +748,17 @@
             "grammar_acc": 75.0,
             "voice_preservation": 100.0,
             "vpr": 100.0,
+            "voice_precision": 100.0,
+            "voice_recall": 100.0,
+            "voice_lexical_f1": 100.0,
+            "voice_marker_retention": 100.0,
+            "voice_over_edit_count": 0,
             "oer": 0.0,
             "anti_hallucination": 100.0,
             "hallucination_count": 0,
-            "hybrid_meta_score": 93.75
+            "hybrid_meta_score": 93.75,
+            "voice_base_score": 100.0,
+            "voice_over_edit_penalty": 0.0
           }
         },
         "TextGears API": {
@@ -517,12 +766,19 @@
           "metrics": {
             "spelling_acc": 100.0,
             "grammar_acc": 50.0,
-            "voice_preservation": 100.0,
+            "voice_preservation": 96.97,
             "vpr": 100.0,
+            "voice_precision": 94.12,
+            "voice_recall": 100.0,
+            "voice_lexical_f1": 96.97,
+            "voice_marker_retention": 100.0,
+            "voice_over_edit_count": 0,
             "oer": 0.0,
             "anti_hallucination": 75.0,
             "hallucination_count": 1,
-            "hybrid_meta_score": 82.5
+            "hybrid_meta_score": 81.89,
+            "voice_base_score": 96.97,
+            "voice_over_edit_penalty": 0.0
           }
         },
         "DeepL Write": {
@@ -530,12 +786,19 @@
           "metrics": {
             "spelling_acc": 100.0,
             "grammar_acc": 25.0,
-            "voice_preservation": 66.67,
+            "voice_preservation": 51.85,
             "vpr": 66.67,
+            "voice_precision": 70.0,
+            "voice_recall": 87.5,
+            "voice_lexical_f1": 77.78,
+            "voice_marker_retention": 66.67,
+            "voice_over_edit_count": 0,
             "oer": 0.0,
             "anti_hallucination": 100.0,
             "hallucination_count": 0,
-            "hybrid_meta_score": 74.58
+            "hybrid_meta_score": 71.62,
+            "voice_base_score": 51.85,
+            "voice_over_edit_penalty": 0.0
           }
         },
         "Sapling Grammar Checker": {
@@ -543,12 +806,19 @@
           "metrics": {
             "spelling_acc": 100.0,
             "grammar_acc": 100.0,
-            "voice_preservation": 100.0,
+            "voice_preservation": 87.5,
             "vpr": 100.0,
+            "voice_precision": 87.5,
+            "voice_recall": 87.5,
+            "voice_lexical_f1": 87.5,
+            "voice_marker_retention": 100.0,
+            "voice_over_edit_count": 0,
             "oer": 0.0,
             "anti_hallucination": 100.0,
             "hallucination_count": 0,
-            "hybrid_meta_score": 100.0
+            "hybrid_meta_score": 97.5,
+            "voice_base_score": 87.5,
+            "voice_over_edit_penalty": 0.0
           }
         },
         "JSpell Free Web Checker": {
@@ -556,12 +826,19 @@
           "metrics": {
             "spelling_acc": 66.67,
             "grammar_acc": 25.0,
-            "voice_preservation": 100.0,
+            "voice_preservation": 91.43,
             "vpr": 100.0,
+            "voice_precision": 84.21,
+            "voice_recall": 100.0,
+            "voice_lexical_f1": 91.43,
+            "voice_marker_retention": 100.0,
+            "voice_over_edit_count": 0,
             "oer": 0.0,
             "anti_hallucination": 25.0,
             "hallucination_count": 3,
-            "hybrid_meta_score": 54.58
+            "hybrid_meta_score": 52.87,
+            "voice_base_score": 91.43,
+            "voice_over_edit_penalty": 0.0
           }
         }
       }
@@ -575,12 +852,19 @@
           "metrics": {
             "spelling_acc": 66.67,
             "grammar_acc": 100.0,
-            "voice_preservation": 75.0,
+            "voice_preservation": 73.33,
             "vpr": 75.0,
+            "voice_precision": 95.65,
+            "voice_recall": 100.0,
+            "voice_lexical_f1": 97.78,
+            "voice_marker_retention": 75.0,
+            "voice_over_edit_count": 0,
             "oer": 0.0,
             "anti_hallucination": 75.0,
             "hallucination_count": 1,
-            "hybrid_meta_score": 78.33
+            "hybrid_meta_score": 78.0,
+            "voice_base_score": 73.33,
+            "voice_over_edit_penalty": 0.0
           }
         },
         "LanguageTool API": {
@@ -588,12 +872,19 @@
           "metrics": {
             "spelling_acc": 66.67,
             "grammar_acc": 100.0,
-            "voice_preservation": 75.0,
+            "voice_preservation": 71.74,
             "vpr": 75.0,
+            "voice_precision": 91.67,
+            "voice_recall": 100.0,
+            "voice_lexical_f1": 95.65,
+            "voice_marker_retention": 75.0,
+            "voice_over_edit_count": 0,
             "oer": 0.0,
             "anti_hallucination": 50.0,
             "hallucination_count": 2,
-            "hybrid_meta_score": 73.33
+            "hybrid_meta_score": 72.68,
+            "voice_base_score": 71.74,
+            "voice_over_edit_penalty": 0.0
           }
         },
         "TextGears API": {
@@ -601,12 +892,19 @@
           "metrics": {
             "spelling_acc": 66.67,
             "grammar_acc": 100.0,
-            "voice_preservation": 50.0,
+            "voice_preservation": 48.89,
             "vpr": 50.0,
+            "voice_precision": 95.65,
+            "voice_recall": 100.0,
+            "voice_lexical_f1": 97.78,
+            "voice_marker_retention": 50.0,
+            "voice_over_edit_count": 0,
             "oer": 0.0,
             "anti_hallucination": 75.0,
             "hallucination_count": 1,
-            "hybrid_meta_score": 73.33
+            "hybrid_meta_score": 73.11,
+            "voice_base_score": 48.89,
+            "voice_over_edit_penalty": 0.0
           }
         },
         "DeepL Write": {
@@ -614,12 +912,19 @@
           "metrics": {
             "spelling_acc": 100.0,
             "grammar_acc": 100.0,
-            "voice_preservation": 75.0,
+            "voice_preservation": 95.45,
             "vpr": 75.0,
+            "voice_precision": 95.45,
+            "voice_recall": 95.45,
+            "voice_lexical_f1": 95.45,
+            "voice_marker_retention": 100.0,
+            "voice_over_edit_count": 0,
             "oer": 0.0,
             "anti_hallucination": 100.0,
             "hallucination_count": 0,
-            "hybrid_meta_score": 95.0
+            "hybrid_meta_score": 99.09,
+            "voice_base_score": 95.45,
+            "voice_over_edit_penalty": 0.0
           }
         },
         "Sapling Grammar Checker": {
@@ -627,12 +932,19 @@
           "metrics": {
             "spelling_acc": 100.0,
             "grammar_acc": 100.0,
-            "voice_preservation": 100.0,
+            "voice_preservation": 97.78,
             "vpr": 100.0,
+            "voice_precision": 95.65,
+            "voice_recall": 100.0,
+            "voice_lexical_f1": 97.78,
+            "voice_marker_retention": 100.0,
+            "voice_over_edit_count": 0,
             "oer": 0.0,
             "anti_hallucination": 100.0,
             "hallucination_count": 0,
-            "hybrid_meta_score": 100.0
+            "hybrid_meta_score": 99.56,
+            "voice_base_score": 97.78,
+            "voice_over_edit_penalty": 0.0
           }
         },
         "JSpell Free Web Checker": {
@@ -640,12 +952,19 @@
           "metrics": {
             "spelling_acc": 83.33,
             "grammar_acc": 0.0,
-            "voice_preservation": 100.0,
+            "voice_preservation": 95.65,
             "vpr": 100.0,
+            "voice_precision": 91.67,
+            "voice_recall": 100.0,
+            "voice_lexical_f1": 95.65,
+            "voice_marker_retention": 100.0,
+            "voice_over_edit_count": 0,
             "oer": 0.0,
             "anti_hallucination": 50.0,
             "hallucination_count": 2,
-            "hybrid_meta_score": 59.17
+            "hybrid_meta_score": 58.3,
+            "voice_base_score": 95.65,
+            "voice_over_edit_penalty": 0.0
           }
         }
       }
@@ -659,12 +978,19 @@
           "metrics": {
             "spelling_acc": 60.0,
             "grammar_acc": 100.0,
-            "voice_preservation": 100.0,
+            "voice_preservation": 97.67,
             "vpr": 100.0,
+            "voice_precision": 95.45,
+            "voice_recall": 100.0,
+            "voice_lexical_f1": 97.67,
+            "voice_marker_retention": 100.0,
+            "voice_over_edit_count": 0,
             "oer": 0.0,
             "anti_hallucination": 75.0,
             "hallucination_count": 1,
-            "hybrid_meta_score": 81.0
+            "hybrid_meta_score": 80.53,
+            "voice_base_score": 97.67,
+            "voice_over_edit_penalty": 0.0
           }
         },
         "LanguageTool API": {
@@ -672,12 +998,19 @@
           "metrics": {
             "spelling_acc": 40.0,
             "grammar_acc": 100.0,
-            "voice_preservation": 80.0,
+            "voice_preservation": 76.36,
             "vpr": 80.0,
+            "voice_precision": 91.3,
+            "voice_recall": 100.0,
+            "voice_lexical_f1": 95.45,
+            "voice_marker_retention": 80.0,
+            "voice_over_edit_count": 0,
             "oer": 0.0,
             "anti_hallucination": 50.0,
             "hallucination_count": 2,
-            "hybrid_meta_score": 65.0
+            "hybrid_meta_score": 64.27,
+            "voice_base_score": 76.36,
+            "voice_over_edit_penalty": 0.0
           }
         },
         "TextGears API": {
@@ -687,10 +1020,17 @@
             "grammar_acc": 100.0,
             "voice_preservation": 100.0,
             "vpr": 100.0,
+            "voice_precision": 100.0,
+            "voice_recall": 100.0,
+            "voice_lexical_f1": 100.0,
+            "voice_marker_retention": 100.0,
+            "voice_over_edit_count": 0,
             "oer": 0.0,
             "anti_hallucination": 75.0,
             "hallucination_count": 1,
-            "hybrid_meta_score": 88.0
+            "hybrid_meta_score": 88.0,
+            "voice_base_score": 100.0,
+            "voice_over_edit_penalty": 0.0
           }
         },
         "DeepL Write": {
@@ -698,12 +1038,19 @@
           "metrics": {
             "spelling_acc": 80.0,
             "grammar_acc": 100.0,
-            "voice_preservation": 60.0,
+            "voice_preservation": 49.57,
             "vpr": 60.0,
+            "voice_precision": 76.0,
+            "voice_recall": 90.48,
+            "voice_lexical_f1": 82.61,
+            "voice_marker_retention": 60.0,
+            "voice_over_edit_count": 0,
             "oer": 0.0,
             "anti_hallucination": 100.0,
             "hallucination_count": 0,
-            "hybrid_meta_score": 85.0
+            "hybrid_meta_score": 82.91,
+            "voice_base_score": 49.57,
+            "voice_over_edit_penalty": 0.0
           }
         },
         "Sapling Grammar Checker": {
@@ -711,12 +1058,19 @@
           "metrics": {
             "spelling_acc": 100.0,
             "grammar_acc": 100.0,
-            "voice_preservation": 100.0,
+            "voice_preservation": 97.67,
             "vpr": 100.0,
+            "voice_precision": 95.45,
+            "voice_recall": 100.0,
+            "voice_lexical_f1": 97.67,
+            "voice_marker_retention": 100.0,
+            "voice_over_edit_count": 0,
             "oer": 0.0,
             "anti_hallucination": 75.0,
             "hallucination_count": 1,
-            "hybrid_meta_score": 95.0
+            "hybrid_meta_score": 94.53,
+            "voice_base_score": 97.67,
+            "voice_over_edit_penalty": 0.0
           }
         },
         "JSpell Free Web Checker": {
@@ -724,12 +1078,19 @@
           "metrics": {
             "spelling_acc": 60.0,
             "grammar_acc": 100.0,
-            "voice_preservation": 100.0,
+            "voice_preservation": 95.45,
             "vpr": 100.0,
+            "voice_precision": 91.3,
+            "voice_recall": 100.0,
+            "voice_lexical_f1": 95.45,
+            "voice_marker_retention": 100.0,
+            "voice_over_edit_count": 0,
             "oer": 0.0,
             "anti_hallucination": 75.0,
             "hallucination_count": 1,
-            "hybrid_meta_score": 81.0
+            "hybrid_meta_score": 80.09,
+            "voice_base_score": 95.45,
+            "voice_over_edit_penalty": 0.0
           }
         }
       }
@@ -745,10 +1106,17 @@
             "grammar_acc": 100.0,
             "voice_preservation": 100.0,
             "vpr": 100.0,
+            "voice_precision": 100.0,
+            "voice_recall": 100.0,
+            "voice_lexical_f1": 100.0,
+            "voice_marker_retention": 100.0,
+            "voice_over_edit_count": 0,
             "oer": 0.0,
             "anti_hallucination": 100.0,
             "hallucination_count": 0,
-            "hybrid_meta_score": 100.0
+            "hybrid_meta_score": 100.0,
+            "voice_base_score": 100.0,
+            "voice_over_edit_penalty": 0.0
           }
         },
         "LanguageTool API": {
@@ -756,12 +1124,19 @@
           "metrics": {
             "spelling_acc": 100.0,
             "grammar_acc": 100.0,
-            "voice_preservation": 100.0,
+            "voice_preservation": 86.67,
             "vpr": 100.0,
+            "voice_precision": 86.67,
+            "voice_recall": 86.67,
+            "voice_lexical_f1": 86.67,
+            "voice_marker_retention": 100.0,
+            "voice_over_edit_count": 0,
             "oer": 0.0,
             "anti_hallucination": 75.0,
             "hallucination_count": 1,
-            "hybrid_meta_score": 95.0
+            "hybrid_meta_score": 92.33,
+            "voice_base_score": 86.67,
+            "voice_over_edit_penalty": 0.0
           }
         },
         "TextGears API": {
@@ -769,12 +1144,19 @@
           "metrics": {
             "spelling_acc": 75.0,
             "grammar_acc": 100.0,
-            "voice_preservation": 100.0,
+            "voice_preservation": 83.87,
             "vpr": 100.0,
+            "voice_precision": 81.25,
+            "voice_recall": 86.67,
+            "voice_lexical_f1": 83.87,
+            "voice_marker_retention": 100.0,
+            "voice_over_edit_count": 0,
             "oer": 0.0,
             "anti_hallucination": 50.0,
             "hallucination_count": 2,
-            "hybrid_meta_score": 81.25
+            "hybrid_meta_score": 78.02,
+            "voice_base_score": 83.87,
+            "voice_over_edit_penalty": 0.0
           }
         },
         "DeepL Write": {
@@ -782,12 +1164,19 @@
           "metrics": {
             "spelling_acc": 100.0,
             "grammar_acc": 100.0,
-            "voice_preservation": 75.0,
+            "voice_preservation": 51.56,
             "vpr": 75.0,
+            "voice_precision": 64.71,
+            "voice_recall": 73.33,
+            "voice_lexical_f1": 68.75,
+            "voice_marker_retention": 75.0,
+            "voice_over_edit_count": 0,
             "oer": 0.0,
             "anti_hallucination": 100.0,
             "hallucination_count": 0,
-            "hybrid_meta_score": 95.0
+            "hybrid_meta_score": 90.31,
+            "voice_base_score": 51.56,
+            "voice_over_edit_penalty": 0.0
           }
         },
         "Sapling Grammar Checker": {
@@ -795,12 +1184,19 @@
           "metrics": {
             "spelling_acc": 100.0,
             "grammar_acc": 100.0,
-            "voice_preservation": 100.0,
+            "voice_preservation": 93.33,
             "vpr": 100.0,
+            "voice_precision": 93.33,
+            "voice_recall": 93.33,
+            "voice_lexical_f1": 93.33,
+            "voice_marker_retention": 100.0,
+            "voice_over_edit_count": 0,
             "oer": 0.0,
             "anti_hallucination": 75.0,
             "hallucination_count": 1,
-            "hybrid_meta_score": 95.0
+            "hybrid_meta_score": 93.67,
+            "voice_base_score": 93.33,
+            "voice_over_edit_penalty": 0.0
           }
         },
         "JSpell Free Web Checker": {
@@ -808,12 +1204,19 @@
           "metrics": {
             "spelling_acc": 75.0,
             "grammar_acc": 0.0,
-            "voice_preservation": 100.0,
+            "voice_preservation": 81.25,
             "vpr": 100.0,
+            "voice_precision": 76.47,
+            "voice_recall": 86.67,
+            "voice_lexical_f1": 81.25,
+            "voice_marker_retention": 100.0,
+            "voice_over_edit_count": 0,
             "oer": 0.0,
             "anti_hallucination": 0.0,
             "hallucination_count": 4,
-            "hybrid_meta_score": 46.25
+            "hybrid_meta_score": 42.5,
+            "voice_base_score": 81.25,
+            "voice_over_edit_penalty": 0.0
           }
         }
       }
@@ -827,12 +1230,19 @@
           "metrics": {
             "spelling_acc": 80.0,
             "grammar_acc": 0.0,
-            "voice_preservation": 100.0,
+            "voice_preservation": 96.0,
             "vpr": 100.0,
+            "voice_precision": 92.31,
+            "voice_recall": 100.0,
+            "voice_lexical_f1": 96.0,
+            "voice_marker_retention": 100.0,
+            "voice_over_edit_count": 0,
             "oer": 0.0,
             "anti_hallucination": 100.0,
             "hallucination_count": 0,
-            "hybrid_meta_score": 68.0
+            "hybrid_meta_score": 67.2,
+            "voice_base_score": 96.0,
+            "voice_over_edit_penalty": 0.0
           }
         },
         "LanguageTool API": {
@@ -840,12 +1250,19 @@
           "metrics": {
             "spelling_acc": 80.0,
             "grammar_acc": 100.0,
-            "voice_preservation": 100.0,
+            "voice_preservation": 96.0,
             "vpr": 100.0,
+            "voice_precision": 92.31,
+            "voice_recall": 100.0,
+            "voice_lexical_f1": 96.0,
+            "voice_marker_retention": 100.0,
+            "voice_over_edit_count": 0,
             "oer": 0.0,
             "anti_hallucination": 75.0,
             "hallucination_count": 1,
-            "hybrid_meta_score": 88.0
+            "hybrid_meta_score": 87.2,
+            "voice_base_score": 96.0,
+            "voice_over_edit_penalty": 0.0
           }
         },
         "TextGears API": {
@@ -853,12 +1270,19 @@
           "metrics": {
             "spelling_acc": 80.0,
             "grammar_acc": 100.0,
-            "voice_preservation": 100.0,
+            "voice_preservation": 96.0,
             "vpr": 100.0,
+            "voice_precision": 92.31,
+            "voice_recall": 100.0,
+            "voice_lexical_f1": 96.0,
+            "voice_marker_retention": 100.0,
+            "voice_over_edit_count": 0,
             "oer": 0.0,
             "anti_hallucination": 75.0,
             "hallucination_count": 1,
-            "hybrid_meta_score": 88.0
+            "hybrid_meta_score": 87.2,
+            "voice_base_score": 96.0,
+            "voice_over_edit_penalty": 0.0
           }
         },
         "DeepL Write": {
@@ -868,10 +1292,17 @@
             "grammar_acc": 100.0,
             "voice_preservation": 100.0,
             "vpr": 100.0,
+            "voice_precision": 100.0,
+            "voice_recall": 100.0,
+            "voice_lexical_f1": 100.0,
+            "voice_marker_retention": 100.0,
+            "voice_over_edit_count": 0,
             "oer": 0.0,
             "anti_hallucination": 100.0,
             "hallucination_count": 0,
-            "hybrid_meta_score": 100.0
+            "hybrid_meta_score": 100.0,
+            "voice_base_score": 100.0,
+            "voice_over_edit_penalty": 0.0
           }
         },
         "Sapling Grammar Checker": {
@@ -879,12 +1310,19 @@
           "metrics": {
             "spelling_acc": 100.0,
             "grammar_acc": 100.0,
-            "voice_preservation": 100.0,
+            "voice_preservation": 96.0,
             "vpr": 100.0,
+            "voice_precision": 92.31,
+            "voice_recall": 100.0,
+            "voice_lexical_f1": 96.0,
+            "voice_marker_retention": 100.0,
+            "voice_over_edit_count": 0,
             "oer": 0.0,
             "anti_hallucination": 100.0,
             "hallucination_count": 0,
-            "hybrid_meta_score": 100.0
+            "hybrid_meta_score": 99.2,
+            "voice_base_score": 96.0,
+            "voice_over_edit_penalty": 0.0
           }
         },
         "JSpell Free Web Checker": {
@@ -894,10 +1332,17 @@
             "grammar_acc": 100.0,
             "voice_preservation": 100.0,
             "vpr": 100.0,
+            "voice_precision": 100.0,
+            "voice_recall": 100.0,
+            "voice_lexical_f1": 100.0,
+            "voice_marker_retention": 100.0,
+            "voice_over_edit_count": 0,
             "oer": 0.0,
             "anti_hallucination": 100.0,
             "hallucination_count": 0,
-            "hybrid_meta_score": 100.0
+            "hybrid_meta_score": 100.0,
+            "voice_base_score": 100.0,
+            "voice_over_edit_penalty": 0.0
           }
         }
       }

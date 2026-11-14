@@ -38,7 +38,7 @@ def build_hybrid_chart_svg():
   <rect x="1" y="1" width="1198" height="418" fill="none" stroke="#30363d" stroke-width="1"/>
 
   <text x="600" y="34" fill="#f0f6fc" font-size="14" font-weight="700" text-anchor="middle">OVERALL HYBRID META-SCORE (4-PILLAR EVALUATION)</text>
-  <text x="600" y="54" fill="#8b949e" font-size="11" text-anchor="middle">H-01 to H-10 | 35% Spelling, 25% Grammar, 20% Voice, 20% Anti-Hallucination | November 14, 2026</text>
+  <text x="600" y="54" fill="#8b949e" font-size="11" text-anchor="middle">H-01 to H-10 | Voice scoring: lexical-marker-f1-v2 | November 14, 2026</text>
 
   <!-- vertical gridlines at 0%, 25%, 50%, 75%, 100% -->
   <line x1="280" y1="68" x2="280" y2="318" stroke="#30363d" stroke-width="1"/>
@@ -56,31 +56,31 @@ def build_hybrid_chart_svg():
 
   <!-- bars are sorted by the 4-pillar hybrid meta-score -->
   <text x="270" y="88" fill="#f0f6fc" font-size="11" font-weight="700" text-anchor="end">Sapling (web demo)</text>
-  <rect x="280" y="72" width="798" height="24" fill="#c9d1d9" stroke="#f0f6fc" stroke-width="1.5"/>
-  <text x="1088" y="89" fill="#f0f6fc" font-size="11" font-weight="700">95.0%</text>
+  <rect x="280" y="72" width="788" height="24" fill="#c9d1d9" stroke="#f0f6fc" stroke-width="1.5"/>
+  <text x="1078" y="89" fill="#f0f6fc" font-size="11" font-weight="700">93.8%</text>
 
   <text x="270" y="128" fill="#c9d1d9" font-size="11" font-weight="600" text-anchor="end">DeepL Write</text>
-  <rect x="280" y="112" width="732" height="24" fill="#30363d" stroke="#6e7681" stroke-width="1"/>
-  <text x="1022" y="129" fill="#c9d1d9" font-size="11" font-weight="600">87.1%</text>
+  <rect x="280" y="112" width="707" height="24" fill="#30363d" stroke="#6e7681" stroke-width="1"/>
+  <text x="997" y="129" fill="#c9d1d9" font-size="11" font-weight="600">84.2%</text>
 
   <text x="270" y="168" fill="#ffffff" font-size="11" font-weight="700" text-anchor="end">BCorrect (FMM)</text>
-  <rect x="280" y="152" width="693" height="24" fill="#e6edf3" stroke="#ffffff" stroke-width="1.5"/>
-  <text x="983" y="169" fill="#ffffff" font-size="11" font-weight="700">82.5%</text>
+  <rect x="280" y="152" width="679" height="24" fill="#e6edf3" stroke="#ffffff" stroke-width="1.5"/>
+  <text x="969" y="169" fill="#ffffff" font-size="11" font-weight="700">80.8%</text>
 
-  <text x="270" y="208" fill="#c9d1d9" font-size="11" font-weight="600" text-anchor="end">LanguageTool API</text>
-  <rect x="280" y="192" width="676" height="24" fill="#8b949e" stroke="#c9d1d9" stroke-width="1"/>
-  <text x="966" y="209" fill="#c9d1d9" font-size="11" font-weight="600">80.5%</text>
+  <text x="270" y="208" fill="#c9d1d9" font-size="11" font-weight="600" text-anchor="end">TextGears API</text>
+  <rect x="280" y="192" width="664" height="24" fill="#6e7681" stroke="#8b949e" stroke-width="1"/>
+  <text x="954" y="209" fill="#c9d1d9" font-size="11" font-weight="600">79.0%</text>
 
-  <text x="270" y="248" fill="#c9d1d9" font-size="11" font-weight="600" text-anchor="end">TextGears API</text>
-  <rect x="280" y="232" width="676" height="24" fill="#6e7681" stroke="#8b949e" stroke-width="1"/>
-  <text x="966" y="249" fill="#c9d1d9" font-size="11" font-weight="600">80.5%</text>
+  <text x="270" y="248" fill="#c9d1d9" font-size="11" font-weight="600" text-anchor="end">LanguageTool API</text>
+  <rect x="280" y="232" width="660" height="24" fill="#c9d1d9" stroke="#c9d1d9" stroke-width="1"/>
+  <text x="950" y="249" fill="#c9d1d9" font-size="11" font-weight="600">78.6%</text>
 
   <text x="270" y="288" fill="#a3a3a3" font-size="11" font-weight="600" text-anchor="end">JSpell (web checker)</text>
-  <rect x="280" y="272" width="564" height="24" fill="#21262d" stroke="#a3a3a3" stroke-width="1"/>
-  <text x="854" y="289" fill="#a3a3a3" font-size="11" font-weight="600">67.2%</text>
+  <rect x="280" y="272" width="547" height="24" fill="#21262d" stroke="#a3a3a3" stroke-width="1"/>
+  <text x="837" y="289" fill="#a3a3a3" font-size="11" font-weight="600">65.1%</text>
 
   <!-- footer -->
-  <text x="600" y="390" fill="#8b949e" font-size="10" text-anchor="middle">Sapling and JSpell used initial web-demo suggestions once; latency not measured. Same 10-domain scoring protocol | November 14, 2026</text>
+  <text x="600" y="390" fill="#8b949e" font-size="10" text-anchor="middle">Voice metric revision lexical-marker-f1-v2 | Web-demo latency not measured | November 14, 2026</text>
 </svg>"""
     with open("assets/hybrid_score_comparison.svg", "w", encoding="utf-8") as f:
         f.write(svg)
@@ -102,7 +102,7 @@ def build_pillars_breakdown_svg():
   <rect x="1" y="1" width="1198" height="518" fill="none" stroke="#30363d" stroke-width="1"/>
 
   <text x="600" y="34" fill="#f0f6fc" font-size="14" font-weight="700" text-anchor="middle">THE 4 EVALUATION PILLARS: ENGINE BREAKDOWN</text>
-  <text x="600" y="54" fill="#8b949e" font-size="11" text-anchor="middle">H-01 to H-10 | Spelling, Grammar, Voice, and Anti-Hallucination | November 14, 2026</text>
+  <text x="600" y="54" fill="#8b949e" font-size="11" text-anchor="middle">H-01 to H-10 | Voice scoring: lexical-marker-f1-v2 | November 14, 2026</text>
 
   <!-- y-axis gridlines and labels -->
   <line x1="140" y1="400" x2="1060" y2="400" stroke="#30363d" stroke-width="1"/>
@@ -135,12 +135,12 @@ def build_pillars_breakdown_svg():
 
     # engine data: [spelling, grammar, voice, anti_hal]
     engines = {
-        "DeepL Write":      [94.7, 72.5, 81.8, 97.5],
-        "LanguageTool API": [81.2, 77.5, 93.5, 70.0],
-        "TextGears API":    [82.7, 71.7, 91.0, 77.5],
-        "BCorrect (FMM)":   [84.8, 63.3, 97.5, 87.5],
-        "Sapling (web demo)": [94.2, 100.0, 95.0, 90.0],
-        "JSpell (web checker)": [76.8, 40.8, 95.5, 55.0],
+        "DeepL Write":      [94.7, 72.5, 67.1, 97.5],
+        "LanguageTool API": [81.2, 77.5, 84.1, 70.0],
+        "TextGears API":    [82.7, 71.7, 83.2, 77.5],
+        "BCorrect (FMM)":   [84.8, 63.3, 88.9, 87.5],
+        "Sapling (web demo)": [94.2, 100.0, 89.1, 90.0],
+        "JSpell (web checker)": [76.8, 40.8, 84.9, 55.0],
     }
 
     # line styles per engine
@@ -266,8 +266,8 @@ def build_progress_chart_svg():
     svg = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 560" style="background:#0d1117; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;">
   <rect x="1" y="1" width="1398" height="558" fill="none" stroke="#30363d" stroke-width="1"/>
 
-  <text x="700" y="34" fill="#f0f6fc" font-size="14" font-weight="700" text-anchor="middle">VOICE-PRESERVING AI-SPELLCHECK PROGRESS OVER TIME (2025 - 2026)</text>
-  <text x="700" y="54" fill="#8b949e" font-size="11" text-anchor="middle">Historical Hybrid Meta-Score Progression Across Engineering Milestones | November 13, 2026</text>
+  <text x="700" y="34" fill="#f0f6fc" font-size="14" font-weight="700" text-anchor="middle">LEGACY HYBRID META-SCORE HISTORY (2025 - 2026)</text>
+  <text x="700" y="54" fill="#8b949e" font-size="11" text-anchor="middle">Pre lexical-marker-f1-v2 scoring; historical values are not directly comparable with current scorecards</text>
 
   <!-- y-axis gridlines: 0% at y=430, 100% at y=90 -> range = 340px, scale = 3.4 px per % -->
   <line x1="140" y1="430" x2="1100" y2="430" stroke="#30363d" stroke-width="1.5"/>

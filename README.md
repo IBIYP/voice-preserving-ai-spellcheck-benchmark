@@ -70,18 +70,18 @@ When developers integrate spelling and grammar engines into word processors, cod
 - **Over-Editing & Voice Erasure (Failing Pillar 3):** Neural writing rewriters (such as **DeepL Write**) aggressively rephrase informal idioms, expand natural contractions, and convert casual or dialectal speech into standardized corporate textbook prose.
 - **Syntactic Agreement Deficits (Failing Pillar 2):** Word-level geometric engines (such as **BCorrect FMM**) achieve top-tier spelling recovery on severe dysgraphia, but struggle with sequence-level subject-verb agreements without a language model layer.
 
-![Overall 4-Pillar Hybrid Benchmark Score](assets/hybrid_score_comparison.svg?v=3.3)
+![Overall 4-Pillar Hybrid Benchmark Score](assets/hybrid_score_comparison.svg?v=3.4)
 
 ### 4-Pillar Engine Breakdown
 These charts use the separate H-01 through H-10 4-pillar suite. The B-01 through B-10 Blind v3 scorecard below is a different input set; scores should be compared only within the same suite.
 
-![4-Pillar Engine Breakdown](assets/pillars_breakdown.svg?v=3.3)
+![4-Pillar Engine Breakdown](assets/pillars_breakdown.svg?v=3.4)
 
 ### Historical Accuracy & Progression Over Time
 A key measure of engine reliability is consistent improvement across revisions on unseen evaluations. The line graph below illustrates the historical progression of overall hybrid score across benchmark milestones from early 2025 to November 2026.
 This historical series predates the Sapling and JSpell web-demo runs; both are shown only in the current cross-sectional charts because no comparable historical series exists.
 
-![Historical Progress Over Time](assets/progress_over_time.svg?v=3.3)
+![Historical Progress Over Time](assets/progress_over_time.svg?v=3.4)
 
 ### Tracking progress as engines improve
 
@@ -119,7 +119,7 @@ $$\text{Pillar 1 (Spelling)} = \frac{\text{Corrected Spelling Targets}}{\text{To
 
 $$\text{Pillar 2 (Grammar)} = \frac{\text{Corrected Grammar Targets}}{\text{Total Grammar Targets}} \times 100\%$$
 
-$$\text{Pillar 3 (Voice)} = \text{VPR} \times \left(1 - \frac{\text{OER}}{100}\right)$$
+$$\text{Pillar 3 (Voice)} = \operatorname{mean}(\text{Lexical F1} \times \text{Marker Retention}) \times \left(1 - \frac{\min(10 \times \text{Over-Edit Signatures}, 80)}{100}\right)$$
 
 $$\text{Pillar 4 (Anti-Hallucination)} = 100\% - \text{Semantic Drift Rate (SDR)}$$
 
@@ -128,17 +128,21 @@ $$\text{Pillar 5 (Hybrid Meta-Score)} = \left(0.35 \times \text{Spelling}\right)
 Where:
 - **Pillar 1 (Spelling Accuracy, 35%):** Percentage of orthographic, phonetic, and dysgraphic errors resolved to their intended target.
 - **Pillar 2 (Grammar Accuracy, 25%):** Percentage of syntactic, agreement, inflectional, and punctuation errors resolved.
-- **Pillar 3 (Maintaining Voice, 20%):** Evaluated via Voice Preservation Rate (VPR) with multi-reference dialect tolerance (accepting regional variants such as `rockin` / `rocking` without penalty), penalized by Over-Editing Rate (OER). Decoupled from spelling slips.
+- **Pillar 3 (Maintaining Voice, 20%):** Each passage combines lexical F1 (case-folded word-token LCS outside annotated correction spans) with retention of curated voice markers. Accepted spelling/grammar corrections are masked and declared dialect equivalents are normalized. The suite-wide mean is reduced by 10% per manually annotated over-edit signature, capped at an 80% penalty. This makes unprompted rewriting, removed voice markers, and added wording visible without counting the same correctable typo twice.
 - **Pillar 4 (Avoiding Hallucinations, 20%):** Evaluated via confirmed rogue dictionary substitutions, detecting whenever an engine substitutes an unintended dictionary word that distorts sentence meaning.
 - **Pillar 5 (Hybrid Meta-Score, 100%):** A balanced composite index reflecting overall developer utility in production.
 
-Voice is currently scored with selected phrase-presence checks and manually
-listed rewrite signatures; the H-suite also applies a word-count drift
-threshold. These checks do not compare edits at their original spans or judge
-meaning, tone, cadence, or register. A high score can therefore miss substantial
-rewriting that is not covered by the annotations.
+The scorer uses deterministic lexical overlap and manually curated voice
+markers; it does not understand meaning, tone, cadence, or register. Correction
+spans are paired to accepted output forms by approximate relative position, not
+verified with semantic alignment. Over-edit signatures are also manual, and
+the suite-wide penalty can be dominated by a small number of annotated cases.
+Scores are diagnostic signals, not semantic judgments; they can miss rewrites
+that are not represented in the markers and signatures. The planned weekly
+drafts now explicitly protect examples such as profanity and dialectal or
+idiosyncratic phrases, but remain private drafts pending human review.
 
-The test passages are fixed, curated inputs; the evaluator does not generate or randomize new essays. "Blind/unseen" is the suite's label, not a claim of dynamically sampled or adversarially secret tests: H-suite inputs and annotations are in the public evaluator, and B-suite source inputs are private locally while much of their scoring logic is public. Every engine is evaluated on the same passage text. Target checks use case-insensitive phrase matching with word boundaries, while over-editing and hallucinations use manually specified phrases and simple length checks. These are deterministic heuristics, not a general semantic-understanding system; target matches are not verified at the original edit location.
+The test passages are fixed, curated inputs; the evaluator does not generate or randomize new essays. "Blind/unseen" is the suite's label, not a claim of dynamically sampled or adversarially secret tests: H-suite inputs and annotations are public, and B-suite source inputs are private locally while much of their scoring logic is public. Every engine is evaluated on the same passage text. Target checks use case-insensitive phrase matching with word boundaries, while voice markers and over-edit signatures are manually specified. These are deterministic heuristics, not a general semantic-understanding system; target matches are not verified at the original edit location.
 
 ---
 
@@ -151,24 +155,24 @@ Evaluated across 10 brand-new, unseen writing styles: Urban Slang, Southern Goth
 
 | Engine / Model | Spelling (35%) | Grammar (25%) | Voice (20%) | Anti-Halluc. (20%) | Meta-Score | Latency |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: |
-| **Sapling Grammar Checker** *(web demo; one-pass)* | 93.9% | **★ 100.0%** | 90.2% | 90.0% | **★ 93.9%** | n/a |
-| **DeepL Write** *(Rewriter)* | **★ 100.0%** | **★ 100.0%** | 25.6% | **★ 100.0%** | 85.1% | ~1,280 ms |
-| **TextGears API** | 71.4% | **★ 100.0%** | 87.8% | 20.0% | 71.5% | ~967 ms |
-| **LanguageTool API** | 73.5% | **★ 100.0%** | 68.3% | 35.0% | 71.4% | ~677 ms |
-| **BCorrect (FMM Engine)** | 65.3% | 50.0% | **★ 90.2%** | 35.0% | 60.4% | **★ ~18 ms local** |
-| **JSpell Free Web Checker** *(web checker; one-pass)* | 61.2% | 50.0% | 82.9% | 20.0% | 54.5% | n/a |
+| **Sapling Grammar Checker** *(web demo; one-pass)* | 93.9% | **★ 100.0%** | **★ 88.3%** | 90.0% | **★ 93.5%** | n/a |
+| **DeepL Write** *(Rewriter)* | **★ 100.0%** | **★ 100.0%** | 24.1% | **★ 100.0%** | 84.8% | ~1,280 ms |
+| **TextGears API** | 71.4% | **★ 100.0%** | 85.2% | 20.0% | **★ 71.0%** | ~967 ms |
+| **LanguageTool API** | 73.5% | **★ 100.0%** | 64.4% | 35.0% | 70.6% | ~677 ms |
+| **BCorrect (FMM Engine)** | 65.3% | 50.0% | 86.6% | 35.0% | 59.7% | **★ ~18 ms local** |
+| **JSpell Free Web Checker** *(web checker; one-pass)* | 61.2% | 50.0% | 77.5% | 20.0% | 53.4% | n/a |
 
 > **Software Architecture Distinction:**
 > - **In-Place Developer APIs (BCorrect, LanguageTool, TextGears):** Designed for keystroke-level text entry, code comments, and chat. They surgically fix orthography without rewriting the author's tone, vocabulary, or cadence.
-> - **Neural Text Rewriters (DeepL Write):** Designed for full-document paraphrasing. They deliver perfect mechanical spelling (100.0%) and grammar (100.0%), but heavily erase authorial voice (25.6% Voice Score) by converting informal idioms and dialect into standardised prose.
+> - **Neural Text Rewriters (DeepL Write):** Designed for full-document paraphrasing. They deliver perfect mechanical spelling (100.0%) and grammar (100.0%) on this suite, but score 24.1% for Writer's Voice after token preservation, curated marker retention, and seven annotated over-edit signatures.
 > - **Sapling Grammar Checker:** Tested once through its interactive free web demo, not a production API. Initial visible suggestions were accepted once at their original offsets; the checker was not rerun after edits. Latency was not measured, so this is not an API throughput or latency result. The [Blind v3 output and suggestion record](raw_results/blind_v3_sapling_outputs.json) is saved; H-suite outputs are included in the [4-pillar results](raw_results/blind_4pillars_eval_run.json). The demo is a third-party service; consult its privacy policy before submitting non-public text.
 > - **JSpell Free Web Checker:** Tested through JSpell's interactive free checker, not its Cloud API or RapidAPI endpoint. The first visible suggestion for each flagged word was applied once, with no recheck. It is a dictionary-based spelling-only tool; it does not check grammar. Latency was not measured. See the [saved output and one-pass suggestion record](raw_results/jspell_web_checker_outputs.json).
 
 Sapling and JSpell are full benchmark participants, not excluded web-demo side notes: both are scored in every sub-benchmark alongside the API and local engines. Their current H-suite and Blind v3 results are in the [4-pillar results](raw_results/blind_4pillars_eval_run.json) and [Blind v3 scoreboard](raw_results/blind_v3_official_scoreboard.json). Web-portal collection is manual and one-pass; latency is reported as `n/a` (JSON `null`), never estimated.
 
-**Interpreting DeepL's voice scores:** DeepL scores 81.8% on the H-suite but 25.6% on Blind v3. The H-suite's heuristic detects 81.8% of its selected voice markers, finds none of its short list of forbidden rewrites, and applies no over-edit penalty; it does not understand tone or meaning. Blind v3 matches seven manually annotated over-edit signatures and applies a larger penalty. This gap is evidence that the current heuristic and annotations are incomplete and suite-dependent—not proof that DeepL reliably preserves voice. Treat voice scores as diagnostic signals, not semantic judgments.
+**Interpreting DeepL's voice scores:** DeepL scores 67.1% on the H-suite and 24.1% on Blind v3. On H-suite it has 87.7% lexical F1 and 75.7% voice-marker retention; on Blind v3 it matches seven manually annotated over-edit signatures, triggering the suite-wide 70% penalty. The gap reflects different passages and annotations, not a semantic understanding of voice. Treat these scores as diagnostic signals, not proof of reliable voice preservation.
 
-Sapling scored above BCorrect's composite in both suites (93.9% vs. 60.4% on Blind v3; 95.0% vs. 82.5% on the separate H-suite). JSpell's web-checker score was 54.5% on Blind v3 and 67.2% on the H-suite. It is included as observed, not selected to guarantee a lower-scoring competitor.
+Sapling scored above BCorrect's composite in both suites (93.5% vs. 59.7% on Blind v3; 93.8% vs. 80.8% on the separate H-suite). JSpell's web-checker score was 53.4% on Blind v3 and 65.1% on the H-suite. It is included as observed, not selected to guarantee a lower-scoring competitor.
 
 The JSpell Cloud API's separate RapidAPI route returned HTTP 403 in this environment and was not used for these scores. The free web checker is a different product interface and should not be described as an API evaluation. The B-suite source passages are not included in the public JSpell raw file; only corrected outputs and source fingerprints are recorded.
 
@@ -185,14 +189,14 @@ This class-winner table uses the B-01 through B-10 Blind v3 outputs above. The s
 | :--- | :--- | :---: | :--- | :--- |
 | **Pillar 1: Spelling Accuracy** | **★ LanguageTool API** | **73.5%** | DeepL Write (100.0%) | DeepL Write delivers perfect orthographic token accuracy; LanguageTool leads developer APIs on standard lexicon words. |
 | **Pillar 2: Grammar & Agreement** | **★ TextGears / LanguageTool**| **100.0%** | DeepL Write (100.0%) | Rule engines resolve basic syntax errors (*to dark* -> *too dark*); BCorrect focuses on word-level correction without language modeling. |
-| **Pillar 3: Maintaining Voice** | **★ BCorrect (FMM)** | **90.2%** | None (Rewriters fail: 25.6%)| BCorrect preserves authentic slang (*clutch was so cracked fr*), regional cadence, and developer shorthand without tone flattening. DeepL converts informal speech to corporate prose. |
+| **Pillar 3: Maintaining Voice** | **★ BCorrect (FMM)** | **86.6%** | DeepL Write (24.1%) | BCorrect retains annotated voice markers; DeepL matches seven over-edit signatures and receives the suite-wide penalty. |
 | **Pillar 4: Anti-Hallucination** | **★ BCorrect / LanguageTool** | **35.0%** | DeepL Write (100.0%) | Traditional developer APIs suffer from rogue dictionary distractors (*yirgacheffe* -> *yorkshire* / *giraffe*, *humerous* -> *numerous*); DeepL maintains contextual consistency. |
-| **Pillar 5: Hybrid Meta-Score** | **★ TextGears API** | **71.5%** | DeepL Write (85.1%) | DeepL leads overall composite due to high mechanical accuracy; TextGears and LanguageTool lead dedicated developer APIs. |
+| **Pillar 5: Hybrid Meta-Score** | **★ TextGears API** | **71.0%** | DeepL Write (84.8%) | DeepL leads the composite due to high spelling, grammar, and anti-hallucination results despite its low Writer's Voice score. |
 | **Keystroke Latency & Speed** | **★ BCorrect (FMM)** | **~18 ms** | DeepL Write (~1,280 ms) | Runs locally on a single CPU thread in sub-20ms - **37x faster than LanguageTool and 53x faster than TextGears**. Ideal for real-time keystroke typing. |
 
-Sapling's web-demo result is 100.0% for grammar and 93.9% for the v3 hybrid score, but is not grouped as an API or a neural rewriter in the class-winner columns above. JSpell is a spelling-only web checker, not an API result. Neither web demo's latency was measured and neither value should be interpreted as zero.
+Sapling's web-demo result is 100.0% for grammar and 93.5% for the v3 hybrid score, but is not grouped as an API or a neural rewriter in the class-winner columns above. JSpell is a spelling-only web checker, not an API result. Neither web demo's latency was measured and neither value should be interpreted as zero.
 
-![Average Query Inference Latency Comparison](assets/latency_comparison.svg?v=3.3)
+![Average Query Inference Latency Comparison](assets/latency_comparison.svg?v=3.4)
 
 ---
 

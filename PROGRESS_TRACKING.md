@@ -68,3 +68,8 @@ reporting cross-week rank or score-gap trends; if the cohort changes, disclose
 it. A change in one series does not imply the same change in the other. Keep
 API, local, and web-demo results visibly separated; in particular, web-demo
 latency is unavailable unless it was actually measured.
+
+Scores from different evaluator or scoring revisions are not directly
+comparable. Rerun the same saved outputs under one revision before making a
+longitudinal comparison; otherwise mark the methodology break and keep the
+legacy series separate.

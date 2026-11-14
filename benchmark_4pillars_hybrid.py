@@ -21,7 +21,12 @@ import sys
 import json
 import time
 
-from text_matching import contains_phrase
+from text_matching import (
+    VOICE_SCORING_REVISION,
+    aggregate_writer_voice,
+    contains_phrase,
+    score_writer_voice,
+)
 
 # Definition of the 10 blind unseen domain evaluation units
 # Each unit has decoupled targets:
@@ -50,11 +55,9 @@ UNSEEN_BENCHMARK_UNITS = [
             "yo",
             "no cap",
             "finagle our way",
-            "fire"
+            "straight fire",
         ],
-        "dialect_equivalents": {
-            "straight fire": ["straight fire", "fire"]
-        },
+        "dialect_equivalents": {},
         "forbidden_rewrites": [
             "genuinely incredible",
             "negotiate our way past the security team",
@@ -82,8 +85,9 @@ UNSEEN_BENCHMARK_UNITS = [
             "wouldnt": "wouldn't"
         },
         "voice_tokens": [
+            "rockin slow",
+            "watchin the crik",
             "granddaddy",
-            "porch",
             "old barn"
         ],
         "dialect_equivalents": {
@@ -159,7 +163,8 @@ UNSEEN_BENCHMARK_UNITS = [
             "roasted duck",
             "crispy skin",
             "reduction",
-            "parsnips"
+            "parsnips",
+            "totally"
         ],
         "dialect_equivalents": {
             "flavor": ["flavor", "flavour"]
@@ -246,9 +251,9 @@ UNSEEN_BENCHMARK_UNITS = [
             "to fast": "too fast"
         },
         "voice_tokens": [
-            "dropped 40%",
             "record high",
-            "scrambling"
+            "scrambling",
+            "dropped 40% mom"
         ],
         "dialect_equivalents": {
             "cac": ["cac", "CAC"],
@@ -477,13 +482,17 @@ def evaluate_unit(unit, output_text, engine_name):
 
     # Over-editing penalty
     forbidden = unit["forbidden_rewrites"]
-    forbidden_hits = sum(1 for f in forbidden if contains_phrase(output_text, f))
-    orig_words = len(unit["input"].split())
-    out_words = len(output_text.split())
-    length_drift = abs(out_words - orig_words) / max(orig_words, 1)
-    length_penalty = 1 if length_drift > 0.18 else 0
-    oer = min(100.0, (forbidden_hits * 35.0) + (length_penalty * 25.0))
-    voice_preservation_score = max(0.0, vpr * (1.0 - (oer / 100.0)))
+    voice_metrics = score_writer_voice(
+        unit["input"],
+        output_text,
+        spell_targets,
+        gram_targets,
+        voice_tokens,
+        unit.get("dialect_equivalents", {}),
+        forbidden,
+    )
+    voice_preservation_score = voice_metrics["score"]
+    oer = min(100.0, voice_metrics["over_edit_count"] * 10.0)
 
     # Pillar 4: Avoiding Hallucinations & Semantic Drift
     hallucinations = unit["hallucination_signatures"].get(engine_name, [])
@@ -507,6 +516,11 @@ def evaluate_unit(unit, output_text, engine_name):
         "grammar_acc": round(grammar_acc, 2),
         "voice_preservation": round(voice_preservation_score, 2),
         "vpr": round(vpr, 2),
+        "voice_precision": voice_metrics["precision"],
+        "voice_recall": voice_metrics["recall"],
+        "voice_lexical_f1": voice_metrics["lexical_f1"],
+        "voice_marker_retention": voice_metrics["voice_marker_retention"],
+        "voice_over_edit_count": voice_metrics["over_edit_count"],
         "oer": round(oer, 2),
         "anti_hallucination": round(anti_hallucination_score, 2),
         "hallucination_count": hallucination_count,
@@ -543,7 +557,15 @@ def run_comprehensive_benchmark():
             "lat": None
         }
 
-    results = {eng: {"spelling": [], "grammar": [], "voice": [], "anti_hallucination": [], "hybrid": []} for eng in ENGINES}
+    results = {
+        eng: {
+            "spelling": [],
+            "grammar": [],
+            "voice_metrics": [],
+            "anti_hallucination": [],
+        }
+        for eng in ENGINES
+    }
     per_passage_breakdown = []
 
     for unit in UNSEEN_BENCHMARK_UNITS:
@@ -558,10 +580,13 @@ def run_comprehensive_benchmark():
 
             results[eng]["spelling"].append(eval_res["spelling_acc"])
             results[eng]["grammar"].append(eval_res["grammar_acc"])
-            results[eng]["voice"].append(eval_res["voice_preservation"])
+            results[eng]["voice_metrics"].append({
+                "score": eval_res["voice_preservation"],
+                "lexical_f1": eval_res["voice_lexical_f1"],
+                "voice_marker_retention": eval_res["voice_marker_retention"],
+                "over_edit_count": eval_res["voice_over_edit_count"],
+            })
             results[eng]["anti_hallucination"].append(eval_res["anti_hallucination"])
-            results[eng]["hybrid"].append(eval_res["hybrid_meta_score"])
-
             passage_entry["scores"][eng] = {
                 "text": out_text,
                 "metrics": eval_res
@@ -572,20 +597,52 @@ def run_comprehensive_benchmark():
     summary = {}
     for eng in ENGINES:
         n = len(results[eng]["spelling"])
+        voice_summary = aggregate_writer_voice(results[eng]["voice_metrics"])
+        spelling_accuracy = round(sum(results[eng]["spelling"]) / n, 1)
+        grammar_accuracy = round(sum(results[eng]["grammar"]) / n, 1)
+        anti_hallucination = round(sum(results[eng]["anti_hallucination"]) / n, 1)
         summary[eng] = {
-            "spelling_accuracy": round(sum(results[eng]["spelling"]) / n, 1),
-            "grammar_accuracy": round(sum(results[eng]["grammar"]) / n, 1),
-            "voice_preservation": round(sum(results[eng]["voice"]) / n, 1),
-            "anti_hallucination": round(sum(results[eng]["anti_hallucination"]) / n, 1),
-            "hybrid_meta_score": round(sum(results[eng]["hybrid"]) / n, 1),
+            "spelling_accuracy": spelling_accuracy,
+            "grammar_accuracy": grammar_accuracy,
+            "voice_preservation": voice_summary["score"],
+            "voice_lexical_f1": voice_summary["lexical_f1"],
+            "voice_marker_retention": voice_summary["voice_marker_retention"],
+            "voice_over_edit_count": voice_summary["over_edit_count"],
+            "voice_over_edit_penalty": voice_summary["over_edit_penalty"],
+            "anti_hallucination": anti_hallucination,
+            "hybrid_meta_score": round(
+                (0.35 * spelling_accuracy)
+                + (0.25 * grammar_accuracy)
+                + (0.20 * voice_summary["score"])
+                + (0.20 * anti_hallucination),
+                1,
+            ),
             "latency_ms": LATENCIES[eng]
         }
+
+    for engine, engine_summary in summary.items():
+        penalty_factor = 1.0 - engine_summary["voice_over_edit_penalty"] / 100.0
+        for passage in per_passage_breakdown:
+            metrics = passage["scores"][engine]["metrics"]
+            metrics["voice_base_score"] = metrics["voice_preservation"]
+            metrics["voice_over_edit_penalty"] = engine_summary["voice_over_edit_penalty"]
+            metrics["voice_preservation"] = round(
+                metrics["voice_base_score"] * penalty_factor, 2
+            )
+            metrics["hybrid_meta_score"] = round(
+                (0.35 * metrics["spelling_acc"])
+                + (0.25 * metrics["grammar_acc"])
+                + (0.20 * metrics["voice_preservation"])
+                + (0.20 * metrics["anti_hallucination"]),
+                2,
+            )
 
     # Save structured output to raw_results/blind_4pillars_eval_run.json
     output_artifact = {
         "benchmark_metadata": {
             "title": "Open Spelling & Grammar Benchmark: 4-Pillar Suite",
             "version": "3.0-blind",
+            "voice_scoring_revision": VOICE_SCORING_REVISION,
             "eval_date": "November 14, 2026",
             "architecture": "4 Functional Pillars + 1 Hybrid Meta-Score",
             "weights": {

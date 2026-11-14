@@ -83,7 +83,13 @@ $$\text{Pillar 1 (Spelling)} = \frac{\text{Corrected Spelling Targets}}{\text{To
 
 $$\text{Pillar 2 (Grammar)} = \frac{\text{Corrected Grammar Targets}}{\text{Total Grammar Targets}} \times 100\%$$
 
-$$\text{Pillar 3 (Voice)} = \text{VPR} \times \left(1 - \frac{\text{OER}}{100}\right)$$
+$$\text{Pillar 3 (Voice)} = \operatorname{mean}(\text{Lexical F1} \times \text{Marker Retention}) \times \left(1 - \frac{\min(10 \times \text{Over-Edit Signatures}, 80)}{100}\right)$$
+
+Lexical F1 is calculated from case-folded word-token LCS outside annotated
+correction spans. Voice-marker retention uses the curated phrases and accepted
+dialect equivalents. The over-edit penalty is applied suite-wide after passage
+scores are averaged; these deterministic annotations do not judge meaning or
+tone.
 
 $$\text{Pillar 4 (Anti-Hallucination)} = 100\% - \text{Semantic Drift Rate (SDR)}$$
 
@@ -96,9 +102,9 @@ $$\text{Pillar 5 (Hybrid Meta-Score)} = \left(0.35 \times \text{Spelling}\right)
 When you run `python benchmark_4pillars_hybrid.py`, confirm that the terminal output matches the published leaderboard:
 - **Pillar 1 (Spelling Leader):** ★ DeepL Write (94.7%)
 - **Pillar 2 (Grammar Leader):** ★ Sapling Grammar Checker (100.0%; web demo)
-- **Pillar 3 (Voice Leader):** ★ BCorrect (FMM) (97.5%)
+- **Pillar 3 (Voice Leader):** ★ Sapling Grammar Checker (89.1%; web demo)
 - **Pillar 4 (Anti-Hallucination Leader):** ★ DeepL Write (97.5%)
-- **Pillar 5 (Hybrid Meta-Leader):** ★ Sapling Grammar Checker (95.0%; web demo)
+- **Pillar 5 (Hybrid Meta-Leader):** ★ Sapling Grammar Checker (93.8%; web demo)
 - **Latency Leader:** ★ BCorrect (FMM) (~18 ms)
 
 Sapling and JSpell web-demo scores use a one-pass policy: apply each initial visible suggestion once, without running the checker again. The evaluators consume saved outputs; they do not query either service. These results are directional and should not be presented as API or latency comparisons. Both are third-party services; check their privacy policies before submitting non-public text. JSpell is a spelling-only checker, but its result is scored across all four selected pillars, so its missed grammar targets remain part of the composite.

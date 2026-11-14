@@ -20,7 +20,12 @@ import argparse
 from collections import Counter
 import json
 import os
-from text_matching import contains_phrase
+from text_matching import (
+    VOICE_SCORING_REVISION,
+    aggregate_writer_voice,
+    contains_phrase,
+    score_writer_voice,
+)
 import sys
 
 # Official gold-standard minimal-edit voice-preserving references
@@ -339,6 +344,7 @@ def run_evaluation(mode="cached", verbose=False, academic=False, export_path="ra
 
     evaluation_report = {
         "benchmark": "Voice-Preserving AI-Spellcheck Benchmark (Blind Suite v3.0)",
+        "voice_scoring_revision": VOICE_SCORING_REVISION,
         "evaluation_date": "November 14, 2026",
         "mode": mode,
         "engines": {}
@@ -346,12 +352,12 @@ def run_evaluation(mode="cached", verbose=False, academic=False, export_path="ra
 
     total_spell_targets = sum(len(gt["spelling"]) for gt in GROUND_TRUTH.values())
     total_gram_targets = sum(len(gt["grammar"]) for gt in GROUND_TRUTH.values())
-    total_voice_markers = sum(len(gt["voice_markers"]) for gt in GROUND_TRUTH.values())
-
     for eng in ENGINES:
         spell_hits = 0
         gram_hits = 0
-        voice_hits = 0
+        voice_precisions = []
+        voice_recalls = []
+        voice_metrics_by_passage = []
         over_edit_count = 0
         hallucination_count = 0
         latencies = []
@@ -374,15 +380,19 @@ def run_evaluation(mode="cached", verbose=False, academic=False, export_path="ra
                 if any(contains_phrase(out_text, target) for target in targets):
                     gram_hits += 1
 
-            # 3. Voice markers
-            for vm in gt["voice_markers"]:
-                if contains_phrase(out_text, vm):
-                    voice_hits += 1
+            voice_metrics = score_writer_voice(
+                unit["input"],
+                out_text,
+                gt["spelling"],
+                gt["grammar"],
+                gt["voice_markers"],
+                forbidden_rewrites=gt["over_edits"],
+            )
+            voice_precisions.append(voice_metrics["precision"])
+            voice_recalls.append(voice_metrics["recall"])
+            voice_metrics_by_passage.append(voice_metrics)
 
-            # Over-edits
-            for oe in gt["over_edits"]:
-                if contains_phrase(out_text, oe):
-                    over_edit_count += 1
+            over_edit_count += voice_metrics["over_edit_count"]
 
             # Hallucinations
             eng_halls = gt["hallucinations"].get(eng, [])
@@ -395,9 +405,8 @@ def run_evaluation(mode="cached", verbose=False, academic=False, export_path="ra
         spelling_acc = round((spell_hits / total_spell_targets) * 100.0, 1)
         grammar_acc = round((gram_hits / max(total_gram_targets, 1)) * 100.0, 1) if total_gram_targets > 0 else 100.0
 
-        vpr = (voice_hits / total_voice_markers) * 100.0
-        oer_penalty = min(over_edit_count * 10.0, 80.0)
-        voice_score = round(max(vpr * (1.0 - oer_penalty / 100.0), 5.0), 1)
+        voice_summary = aggregate_writer_voice(voice_metrics_by_passage)
+        voice_score = round(voice_summary["score"], 1)
 
         anti_halluc = round(max(100.0 - (hallucination_count * 5.0), 20.0), 1)
         meta_score = round((0.35 * spelling_acc) + (0.25 * grammar_acc) + (0.20 * voice_score) + (0.20 * anti_halluc), 1)
@@ -408,6 +417,11 @@ def run_evaluation(mode="cached", verbose=False, academic=False, export_path="ra
             "spelling_accuracy": spelling_acc,
             "grammar_accuracy": grammar_acc,
             "voice_preservation": voice_score,
+            "voice_precision": round(sum(voice_precisions) / len(voice_precisions), 1),
+            "voice_recall": round(sum(voice_recalls) / len(voice_recalls), 1),
+            "voice_lexical_f1": round(voice_summary["lexical_f1"], 1),
+            "voice_marker_retention": round(voice_summary["voice_marker_retention"], 1),
+            "voice_over_edit_penalty": round(voice_summary["over_edit_penalty"], 1),
             "anti_hallucination": anti_halluc,
             "hybrid_meta_score": meta_score,
             "latency_ms": avg_lat,

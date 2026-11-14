@@ -115,7 +115,7 @@ Benchmark maintainers will execute a 3-query sanity check to ensure the endpoint
 The automated suite executes the 4-pillar blind test corpus against the endpoint, recording:
 - Spelling Accuracy (Pillar 1).
 - Grammar & Syntactic Accuracy (Pillar 2).
-- Voice Preservation Rate (Pillar 3).
+- Writer's Voice score: lexical F1, annotated marker retention, and any suite-wide over-edit penalty (Pillar 3).
 - Anti-Hallucination Rate (Pillar 4).
 - Response Latency (Milliseconds).
 
