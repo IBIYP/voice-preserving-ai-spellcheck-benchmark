@@ -70,18 +70,18 @@ When developers integrate spelling and grammar engines into word processors, cod
 - **Over-Editing & Voice Erasure (Failing Pillar 3):** Neural writing rewriters (such as **DeepL Write**) aggressively rephrase informal idioms, expand natural contractions, and convert casual or dialectal speech into standardized corporate textbook prose.
 - **Syntactic Agreement Deficits (Failing Pillar 2):** Word-level geometric engines (such as **BCorrect FMM**) achieve top-tier spelling recovery on severe dysgraphia, but struggle with sequence-level subject-verb agreements without a language model layer.
 
-![Overall 4-Pillar Hybrid Benchmark Score](assets/hybrid_score_comparison.svg?v=3.4)
+![Overall 4-Pillar Hybrid Benchmark Score](assets/hybrid_score_comparison.svg?v=3.5)
 
 ### 4-Pillar Engine Breakdown
 These charts use the separate H-01 through H-10 4-pillar suite. The B-01 through B-10 Blind v3 scorecard below is a different input set; scores should be compared only within the same suite.
 
-![4-Pillar Engine Breakdown](assets/pillars_breakdown.svg?v=3.4)
+![4-Pillar Engine Breakdown](assets/pillars_breakdown.svg?v=3.5)
 
 ### Historical Accuracy & Progression Over Time
 A key measure of engine reliability is consistent improvement across revisions on unseen evaluations. The line graph below illustrates the historical progression of overall hybrid score across benchmark milestones from early 2025 to November 2026.
-This historical series predates the Sapling and JSpell web-demo runs; both are shown only in the current cross-sectional charts because no comparable historical series exists.
+This historical series uses legacy scoring and predates the Sapling and JSpell web-demo runs. Both web demos appear in the current score and pillar charts; their historical scores are unavailable, so no trend values are invented.
 
-![Historical Progress Over Time](assets/progress_over_time.svg?v=3.4)
+![Historical Progress Over Time](assets/progress_over_time.svg?v=3.5)
 
 ### Tracking progress as engines improve
 
@@ -196,7 +196,7 @@ This class-winner table uses the B-01 through B-10 Blind v3 outputs above. The s
 
 Sapling's web-demo result is 100.0% for grammar and 93.5% for the v3 hybrid score, but is not grouped as an API or a neural rewriter in the class-winner columns above. JSpell is a spelling-only web checker, not an API result. Neither web demo's latency was measured and neither value should be interpreted as zero.
 
-![Average Query Inference Latency Comparison](assets/latency_comparison.svg?v=3.4)
+![Average Query Inference Latency Comparison](assets/latency_comparison.svg?v=3.5)
 
 ---
 

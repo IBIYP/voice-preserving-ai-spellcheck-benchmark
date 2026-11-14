@@ -215,11 +215,11 @@ def build_pillars_breakdown_svg():
 
 def build_latency_chart_svg():
     """chart 3: horizontal bar chart for latency comparison. wide and spacious."""
-    svg = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" style="background:#0d1117; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;">
-  <rect x="1" y="1" width="1198" height="358" fill="none" stroke="#30363d" stroke-width="1"/>
+    svg = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 410" style="background:#0d1117; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;">
+  <rect x="1" y="1" width="1198" height="408" fill="none" stroke="#30363d" stroke-width="1"/>
 
   <text x="600" y="34" fill="#f0f6fc" font-size="14" font-weight="700" text-anchor="middle">AVERAGE QUERY INFERENCE LATENCY (LOWER IS BETTER)</text>
-  <text x="600" y="54" fill="#8b949e" font-size="11" text-anchor="middle">Measured runs only; Sapling and JSpell web-demo latency was not collected | November 14, 2026</text>
+  <text x="600" y="54" fill="#8b949e" font-size="11" text-anchor="middle">Measured local/API runs; Sapling and JSpell web-demo latency is n/a | November 14, 2026</text>
 
   <!-- 1. BCorrect (FMM): 18ms -> width = 18/1300 * 750 = 10px (min 14px for visibility) -->
   <text x="270" y="105" fill="#ffffff" font-size="11" font-weight="700" text-anchor="end">BCorrect (1 vCPU Local)</text>
@@ -245,14 +245,17 @@ def build_latency_chart_svg():
   <text x="1028" y="255" fill="#8b949e" font-size="11" font-weight="600">~1,280 ms</text>
 
   <text x="270" y="305" fill="#f0f6fc" font-size="11" font-weight="600" text-anchor="end">Sapling (web demo)</text>
-  <text x="280" y="305" fill="#8b949e" font-size="11">Not measured - excluded from speed ranking</text>
+  <text x="280" y="305" fill="#8b949e" font-size="11">n/a - not measured; excluded from speed ranking</text>
+
+  <text x="270" y="355" fill="#a3a3a3" font-size="11" font-weight="600" text-anchor="end">JSpell (web checker)</text>
+  <text x="280" y="355" fill="#8b949e" font-size="11">n/a - not measured; excluded from speed ranking</text>
 
   <!-- bottom scale line -->
-  <line x1="280" y1="325" x2="1030" y2="325" stroke="#30363d" stroke-width="1"/>
-  <text x="280" y="344" fill="#8b949e" font-size="10" text-anchor="middle">0 ms</text>
-  <text x="568" y="344" fill="#8b949e" font-size="10" text-anchor="middle">500 ms</text>
-  <text x="856" y="344" fill="#8b949e" font-size="10" text-anchor="middle">1000 ms</text>
-  <text x="1030" y="344" fill="#8b949e" font-size="10" text-anchor="middle">1300 ms</text>
+  <line x1="280" y1="378" x2="1030" y2="378" stroke="#30363d" stroke-width="1"/>
+  <text x="280" y="398" fill="#8b949e" font-size="10" text-anchor="middle">0 ms</text>
+  <text x="568" y="398" fill="#8b949e" font-size="10" text-anchor="middle">500 ms</text>
+  <text x="856" y="398" fill="#8b949e" font-size="10" text-anchor="middle">1000 ms</text>
+  <text x="1030" y="398" fill="#8b949e" font-size="10" text-anchor="middle">1300 ms</text>
 </svg>"""
     with open("assets/latency_comparison.svg", "w", encoding="utf-8") as f:
         f.write(svg)
@@ -267,7 +270,7 @@ def build_progress_chart_svg():
   <rect x="1" y="1" width="1398" height="558" fill="none" stroke="#30363d" stroke-width="1"/>
 
   <text x="700" y="34" fill="#f0f6fc" font-size="14" font-weight="700" text-anchor="middle">LEGACY HYBRID META-SCORE HISTORY (2025 - 2026)</text>
-  <text x="700" y="54" fill="#8b949e" font-size="11" text-anchor="middle">Pre lexical-marker-f1-v2 scoring; historical values are not directly comparable with current scorecards</text>
+  <text x="700" y="54" fill="#8b949e" font-size="11" text-anchor="middle">Legacy scoring; no historical Sapling/JSpell series; not comparable with current scorecards</text>
 
   <!-- y-axis gridlines: 0% at y=430, 100% at y=90 -> range = 340px, scale = 3.4 px per % -->
   <line x1="140" y1="430" x2="1100" y2="430" stroke="#30363d" stroke-width="1.5"/>

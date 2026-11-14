@@ -64,7 +64,7 @@ python generate_charts.py
 - `assets/hybrid_score_comparison.svg`: Sharp bar chart comparing Hybrid Meta-Scores.
 - `assets/pillars_breakdown.svg`: Grouped breakdown across Pillars 1, 2, 3, and 4.
 - `assets/latency_comparison.svg`: Measured latency comparison; Sapling and JSpell are shown as not measured and are excluded from speed rankings.
-- `assets/progress_over_time.svg`: Multi-milestone progress line graph from Q1 2025 to November 2026.
+- `assets/progress_over_time.svg`: Legacy multi-milestone progress line graph; no historical Sapling or JSpell series is available.
 
 ---
 
