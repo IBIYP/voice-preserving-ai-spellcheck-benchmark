@@ -1,0 +1,101 @@
+{
+  "benchmark_metadata": {
+    "engine": "Sapling Grammar Checker",
+    "source": "Sapling.ai free grammar-check web demo",
+    "suggestion_policy": "Capture the initial suggestions, apply each distinct suggestion once at its original text offset, and do not recheck after edits.",
+    "collected_at": "2026-11-14",
+    "latency_ms": null
+  },
+  "passages": {
+    "B-01": {
+      "text": "Bro that clutch was so cracked for fur, but my keyboard glitchd during the defuse. We gotta climb back up the ranks tonite cuz tomorrow is patch day.",
+      "initial_suggestions": [
+        "fr fr -> for fur",
+        "keybord -> keyboard",
+        "clime -> climb"
+      ]
+    },
+    "B-02": {
+      "text": "Old man Miller was sitting by the woodstove whittling an ax handle, listening to the howling wind. He figured winter was gonna hit early this year.",
+      "initial_suggestions": [
+        "sittin -> sitting",
+        "whittlin -> whittling",
+        "axe -> ax",
+        "listenin -> listening",
+        "yeer -> year"
+      ]
+    },
+    "B-03": {
+      "text": "Rain drummed against the cracked plasglas. He popped the neural deck open, swapped the fried heatsink, and waited for the optics to recalabrate.",
+      "initial_suggestions": [
+        "popd -> popped",
+        "swaped -> swapped"
+      ]
+    },
+    "B-04": {
+      "text": "The Ethiopian yirgacheffe had an intensely floral aroma with notes of bergamot, but the roast profile was slightly too dark, masking the delicate stonefruit acidity.",
+      "initial_suggestions": [
+        "ethiopian -> Ethiopian",
+        "aromma -> aroma",
+        "profle -> profile",
+        "to -> too",
+        "delcate -> delicate"
+      ]
+    },
+    "B-05": {
+      "text": "The little puppy ran across the grass chasing a yellow ball. He jumped in the muddy puddle and started splashing everywhere until his paws were dark brown.",
+      "initial_suggestions": [
+        "litle -> little",
+        "acros the gras -> across the grass",
+        "yello -> yellow",
+        "jumpd -> jumped",
+        "mudy pudle and startd splashing eveywhere untill -> muddy puddle and started splashing everywhere until",
+        "broun -> brown"
+      ]
+    },
+    "B-06": {
+      "text": "The saync worker crashed due to an unhandled null pointer in the redis cache layer. We rolled back the commit and increased the connection pool timeout.",
+      "initial_suggestions": [
+        "async -> saync",
+        "unhandeled -> unhandled",
+        "rediss -> redis",
+        "increesed -> increased"
+      ]
+    },
+    "B-07": {
+      "text": "We trapped their point guard in the backcourt and forced a turnover. Marcus caught an alley-oop pass in transition and threw down a Thunderous dunk!",
+      "initial_suggestions": [
+        "trapd -> trapped",
+        "forcd -> forced",
+        "the alleyoop -> an alley-oop",
+        "transtion -> transition",
+        "thunderos -> Thunderous"
+      ]
+    },
+    "B-08": {
+      "text": "Frost crept silently across the cold windowpane. The room grew still, shadowed by the fading dusk, as if the whole world was holding its breath for the snow.",
+      "initial_suggestions": [
+        "crep -> crept",
+        "breth for -> breath for the"
+      ]
+    },
+    "B-09": {
+      "text": "Examined a juvenile barn owl with a fractured left humerus. The wing feathers were clean and the raptor showed strong aggressive defense reflexes.",
+      "initial_suggestions": [
+        "Exaimned -> Examined",
+        "humerous -> humerus",
+        "agressive -> aggressive"
+      ]
+    },
+    "B-10": {
+      "text": "Pursuant to Section 8, the supplier shall reimburse the buyer for any unauthorized shipment expenses incurred prior to the termination date.",
+      "initial_suggestions": [
+        "Pursuent -> Pursuant",
+        "remburse -> reimburse",
+        "unauthorizd -> unauthorized",
+        "incured -> incurred",
+        "terminashun -> termination"
+      ]
+    }
+  }
+}
